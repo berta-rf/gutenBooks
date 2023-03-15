@@ -1,13 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ReactReader } from 'react-reader';
 import Container from '@mui/material/Container';
+import axios from "axios";
 
 
 const Reader = () => {
-
-    fetch("/.netlify/functions/epub-downloader")
-    .then(response.data)
-
 
     // And your own state logic to persist state
     const [location, setLocation] = useState(null)
@@ -16,18 +13,33 @@ const Reader = () => {
     setLocation(epubcifi)
     }
 
-    return (
+    const baseURL = "/.netlify/functions/epub-downloader";
 
+    const [book, setBook] = useState(null);
+
+    useEffect(() => {
+        axios.get(baseURL).then((response) => {
+            setBook(response.data.data);
+        });
+    }, []);
+
+    if (!book) return null;
+
+    return (
+        
         <Container>
             <div style={{ height: '100vh' }}>
             <ReactReader
                 location={location}
                 locationChanged={locationChanged}
-                url="https://www.gutenberg.org/ebooks/2016.epub3.images"
+                epubInitOptions={
+                    {encoding: 'base64'}
+                }
+                url={book}
             />
             </div>
         </Container>
-    )
+    );
 }
 
 

@@ -5,12 +5,11 @@ import ReviewPage from './components/Reviewpage'
 
 import './assets/styles/App.scss';
 
-// import Reader from './components/Reader';
+import Reader from './components/Reader';
 
 
 function App() {
   return (
-
 
     <Router>
       <Routes>

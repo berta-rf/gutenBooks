@@ -2,8 +2,7 @@ const fetch = require('node-fetch')
 
 const handler = async function () {
   try {
-    const response = await fetch('https://www.gutenberg.org/ebooks/2016.epub3.images', {
-      // headers: { Accept: 'application/json' },
+    const response = await fetch('https://www.gutenberg.org/ebooks/844.epub.noimages', {
     })
     if (!response.ok) {
       // NOT res.status >= 200 && res.status < 300
