@@ -13,6 +13,10 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { styled, useTheme } from "@mui/material/styles";
+import SearchIcon from "@mui/icons-material/Search";
+import { Link } from "react-router-dom";
+// import Bookshelf from "./Pages/Bookshelf";
+// import Reviews from "./Reviews";
 
 const links = ["Bookshelf", "Your Reviews"];
 
@@ -26,7 +30,49 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 
 const drawerWidth = 350;
 
-function Navigation() {
+/* const Search = styled("div")(({ theme }) => ({
+  position: "relative",
+  borderRadius: theme.shape.borderRadius,
+  backgroundColor: alpha(theme.palette.common.white, 0.15),
+  "&:hover": {
+    backgroundColor: alpha(theme.palette.common.white, 0.25),
+  },
+  marginLeft: 0,
+  width: "100%",
+  [theme.breakpoints.up("sm")]: {
+    marginLeft: theme.spacing(1),
+    width: "auto",
+  },
+}));
+
+const SearchIconWrapper = styled("div")(({ theme }) => ({
+  padding: theme.spacing(0, 2),
+  height: "100%",
+  position: "absolute",
+  pointerEvents: "none",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+}));
+
+const StyledInputBase = styled(InputBase)(({ theme }) => ({
+  color: "inherit",
+  "& .MuiInputBase-input": {
+    padding: theme.spacing(1, 1, 1, 0),
+    // vertical padding + font size from searchIcon
+    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+    transition: theme.transitions.create("width"),
+    width: "100%",
+    [theme.breakpoints.up("sm")]: {
+      width: "12ch",
+      "&:focus": {
+        width: "20ch",
+      },
+    },
+  },
+})); */
+
+const Navigation = () => {
   const [open, setOpen] = useState(false);
 
   const handleDrawerOpen = () => {
@@ -81,7 +127,7 @@ function Navigation() {
                   key={page}
                   sx={{ my: 2, color: "white", display: "block" }}
                 >
-                  {page}
+                  <Link to={`/${page}`}>{page}</Link>
                 </Button>
               ))}
             </Box>
@@ -108,7 +154,7 @@ function Navigation() {
           <Button
             key={page}
             to={`/${page}`}
-            sx={{ my: 2, color: "black", display: "block" }}
+            sx={{ my: 1, color: "black", display: "block" }}
           >
             {page}
           </Button>
@@ -116,6 +162,6 @@ function Navigation() {
       </Drawer>
     </div>
   );
-}
+};
 
 export default Navigation;
