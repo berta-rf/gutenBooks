@@ -1,24 +1,31 @@
 import React, { useState } from "react";
-import { Box } from "@mui/system";
+import { useLocation } from "react-router-dom";
+
+//MUI
 import {
   AppBar,
   Button,
   Divider,
   Drawer,
   IconButton,
-  Menu,
-  MenuItem,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
   Toolbar,
   Typography,
 } from "@mui/material";
+import { Box } from "@mui/system";
 import MenuIcon from "@mui/icons-material/Menu";
-import { styled, useTheme } from "@mui/material/styles";
-import SearchIcon from "@mui/icons-material/Search";
-import { Link } from "react-router-dom";
-// import Bookshelf from "./Pages/Bookshelf";
-// import Reviews from "./Reviews";
+import RateReviewIcon from "@mui/icons-material/RateReview";
+import AutoStoriesIcon from "@mui/icons-material/AutoStories";
+import MenuBookIcon from "@mui/icons-material/MenuBook";
+import styled from "@emotion/styled";
 
-const links = ["Bookshelf", "Your Reviews"];
+const menuItems = [
+  { text: "My Bookshelf", icon: <AutoStoriesIcon />, path: "/Bookshelf" },
+  { text: "Reviewpage", icon: <RateReviewIcon />, path: "/Reviewpage" },
+];
 
 const DrawerHeader = styled("div")(({ theme }) => ({
   display: "flex",
@@ -28,51 +35,28 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   justifyContent: "flex-end",
 }));
 
-const drawerWidth = 350;
+const drawerWidth = 280;
 
-/* const Search = styled("div")(({ theme }) => ({
-  position: "relative",
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
-  "&:hover": {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
-  },
-  marginLeft: 0,
-  width: "100%",
-  [theme.breakpoints.up("sm")]: {
-    marginLeft: theme.spacing(1),
-    width: "auto",
-  },
-}));
-
-const SearchIconWrapper = styled("div")(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: "100%",
-  position: "absolute",
-  pointerEvents: "none",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-}));
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: "inherit",
-  "& .MuiInputBase-input": {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create("width"),
-    width: "100%",
-    [theme.breakpoints.up("sm")]: {
-      width: "12ch",
-      "&:focus": {
-        width: "20ch",
-      },
-    },
-  },
-})); */
+// const useStyles = makeStyles({
+//   page: {
+//     background: "#f9f9f9",
+//     width: "100%",
+//   },
+//   drawer: {
+//     width: drawerWidth,
+//   },
+//   ".MuiDrawer-paper": {
+//     width: drawerWidth,
+//   },
+//   root: {
+//     display: "flex",
+//   },
+// });
 
 const Navigation = () => {
+  // const classes = useStyles();
+  const location = useLocation();
+
   const [open, setOpen] = useState(false);
 
   const handleDrawerOpen = () => {
@@ -84,10 +68,16 @@ const Navigation = () => {
   };
 
   return (
-    <div>
-      <Box sx={{ flexGrow: 1, marginBottom: 3 }}>
-        <AppBar position="static">
-          <Toolbar>
+    <Box sx={{ display: "flex" }}>
+      {/* app bar */}
+      <Box sx={{ display: "flex", flexGrow: 1, marginBottom: 3 }}>
+        <AppBar
+          position="static"
+          sx={{
+            display: { xs: "block", sm: "none" },
+          }}
+        >
+          <Toolbar sx={{ flexDirection: "row-reverse" }}>
             <Typography
               variant="h6"
               noWrap
@@ -95,7 +85,7 @@ const Navigation = () => {
               href="/"
               sx={{
                 mr: 2,
-                display: { xs: "none", md: "flex" },
+                display: "flex",
                 fontWeight: 700,
                 color: "inherit",
                 textDecoration: "none",
@@ -121,21 +111,18 @@ const Navigation = () => {
                 <MenuIcon />
               </IconButton>
             </Box>
-            <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-              {links.map((page) => (
-                <Button
-                  key={page}
-                  sx={{ my: 2, color: "white", display: "block" }}
-                >
-                  <Link to={`/${page}`}>{page}</Link>
-                </Button>
-              ))}
-            </Box>
           </Toolbar>
         </AppBar>
       </Box>
+
+      {/* side nav */}
+
+      {/* SearchBar */}
+
+      {/* Mobile */}
       <Drawer
         sx={{
+          display: { xs: "block", sm: "none" },
           width: drawerWidth,
           flexShrink: 0,
           "& .MuiDrawer-paper": { width: drawerWidth, boxSizing: "border-box" },
@@ -147,20 +134,75 @@ const Navigation = () => {
         }}
         open={open}
       >
-        <DrawerHeader>
-          <IconButton onClick={handleDrawerClose}>x</IconButton>
+        <DrawerHeader sx={{ justifyContent: "space-between" }}>
+          <Typography variant="H5">MENU</Typography>
+          <IconButton onClick={handleDrawerClose}>X</IconButton>
         </DrawerHeader>
-        {links.map((page) => (
+        {/* {links.map((page) => (
           <Button
             key={page}
             to={`/${page}`}
             sx={{ my: 1, color: "black", display: "block" }}
           >
-            {page}
+            <Link style={{ textDecoration: "none" }} to={`/${page}`}>
+              {page}
+            </Link>
           </Button>
-        ))}
+        ))} */}
       </Drawer>
-    </div>
+      {/* Desktop */}
+      <Drawer
+        sx={{
+          display: { xs: "none", sm: "block" },
+          width: drawerWidth,
+          flexShrink: 0,
+          ".MuiDrawer-paper": {
+            width: drawerWidth,
+            boxSizing: "border-box",
+          },
+        }}
+        variant="permanent"
+        anchor="left"
+      >
+        <Box>
+          <Typography
+            variant="h5"
+            noWrap
+            component="a"
+            href="/"
+            sx={{
+              m: 2,
+              display: "flex",
+              fontWeight: 700,
+              color: "inherit",
+              textDecoration: "none",
+            }}
+          >
+            GutenBooks
+            <MenuBookIcon />
+          </Typography>
+        </Box>
+        <Divider />
+        {/* Menu items */}
+        <List>
+          {menuItems.map((item) => (
+            <ListItem key={item.text}>
+              <ListItemIcon>{item.icon}</ListItemIcon>
+              <ListItemButton
+                style={{ textDecoration: "none" }}
+                to={item.path}
+                sx={location.pathname}
+              >
+                {item.text}
+              </ListItemButton>
+            </ListItem>
+          ))}
+        </List>
+      </Drawer>
+
+      {/* where page will appear */}
+      <Box component="main"></Box>
+    </Box>
   );
 };
 
