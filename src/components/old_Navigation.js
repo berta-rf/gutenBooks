@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
-
-//MUI
+import { Box } from "@mui/system";
 import {
   AppBar,
+  Button,
   Divider,
   Drawer,
   IconButton,
@@ -14,19 +13,17 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
-import { Box } from "@mui/system";
+import { styled } from "@mui/material/styles";
+
+//icons
 import MenuIcon from "@mui/icons-material/Menu";
 import RateReviewIcon from "@mui/icons-material/RateReview";
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
-import MenuBookIcon from "@mui/icons-material/MenuBook";
-import { styled } from "@mui/material/styles";
-import SearchBook from "./SearchBook";
-import { Search } from "@mui/icons-material";
 
-const menuItems = [
-  { text: "My Bookshelf", icon: <AutoStoriesIcon />, path: "/Bookshelf" },
-  { text: "Reviewpage", icon: <RateReviewIcon />, path: "/Reviewpage" },
-];
+//router
+import { Link } from "react-router-dom";
+
+const links = ["Bookshelf", "Reviewpage"];
 
 const DrawerHeader = styled("div")(({ theme }) => ({
   display: "flex",
@@ -36,29 +33,9 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   justifyContent: "flex-end",
 }));
 
-const drawerWidth = 280;
+const drawerWidth = 250;
 
-// const useStyles = makeStyles({
-//   page: {
-//     background: "#f9f9f9",
-//     width: "100%",
-//   },
-//   drawer: {
-//     width: drawerWidth,
-//   },
-//   ".MuiDrawer-paper": {
-//     width: drawerWidth,
-//   },
-//   root: {
-//     display: "flex",
-//   },
-// });
-
-const Navigation = () => {
-  // const classes = useStyles();
-  const location = useLocation();
-  const path = location.pathname;
-
+const Navigation = ({ Children }) => {
   const [open, setOpen] = useState(false);
 
   const handleDrawerOpen = () => {
@@ -70,10 +47,9 @@ const Navigation = () => {
   };
 
   return (
-    <Box sx={{ display: "flex" }}>
-      {/* app bar */}
+    <div>
       <Box sx={{ display: "flex", flexGrow: 1, marginBottom: 3 }}>
-        <AppBar sx={{ width: `calc(100%)-${drawerWidth}px` }}>
+        <AppBar position="static">
           <Toolbar sx={{ flexDirection: "row-reverse" }}>
             <Typography
               variant="h6"
@@ -111,15 +87,9 @@ const Navigation = () => {
           </Toolbar>
         </AppBar>
       </Box>
-
-      {/* side nav */}
-
-      {/* SearchBar goes here */}
-
       {/* Mobile */}
       <Drawer
         sx={{
-          display: { xs: "block", sm: "none" },
           width: drawerWidth,
           flexShrink: 0,
           "& .MuiDrawer-paper": { width: drawerWidth, boxSizing: "border-box" },
@@ -135,60 +105,56 @@ const Navigation = () => {
           <Typography variant="H5">MENU</Typography>
           <IconButton onClick={handleDrawerClose}>X</IconButton>
         </DrawerHeader>
+        {links.map((page) => (
+          <Button
+            key={page}
+            to={`/${page}`}
+            sx={{ my: 1, color: "black", display: "block" }}
+          >
+            <Link style={{ textDecoration: "none" }} to={`/${page}`}>
+              {page}
+            </Link>
+          </Button>
+        ))}
       </Drawer>
       {/* Desktop */}
       <Drawer
+        variant="permanent"
+        anchor="left"
         sx={{
           display: { xs: "none", sm: "block" },
           width: drawerWidth,
           flexShrink: 0,
-          ".MuiDrawer-paper": {
-            width: drawerWidth,
-            boxSizing: "border-box",
-          },
+          "& .MuiDrawer-paper": { boxSizing: "border-box", width: drawerWidth },
         }}
-        variant="permanent"
-        anchor="left"
+        open
       >
-        <Box>
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              m: 2,
-              display: "flex",
-              fontWeight: 700,
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            GutenBooks
-            <MenuBookIcon />
-          </Typography>
-        </Box>
-        <Divider />
-        {/* Menu items */}
-        <List>
-          {menuItems.map((item) => (
-            <ListItem key={item.text}>
-              <ListItemIcon>{item.icon}</ListItemIcon>
-              <ListItemButton
-                style={{ textDecoration: "none" }}
-                to={item.path}
-                sx={location.pathname}
-              >
-                {item.text}
-              </ListItemButton>
-            </ListItem>
+        <Box
+          sx={{
+            flexGrow: 1,
+            display: { xs: "none", md: "flex" },
+            flexDirection: "column",
+            overflow: "auto",
+          }}
+        >
+          {links.map((page, index) => (
+            <List>
+              <ListItem key={page} disablePadding>
+                <ListItemIcon>
+                  {index % 2 === 0 ? <AutoStoriesIcon /> : <RateReviewIcon />}
+                </ListItemIcon>
+                <ListItemButton
+                  style={{ textDecoration: "none" }}
+                  to={`/${page}`}
+                >
+                  {page}
+                </ListItemButton>
+              </ListItem>
+            </List>
           ))}
-        </List>
+        </Box>
       </Drawer>
-
-      {/* where page will appear */}
-      <Box component="main"></Box>
-    </Box>
+    </div>
   );
 };
 
