@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 
 //MUI
 import {
@@ -20,8 +20,6 @@ import RateReviewIcon from "@mui/icons-material/RateReview";
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
 import { styled } from "@mui/material/styles";
-import SearchBook from "./SearchBook";
-import { Search } from "@mui/icons-material";
 
 const menuItems = [
   { text: "My Bookshelf", icon: <AutoStoriesIcon />, path: "/Bookshelf" },
@@ -56,8 +54,8 @@ const drawerWidth = 280;
 
 const Navigation = () => {
   // const classes = useStyles();
-  const location = useLocation();
-  const path = location.pathname;
+  // const location = useLocation();
+  // const path = location.pathname;
 
   const [open, setOpen] = useState(false);
 
@@ -187,7 +185,12 @@ const Navigation = () => {
       </Drawer>
 
       {/* where page will appear */}
-      <Box component="main"></Box>
+      <Box
+        component="main"
+        sx={{ flexGrow: 1, bgcolor: "background.default", m: 3, p: 3 }}
+      >
+        <Outlet />
+      </Box>
     </Box>
   );
 };

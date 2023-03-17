@@ -1,9 +1,7 @@
-import { Box } from "@mui/system";
-import React, { useEffect, useState } from "react";
-import Navigation from "../Navigation";
+import React from "react";
 
 const Home = () => {
-  return <div>Home</div>;
+  return <div>HOME PAGE</div>;
 };
 
 export default Home;
