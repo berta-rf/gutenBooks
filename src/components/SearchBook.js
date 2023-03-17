@@ -15,21 +15,23 @@ const SearchBook = () => {
     const topicURL = "https://gutendex.com/books?topic=";
 
 
-    const [param, setParam] = useState('author');
-    const [searchQuery, setSearchQuery] = useState("");
+    const [searchResults, setSearchResults] = useState ({
+        param: 'author',
+        query: '',
+    })
+    
 
+    const handleChange = (event) => {
 
-    const handleParamChange = (event) => {
-
-        setParam(event.target.value);
+        setSearchResults({...searchResults, param: event.target.value});
     };
 
     const handleSearch = () => {
 
-        if (param === "author") {
-            axios.get(authorURL + searchQuery)
-        } else if (param === "topic")
-            axios.get(topicURL + searchQuery)
+        if (searchResults.param === "author") {
+            axios.get(authorURL + searchResults.query)
+        } else if (searchResults.param === "topic")
+            axios.get(topicURL + searchResults.query)
 
         .then(data => console.log(data.data))
         .catch(error => console.log(error));
@@ -43,8 +45,8 @@ const SearchBook = () => {
 
             <Select
                 id="select-param"
-                value={param}
-                onChange={handleParamChange}>
+                value={searchResults.param}
+                onChange={handleChange}>
                 <MenuItem value={"author"}>Search by title / author</MenuItem>
                 <MenuItem value={"topic"}>Search by topic</MenuItem>
             </Select>
@@ -53,7 +55,9 @@ const SearchBook = () => {
             
                 id="search-bar"
                 className="text"
-                onInput={(e) => {setSearchQuery(e.target.value)}}
+                value={searchResults.query}
+                onInput={(e) => {setSearchResults({...searchResults, query: e.target.value});
+                }}
                 placeholder=""
 
             />
@@ -64,7 +68,7 @@ const SearchBook = () => {
             </IconButton>
         </FormControl>
 
-        
+        <DefaultHomepage props={searchResults}/>
 
     </>)}
 
