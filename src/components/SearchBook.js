@@ -6,6 +6,7 @@ import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
+import defaultBooks from '../assets/data/defaultBooks.json';
 
 import Homepage from './Homepage';
 
@@ -36,12 +37,12 @@ const SearchBook = () => {
             url = topicURL + searchResults.query;
         }
         axios.get(url)
-            .then(data => setResults(data.data))
+            .then(data => setResults(data.data.results))
             .catch(error => console.log(error));
          
     };
 
-    const [results, setResults] = useState(null) 
+    const [results, setResults] = useState(defaultBooks);
     // console.log(results)
 
     return(<>
@@ -72,8 +73,9 @@ const SearchBook = () => {
                <SearchIcon style={{ fill: "blue" }} />
             </IconButton>
         </FormControl>
-
-        { results ? <Homepage results={results} /> : '' }
+        
+        
+        { results ? <Homepage results={results} /> : <Homepage results={defaultBooks} /> }
 
     </>)}
 

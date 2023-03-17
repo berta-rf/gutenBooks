@@ -12,14 +12,16 @@ function Homepage({results}) {
 
   console.log(results)
   return (<>
+    
+    <h1>Here's some books for you...</h1>
 
-    <Grid container className='homepage' spacing={2}>
-      <h1>Here's some books for you...</h1>
+    <Grid container className='homepage'>
+      
 
-        {results.results.map((book) => (
+        {results.map((book) => (
 
-          <Grid xs={6}>
-              <Card className='defaultBooks'>
+          <Grid xs={6} md={4} xl={3}>
+              <Card className='defaultBooks' sx={{ width: '92%'}}>
                   <CardMedia
                     component="img"
                     alt={book.title}
@@ -27,13 +29,12 @@ function Homepage({results}) {
                     image={`https://www.gutenberg.org/cache/epub/${book.id}/pg${book.id}.cover.medium.jpg`} />
                   <CardContent>
                     <Typography gutterBottom variant="h7" component="div">
-                      {book.title}
-                      {/* {book.authors[0].name} */}
+                      {book.title} by {book.authors[0] ? book.authors[0].name : 'Unknown Author'}
                     </Typography>
                   </CardContent>
                   <CardActionArea>
-                    <Button size="small">See info</Button>
-                    <Button size="small">READ THIS BOOK</Button>
+                    <Button size="medium">See info</Button>
+                    <Button size="medium">READ THIS BOOK</Button>
                 </CardActionArea>
               </Card>
           </Grid>
