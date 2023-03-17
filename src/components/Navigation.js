@@ -4,7 +4,6 @@ import { useLocation } from "react-router-dom";
 //MUI
 import {
   AppBar,
-  Button,
   Divider,
   Drawer,
   IconButton,
@@ -20,7 +19,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import RateReviewIcon from "@mui/icons-material/RateReview";
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
-import styled from "@emotion/styled";
+import { styled } from "@mui/material/styles";
 
 const menuItems = [
   { text: "My Bookshelf", icon: <AutoStoriesIcon />, path: "/Bookshelf" },
@@ -56,6 +55,7 @@ const drawerWidth = 280;
 const Navigation = () => {
   // const classes = useStyles();
   const location = useLocation();
+  const path = location.pathname;
 
   const [open, setOpen] = useState(false);
 
@@ -117,7 +117,7 @@ const Navigation = () => {
 
       {/* side nav */}
 
-      {/* SearchBar */}
+      {/* SearchBar goes here */}
 
       {/* Mobile */}
       <Drawer
@@ -138,17 +138,6 @@ const Navigation = () => {
           <Typography variant="H5">MENU</Typography>
           <IconButton onClick={handleDrawerClose}>X</IconButton>
         </DrawerHeader>
-        {/* {links.map((page) => (
-          <Button
-            key={page}
-            to={`/${page}`}
-            sx={{ my: 1, color: "black", display: "block" }}
-          >
-            <Link style={{ textDecoration: "none" }} to={`/${page}`}>
-              {page}
-            </Link>
-          </Button>
-        ))} */}
       </Drawer>
       {/* Desktop */}
       <Drawer
