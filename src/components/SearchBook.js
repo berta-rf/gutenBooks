@@ -7,6 +7,8 @@ import SearchIcon from "@mui/icons-material/Search";
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 
+import Homepage from './Homepage';
+
 
 
 const SearchBook = () => {
@@ -27,17 +29,20 @@ const SearchBook = () => {
     };
 
     const handleSearch = () => {
-
+        let url;
         if (searchResults.param === "author") {
-            axios.get(authorURL + searchResults.query)
-        } else if (searchResults.param === "topic")
-            axios.get(topicURL + searchResults.query)
-
-        .then(data => console.log(data.data))
-        .catch(error => console.log(error));
-        
+           url = authorURL + searchResults.query;
+        } else if (searchResults.param === "topic") {
+            url = topicURL + searchResults.query;
+        }
+        axios.get(url)
+            .then(data => setResults(data.data))
+            .catch(error => console.log(error));
+         
     };
 
+    const [results, setResults] = useState(null) 
+    // console.log(results)
 
     return(<>
 
@@ -68,7 +73,7 @@ const SearchBook = () => {
             </IconButton>
         </FormControl>
 
-        <DefaultHomepage props={searchResults}/>
+        { results ? <Homepage results={results} /> : '' }
 
     </>)}
 
