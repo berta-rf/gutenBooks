@@ -10,8 +10,6 @@ import defaultBooks from '../assets/data/defaultBooks.json';
 
 import Homepage from './Homepage';
 
-
-
 const SearchBook = () => {
 
     const authorURL = "https://gutendex.com/books?search=";

@@ -6,17 +6,21 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { CardActionArea } from '@mui/material';
+import SearchBook from './SearchBook';
 
 
 function Homepage({results}) {
 
-  console.log(results)
+  // console.log(results)
+
   return (<>
+
+    <SearchBook />
     
     <h1>Here's some books for you...</h1>
 
     <Grid container className='homepage'>
-      
+
 
         {results.map((book) => (
 
