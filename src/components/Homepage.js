@@ -15,7 +15,6 @@ function Homepage({results}) {
 
   return (<>
 
-    <SearchBook />
     
     <h1>Here's some books for you...</h1>
 
