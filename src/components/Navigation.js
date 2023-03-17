@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+
+import SearchBook from "./SearchBook";
 
 //MUI
 import {
@@ -14,16 +16,40 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
+import { styled } from "@mui/material/styles";
 import { Box } from "@mui/system";
+
+//MUI icons
 import MenuIcon from "@mui/icons-material/Menu";
 import RateReviewIcon from "@mui/icons-material/RateReview";
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
-import { styled } from "@mui/material/styles";
+import HomeIcon from "@mui/icons-material/Home";
+
+/*UNUSED const useStyles = makeStyles({
+  page: {
+    background: "#f9f9f9",
+    width: "100%",
+  },
+  drawer: {
+    width: drawerWidth,
+  },
+  ".MuiDrawer-paper": {
+    width: drawerWidth,
+  },
+  root: {
+    display: "flex",
+  },
+}); 
+const classes = useStyles();
+const location = useLocation();
+const path = location.pathname;
+*/
 
 const menuItems = [
+  { text: "Home", icon: <HomeIcon />, path: "/#" },
   { text: "My Bookshelf", icon: <AutoStoriesIcon />, path: "/Bookshelf" },
-  { text: "Reviewpage", icon: <RateReviewIcon />, path: "/Reviewpage" },
+  { text: "My Reviews", icon: <RateReviewIcon />, path: "/Review" },
 ];
 
 const DrawerHeader = styled("div")(({ theme }) => ({
@@ -36,27 +62,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 
 const drawerWidth = 280;
 
-// const useStyles = makeStyles({
-//   page: {
-//     background: "#f9f9f9",
-//     width: "100%",
-//   },
-//   drawer: {
-//     width: drawerWidth,
-//   },
-//   ".MuiDrawer-paper": {
-//     width: drawerWidth,
-//   },
-//   root: {
-//     display: "flex",
-//   },
-// });
-
 const Navigation = () => {
-  // const classes = useStyles();
-  // const location = useLocation();
-  // const path = location.pathname;
-
   const [open, setOpen] = useState(false);
 
   const handleDrawerOpen = () => {
@@ -70,24 +76,14 @@ const Navigation = () => {
   return (
     <Box sx={{ display: "flex" }}>
       {/* app bar */}
-      <Box sx={{ display: "flex", flexGrow: 1, marginBottom: 3 }}>
+      <Box sx={{ flexGrow: 1 }}>
         <AppBar sx={{ width: `calc(100%)-${drawerWidth}px` }}>
-          <Toolbar sx={{ flexDirection: "row-reverse" }}>
-            <Typography
-              variant="h6"
-              noWrap
-              component="a"
-              href="/"
-              sx={{
-                mr: 2,
-                display: "flex",
-                fontWeight: 700,
-                color: "inherit",
-                textDecoration: "none",
-              }}
-            >
-              GutenBooks
-            </Typography>
+          <Toolbar
+            sx={{ flexDirection: "row-reverse", backgroundColor: "#087f5b" }}
+          >
+            <Box sx={{ display: "flex" }}>
+              <SearchBook />
+            </Box>
             <Box
               sx={{
                 flexGrow: 1,
@@ -110,9 +106,7 @@ const Navigation = () => {
         </AppBar>
       </Box>
 
-      {/* side nav */}
-
-      {/* SearchBar goes here */}
+      {/* side navigation */}
 
       {/* Mobile */}
       <Drawer
@@ -130,10 +124,22 @@ const Navigation = () => {
         open={open}
       >
         <DrawerHeader sx={{ justifyContent: "space-between" }}>
-          <Typography variant="H5">MENU</Typography>
+          <Typography variant="h4">MENU</Typography>
           <IconButton onClick={handleDrawerClose}>X</IconButton>
         </DrawerHeader>
+        {/* Menu items */}
+        <List>
+          {menuItems.map((item) => (
+            <ListItem key={item.text}>
+              <ListItemIcon>{item.icon}</ListItemIcon>
+              <ListItemButton style={{ textDecoration: "none" }} to={item.path}>
+                {item.text}
+              </ListItemButton>
+            </ListItem>
+          ))}
+        </List>
       </Drawer>
+
       {/* Desktop */}
       <Drawer
         sx={{
@@ -172,11 +178,7 @@ const Navigation = () => {
           {menuItems.map((item) => (
             <ListItem key={item.text}>
               <ListItemIcon>{item.icon}</ListItemIcon>
-              <ListItemButton
-                style={{ textDecoration: "none" }}
-                to={item.path}
-                sx={location.pathname}
-              >
+              <ListItemButton style={{ textDecoration: "none" }} to={item.path}>
                 {item.text}
               </ListItemButton>
             </ListItem>
@@ -185,10 +187,8 @@ const Navigation = () => {
       </Drawer>
 
       {/* where page will appear */}
-      <Box
-        component="main"
-        sx={{ flexGrow: 1, bgcolor: "background.default", m: 3, p: 3 }}
-      >
+      <Box component="main" sx={{ flexGrow: 1, m: 3, p: 3 }}>
+        <Toolbar />
         <Outlet />
       </Box>
     </Box>

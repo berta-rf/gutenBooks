@@ -1,7 +1,12 @@
+import { Typography } from "@mui/material";
 import React from "react";
 
 const Bookshelf = () => {
-  return <box sx={{ mr: 5 }}>THIS IS A TEST</box>;
+  return (
+    <div>
+      <Typography variant="h2">Bookshelf</Typography>
+    </div>
+  );
 };
 
 export default Bookshelf;
