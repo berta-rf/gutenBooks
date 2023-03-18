@@ -24,7 +24,7 @@ function Homepage({results}) {
         {results.map((book) => (
 
           <Grid xs={6} md={4} xl={3}>
-              <Card className='defaultBooks' sx={{ width: '92%'}}>
+              <Card className='books' sx={{ width: '92%'}}>
                   <CardMedia
                     component="img"
                     alt={book.title}
