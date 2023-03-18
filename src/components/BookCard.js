@@ -1,31 +1,17 @@
 import React from "react";
 import {
-  Box,
   Button,
   Card,
   CardActionArea,
   CardContent,
   CardMedia,
-  Fab,
-  IconButton,
   Typography,
 } from "@mui/material";
 import defaultBooks from "../assets/data/defaultBooks.json";
 import Grid from "@mui/material/Unstable_Grid2";
 
-//mui icons
-import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
-
 //defeault booksjson
 const books = defaultBooks;
-
-//function to fix author name display
-//split name into 2
-function fixAuthorName(name) {
-  const splitName = name.split(" ");
-
-  return splitName;
-}
 
 const BookCard = () => {
   return (
