@@ -6,7 +6,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { CardActionArea } from '@mui/material';
-import SearchBook from './SearchBook';
+// import SearchBook from './SearchBook';
 
 
 function Homepage({results}) {
@@ -20,10 +20,9 @@ function Homepage({results}) {
 
     <Grid container className='homepage'>
 
-
         {results.map((book) => (
 
-          <Grid xs={6} md={4} xl={3}>
+            <Grid item key={book.id} xs={6} md={4} xl={3}>
               <Card className='books' sx={{ width: '92%'}}>
                   <CardMedia
                     component="img"
@@ -40,7 +39,7 @@ function Homepage({results}) {
                     <Button size="medium">READ THIS BOOK</Button>
                 </CardActionArea>
               </Card>
-          </Grid>
+            </Grid>
         ))}
 
     </Grid>
