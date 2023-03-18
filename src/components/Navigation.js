@@ -76,7 +76,6 @@ const Navigation = () => {
   return (
     <Box sx={{ display: "flex" }}>
       {/* app bar */}
-<<<<<<< HEAD
       <Box sx={{ display: "flex", flexGrow: 1, marginBottom: 3 }}>
         <AppBar
           position="static"
@@ -100,16 +99,6 @@ const Navigation = () => {
             >
               GutenBooks
             </Typography>
-=======
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar sx={{ width: `calc(100%)-${drawerWidth}px` }}>
-          <Toolbar
-            sx={{ flexDirection: "row-reverse", backgroundColor: "#087f5b" }}
-          >
-            <Box sx={{ display: "flex" }}>
-              <SearchBook />
-            </Box>
->>>>>>> ffae5f1 (finished basic navigation with working links and display)
             <Box
               sx={{
                 flexGrow: 1,
