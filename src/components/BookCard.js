@@ -32,7 +32,7 @@ const BookCard = () => {
     <>
       {books.map((book) => (
         <Grid>
-          <Card sx={{ width: 350, height: 700 }}>
+          <Card id={book.id} sx={{ width: 350, height: 700 }}>
             {/* Cover */}
             <CardMedia
               component="img"
