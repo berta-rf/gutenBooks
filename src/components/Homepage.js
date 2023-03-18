@@ -18,11 +18,14 @@ function Homepage({results}) {
     
     <h1>Here's some books for you...</h1>
 
+    
     <Grid container className='homepage'>
 
         {results.map((book) => (
 
+
             <Grid item key={book.id} xs={6} md={4} xl={3}>
+
               <Card className='books' sx={{ width: '92%'}}>
                   <CardMedia
                     component="img"
@@ -43,7 +46,6 @@ function Homepage({results}) {
         ))}
 
     </Grid>
-  
   </>);
 
 }
