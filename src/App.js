@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import ReviewPage from './components/Reviewpage'
-import Homepage from './components/Homepage';
+// import Homepage from './components/Homepage';
 // import Reader from './components/Reader';
 import SearchBook from './components/SearchBook';
 
