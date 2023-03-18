@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
 
-//import SearchBook from "./SearchBook";
+import SearchBook from "./SearchBook";
 
 //MUI
 import {
@@ -76,29 +76,14 @@ const Navigation = () => {
   return (
     <Box sx={{ display: "flex" }}>
       {/* app bar */}
-      <Box sx={{ display: "flex", flexGrow: 1, marginBottom: 3 }}>
-        <AppBar
-          position="static"
-          sx={{
-            display: { xs: "block", sm: "none" },
-          }}
-        >
-          <Toolbar sx={{ flexDirection: "row-reverse" }}>
-            <Typography
-              variant="h6"
-              noWrap
-              component="a"
-              href="/"
-              sx={{
-                mr: 2,
-                display: "flex",
-                fontWeight: 700,
-                color: "inherit",
-                textDecoration: "none",
-              }}
-            >
-              GutenBooks
-            </Typography>
+      <Box sx={{ flexGrow: 1 }}>
+        <AppBar sx={{ width: `calc(100%)-${drawerWidth}px` }}>
+          <Toolbar
+            sx={{ flexDirection: "row-reverse", backgroundColor: "#087f5b" }}
+          >
+            <Box sx={{ display: "flex" }}>
+              <SearchBook />
+            </Box>
             <Box
               sx={{
                 flexGrow: 1,
