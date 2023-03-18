@@ -8,7 +8,7 @@ import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import defaultBooks from "../assets/data/defaultBooks.json";
 import { FormGroup } from "@mui/material";
-import { createContext } from "react";
+// import { createContext } from "react";
 
 const SearchBook = () => {
   const authorURL = "https://gutendex.com/books?search=";
@@ -36,7 +36,7 @@ const SearchBook = () => {
       .catch((error) => console.log(error));
   };
 
-  const [results, setResults] = useState(defaultBooks);
+  // const [results, setResults] = useState(defaultBooks);
   // console.log(results)
 
   return (

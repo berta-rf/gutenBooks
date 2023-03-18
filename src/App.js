@@ -8,7 +8,7 @@ import Navigation from "./components/Navigation";
 // import Reader from './components/Reader';
 
 //pages
-import Homepage from "./components/Pages/Homepage";
+import Homepage from "./components/Homepage";
 import Bookshelf from "./components/Pages/Bookshelf";
 import Reviewpage from "./components/Pages/Reviewpage";
 
