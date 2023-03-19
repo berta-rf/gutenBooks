@@ -1,9 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
+//mui
+import { Box, Fab, IconButton } from "@mui/material";
 
-//Check if any books in storage
-//if
+//mui icons
+import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
+
 const AddToBookshelf = () => {
-  const handleClick = (e) => {
-    e.preventDefault();
-  };
+  const [addedBooks, setAddedBook] = useState([]);
+
+  const handleAddBook = () => {};
+
+  return (
+    <IconButton>
+      <BookmarkAddIcon />
+    </IconButton>
+  );
 };
+{
+  /* <Fab
+    color="primary"
+    aria-label="add"
+    size="small"
+    onClick={handleAddBook}
+    sx={{
+      position: "relative",
+      bottom: 670,
+      left: 280,
+      zIndex: 1,
+    }}</Fab>
+  > */
+}
+
+export default AddToBookshelf;

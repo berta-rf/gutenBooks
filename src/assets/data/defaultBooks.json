@@ -1,285 +1,284 @@
 [
-    {
-      "id": 145,
-      "title": "Middlemarch",
-      "authors": [
-        {
-          "name": "Eliot, George",
-          "birth_year": 1819,
-          "death_year": 1880
-        }
-      ],
-      "translators": [],
-      "subjects": [
-        "Bildungsromans",
-        "City and town life -- Fiction",
-        "Didactic fiction",
-        "Domestic fiction",
-        "England -- Fiction",
-        "Love stories",
-        "Married people -- Fiction",
-        "Young women -- Fiction"
-      ],
-      "bookshelves": ["Best Books Ever Listings", "Historical Fiction"],
-      "languages": ["en"],
-      "copyright": false,
-      "media_type": "Text",
-      "formats": {
-        "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/145.kf8.images",
-        "application/epub+zip": "https://www.gutenberg.org/ebooks/145.epub3.images",
-        "text/html": "https://www.gutenberg.org/ebooks/145.html.images",
-        "application/octet-stream": "https://www.gutenberg.org/files/145/145-0.zip",
-        "text/plain": "https://www.gutenberg.org/ebooks/145.txt.utf-8",
-        "image/jpeg": "https://www.gutenberg.org/cache/epub/145/pg145.cover.medium.jpg",
-        "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/145/145-0.txt",
-        "application/rdf+xml": "https://www.gutenberg.org/ebooks/145.rdf"
-      },
-      "download_count": 165079
+  {
+    "id": 145,
+    "title": "Middlemarch",
+    "authors": [
+      {
+        "name": "Eliot, George",
+        "birth_year": 1819,
+        "death_year": 1880
+      }
+    ],
+    "translators": [],
+    "subjects": [
+      "Bildungsromans",
+      "City and town life -- Fiction",
+      "Didactic fiction",
+      "Domestic fiction",
+      "England -- Fiction",
+      "Love stories",
+      "Married people -- Fiction",
+      "Young women -- Fiction"
+    ],
+    "bookshelves": ["Best Books Ever Listings", "Historical Fiction"],
+    "languages": ["en"],
+    "copyright": false,
+    "media_type": "Text",
+    "formats": {
+      "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/145.kf8.images",
+      "application/epub+zip": "https://www.gutenberg.org/ebooks/145.epub3.images",
+      "text/html": "https://www.gutenberg.org/ebooks/145.html.images",
+      "application/octet-stream": "https://www.gutenberg.org/files/145/145-0.zip",
+      "text/plain": "https://www.gutenberg.org/ebooks/145.txt.utf-8",
+      "image/jpeg": "https://www.gutenberg.org/cache/epub/145/pg145.cover.medium.jpg",
+      "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/145/145-0.txt",
+      "application/rdf+xml": "https://www.gutenberg.org/ebooks/145.rdf"
     },
-    {
-      "id": 37106,
-      "title": "Little Women; Or, Meg, Jo, Beth, and Amy",
-      "authors": [
-        {
-          "name": "Alcott, Louisa May",
-          "birth_year": 1832,
-          "death_year": 1888
-        }
-      ],
-      "translators": [],
-      "subjects": [
-        "Autobiographical fiction",
-        "Bildungsromans",
-        "Domestic fiction",
-        "Family life -- New England -- Fiction",
-        "March family (Fictitious characters) -- Fiction",
-        "Mothers and daughters -- Fiction",
-        "New England -- Fiction",
-        "Sisters -- Fiction",
-        "Young women -- Fiction"
-      ],
-      "bookshelves": [],
-      "languages": ["en"],
-      "copyright": false,
-      "media_type": "Text",
-      "formats": {
-        "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/37106.kf8.images",
-        "application/epub+zip": "https://www.gutenberg.org/ebooks/37106.epub3.images",
-        "image/jpeg": "https://www.gutenberg.org/cache/epub/37106/pg37106.cover.medium.jpg",
-        "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/37106/37106.txt",
-        "text/html; charset=iso-8859-1": "https://www.gutenberg.org/files/37106/37106-h/37106-h.htm",
-        "text/html": "https://www.gutenberg.org/ebooks/37106.html.images",
-        "application/rdf+xml": "https://www.gutenberg.org/ebooks/37106.rdf",
-        "text/plain": "https://www.gutenberg.org/ebooks/37106.txt.utf-8"
-      },
-      "download_count": 152480
+    "download_count": 165079
+  },
+  {
+    "id": 37106,
+    "title": "Little Women; Or, Meg, Jo, Beth, and Amy",
+    "authors": [
+      {
+        "name": "Alcott, Louisa May",
+        "birth_year": 1832,
+        "death_year": 1888
+      }
+    ],
+    "translators": [],
+    "subjects": [
+      "Autobiographical fiction",
+      "Bildungsromans",
+      "Domestic fiction",
+      "Family life -- New England -- Fiction",
+      "March family (Fictitious characters) -- Fiction",
+      "Mothers and daughters -- Fiction",
+      "New England -- Fiction",
+      "Sisters -- Fiction",
+      "Young women -- Fiction"
+    ],
+    "bookshelves": [],
+    "languages": ["en"],
+    "copyright": false,
+    "media_type": "Text",
+    "formats": {
+      "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/37106.kf8.images",
+      "application/epub+zip": "https://www.gutenberg.org/ebooks/37106.epub3.images",
+      "image/jpeg": "https://www.gutenberg.org/cache/epub/37106/pg37106.cover.medium.jpg",
+      "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/37106/37106.txt",
+      "text/html; charset=iso-8859-1": "https://www.gutenberg.org/files/37106/37106-h/37106-h.htm",
+      "text/html": "https://www.gutenberg.org/ebooks/37106.html.images",
+      "application/rdf+xml": "https://www.gutenberg.org/ebooks/37106.rdf",
+      "text/plain": "https://www.gutenberg.org/ebooks/37106.txt.utf-8"
     },
-    {
-      "id": 16389,
-      "title": "The Enchanted April",
-      "authors": [
-        {
-          "name": "Von Arnim, Elizabeth",
-          "birth_year": 1866,
-          "death_year": 1941
-        }
-      ],
-      "translators": [],
-      "subjects": [
-        "British -- Italy -- Fiction",
-        "Domestic fiction",
-        "Female friendship -- Fiction",
-        "Italy -- Fiction",
-        "Love stories"
-      ],
-      "bookshelves": ["Bestsellers, American, 1895-1923"],
-      "languages": ["en"],
-      "copyright": false,
-      "media_type": "Text",
-      "formats": {
-        "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/16389.kf8.images",
-        "text/html": "https://www.gutenberg.org/ebooks/16389.html.images",
-        "application/octet-stream": "https://www.gutenberg.org/files/16389/16389-0.zip",
-        "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/16389/16389-0.txt",
-        "application/epub+zip": "https://www.gutenberg.org/ebooks/16389.epub3.images",
-        "image/jpeg": "https://www.gutenberg.org/cache/epub/16389/pg16389.cover.medium.jpg",
-        "text/plain": "https://www.gutenberg.org/ebooks/16389.txt.utf-8",
-        "application/rdf+xml": "https://www.gutenberg.org/ebooks/16389.rdf"
-      },
-      "download_count": 147692
+    "download_count": 152480
+  },
+  {
+    "id": 16389,
+    "title": "The Enchanted April",
+    "authors": [
+      {
+        "name": "Von Arnim, Elizabeth",
+        "birth_year": 1866,
+        "death_year": 1941
+      }
+    ],
+    "translators": [],
+    "subjects": [
+      "British -- Italy -- Fiction",
+      "Domestic fiction",
+      "Female friendship -- Fiction",
+      "Italy -- Fiction",
+      "Love stories"
+    ],
+    "bookshelves": ["Bestsellers, American, 1895-1923"],
+    "languages": ["en"],
+    "copyright": false,
+    "media_type": "Text",
+    "formats": {
+      "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/16389.kf8.images",
+      "text/html": "https://www.gutenberg.org/ebooks/16389.html.images",
+      "application/octet-stream": "https://www.gutenberg.org/files/16389/16389-0.zip",
+      "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/16389/16389-0.txt",
+      "application/epub+zip": "https://www.gutenberg.org/ebooks/16389.epub3.images",
+      "image/jpeg": "https://www.gutenberg.org/cache/epub/16389/pg16389.cover.medium.jpg",
+      "text/plain": "https://www.gutenberg.org/ebooks/16389.txt.utf-8",
+      "application/rdf+xml": "https://www.gutenberg.org/ebooks/16389.rdf"
     },
-    {
-      "id": 394,
-      "title": "Cranford",
-      "authors": [
-        {
-          "name": "Gaskell, Elizabeth Cleghorn",
-          "birth_year": 1810,
-          "death_year": 1865
-        }
-      ],
-      "translators": [],
-      "subjects": [
-        "England -- Fiction",
-        "Female friendship -- Fiction",
-        "Older women -- Fiction",
-        "Pastoral fiction",
-        "Sisters -- Fiction",
-        "Villages -- Fiction"
-      ],
-      "bookshelves": [],
-      "languages": ["en"],
-      "copyright": false,
-      "media_type": "Text",
-      "formats": {
-        "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/394.kf8.images",
-        "application/epub+zip": "https://www.gutenberg.org/ebooks/394.epub3.images",
-        "text/html": "https://www.gutenberg.org/ebooks/394.html.images",
-        "application/octet-stream": "https://www.gutenberg.org/files/394/394-0.zip",
-        "image/jpeg": "https://www.gutenberg.org/cache/epub/394/pg394.cover.medium.jpg",
-        "text/plain": "https://www.gutenberg.org/ebooks/394.txt.utf-8",
-        "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/394/394-0.txt",
-        "application/rdf+xml": "https://www.gutenberg.org/ebooks/394.rdf"
-      },
-      "download_count": 143503
+    "download_count": 147692
+  },
+  {
+    "id": 394,
+    "title": "Cranford",
+    "authors": [
+      {
+        "name": "Gaskell, Elizabeth Cleghorn",
+        "birth_year": 1810,
+        "death_year": 1865
+      }
+    ],
+    "translators": [],
+    "subjects": [
+      "England -- Fiction",
+      "Female friendship -- Fiction",
+      "Older women -- Fiction",
+      "Pastoral fiction",
+      "Sisters -- Fiction",
+      "Villages -- Fiction"
+    ],
+    "bookshelves": [],
+    "languages": ["en"],
+    "copyright": false,
+    "media_type": "Text",
+    "formats": {
+      "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/394.kf8.images",
+      "application/epub+zip": "https://www.gutenberg.org/ebooks/394.epub3.images",
+      "text/html": "https://www.gutenberg.org/ebooks/394.html.images",
+      "application/octet-stream": "https://www.gutenberg.org/files/394/394-0.zip",
+      "image/jpeg": "https://www.gutenberg.org/cache/epub/394/pg394.cover.medium.jpg",
+      "text/plain": "https://www.gutenberg.org/ebooks/394.txt.utf-8",
+      "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/394/394-0.txt",
+      "application/rdf+xml": "https://www.gutenberg.org/ebooks/394.rdf"
     },
-    {
-      "id": 100,
-      "title": "The Complete Works of William Shakespeare",
-      "authors": [
-        {
-          "name": "Shakespeare, William",
-          "birth_year": 1564,
-          "death_year": 1616
-        }
-      ],
-      "translators": [],
-      "subjects": ["English drama -- Early modern and Elizabethan, 1500-1600"],
-      "bookshelves": ["Plays"],
-      "languages": ["en"],
-      "copyright": false,
-      "media_type": "Text",
-      "formats": {
-        "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/100.kf8.images",
-        "application/epub+zip": "https://www.gutenberg.org/ebooks/100.epub3.images",
-        "text/html": "https://www.gutenberg.org/ebooks/100.html.images",
-        "application/octet-stream": "https://www.gutenberg.org/files/100/100-0.zip",
-        "image/jpeg": "https://www.gutenberg.org/cache/epub/100/pg100.cover.medium.jpg",
-        "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/100/100-0.txt",
-        "text/plain": "https://www.gutenberg.org/ebooks/100.txt.utf-8",
-        "application/rdf+xml": "https://www.gutenberg.org/ebooks/100.rdf"
-      },
-      "download_count": 136421
+    "download_count": 143503
+  },
+  {
+    "id": 100,
+    "title": "The Complete Works of William Shakespeare",
+    "authors": [
+      {
+        "name": "Shakespeare, William",
+        "birth_year": 1564,
+        "death_year": 1616
+      }
+    ],
+    "translators": [],
+    "subjects": ["English drama -- Early modern and Elizabethan, 1500-1600"],
+    "bookshelves": ["Plays"],
+    "languages": ["en"],
+    "copyright": false,
+    "media_type": "Text",
+    "formats": {
+      "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/100.kf8.images",
+      "application/epub+zip": "https://www.gutenberg.org/ebooks/100.epub3.images",
+      "text/html": "https://www.gutenberg.org/ebooks/100.html.images",
+      "application/octet-stream": "https://www.gutenberg.org/files/100/100-0.zip",
+      "image/jpeg": "https://www.gutenberg.org/cache/epub/100/pg100.cover.medium.jpg",
+      "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/100/100-0.txt",
+      "text/plain": "https://www.gutenberg.org/ebooks/100.txt.utf-8",
+      "application/rdf+xml": "https://www.gutenberg.org/ebooks/100.rdf"
     },
-    {
-      "id": 84,
-      "title": "Frankenstein; Or, The Modern Prometheus",
-      "authors": [
-        {
-          "name": "Shelley, Mary Wollstonecraft",
-          "birth_year": 1797,
-          "death_year": 1851
-        }
-      ],
-      "translators": [],
-      "subjects": [
-        "Frankenstein's monster (Fictitious character) -- Fiction",
-        "Frankenstein, Victor (Fictitious character) -- Fiction",
-        "Gothic fiction",
-        "Horror tales",
-        "Monsters -- Fiction",
-        "Science fiction",
-        "Scientists -- Fiction"
-      ],
-      "bookshelves": [
-        "Gothic Fiction",
-        "Movie Books",
-        "Precursors of Science Fiction",
-        "Science Fiction by Women"
-      ],
-      "languages": ["en"],
-      "copyright": false,
-      "media_type": "Text",
-      "formats": {
-        "text/plain": "https://www.gutenberg.org/ebooks/84.txt.utf-8",
-        "application/octet-stream": "https://www.gutenberg.org/files/84/84-0.zip",
-        "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/84/84-0.txt",
-        "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/84.kf8.images",
-        "application/epub+zip": "https://www.gutenberg.org/ebooks/84.epub3.images",
-        "image/jpeg": "https://www.gutenberg.org/cache/epub/84/pg84.cover.medium.jpg",
-        "text/html": "https://www.gutenberg.org/ebooks/84.html.images",
-        "application/rdf+xml": "https://www.gutenberg.org/ebooks/84.rdf"
-      },
-      "download_count": 75145
+    "download_count": 136421
+  },
+  {
+    "id": 84,
+    "title": "Frankenstein; Or, The Modern Prometheus",
+    "authors": [
+      {
+        "name": "Shelley, Mary Wollstonecraft",
+        "birth_year": 1797,
+        "death_year": 1851
+      }
+    ],
+    "translators": [],
+    "subjects": [
+      "Frankenstein's monster (Fictitious character) -- Fiction",
+      "Frankenstein, Victor (Fictitious character) -- Fiction",
+      "Gothic fiction",
+      "Horror tales",
+      "Monsters -- Fiction",
+      "Science fiction",
+      "Scientists -- Fiction"
+    ],
+    "bookshelves": [
+      "Gothic Fiction",
+      "Movie Books",
+      "Precursors of Science Fiction",
+      "Science Fiction by Women"
+    ],
+    "languages": ["en"],
+    "copyright": false,
+    "media_type": "Text",
+    "formats": {
+      "text/plain": "https://www.gutenberg.org/ebooks/84.txt.utf-8",
+      "application/octet-stream": "https://www.gutenberg.org/files/84/84-0.zip",
+      "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/84/84-0.txt",
+      "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/84.kf8.images",
+      "application/epub+zip": "https://www.gutenberg.org/ebooks/84.epub3.images",
+      "image/jpeg": "https://www.gutenberg.org/cache/epub/84/pg84.cover.medium.jpg",
+      "text/html": "https://www.gutenberg.org/ebooks/84.html.images",
+      "application/rdf+xml": "https://www.gutenberg.org/ebooks/84.rdf"
     },
-    {
-      "id": 1342,
-      "title": "Pride and Prejudice",
-      "authors": [
-        {
-          "name": "Austen, Jane",
-          "birth_year": 1775,
-          "death_year": 1817
-        }
-      ],
-      "translators": [],
-      "subjects": [
-        "Courtship -- Fiction",
-        "Domestic fiction",
-        "England -- Fiction",
-        "Love stories",
-        "Sisters -- Fiction",
-        "Social classes -- Fiction",
-        "Young women -- Fiction"
-      ],
-      "bookshelves": ["Best Books Ever Listings", "Harvard Classics"],
-      "languages": ["en"],
-      "copyright": false,
-      "media_type": "Text",
-      "formats": {
-        "application/octet-stream": "https://www.gutenberg.org/files/1342/1342-0.zip",
-        "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/1342/1342-0.txt",
-        "text/plain": "https://www.gutenberg.org/ebooks/1342.txt.utf-8",
-        "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/1342.kf8.images",
-        "application/epub+zip": "https://www.gutenberg.org/ebooks/1342.epub3.images",
-        "image/jpeg": "https://www.gutenberg.org/cache/epub/1342/pg1342.cover.medium.jpg",
-        "text/html": "https://www.gutenberg.org/ebooks/1342.html.images",
-        "application/rdf+xml": "https://www.gutenberg.org/ebooks/1342.rdf"
-      },
-      "download_count": 68103
+    "download_count": 75145
+  },
+  {
+    "id": 1342,
+    "title": "Pride and Prejudice",
+    "authors": [
+      {
+        "name": "Austen, Jane",
+        "birth_year": 1775,
+        "death_year": 1817
+      }
+    ],
+    "translators": [],
+    "subjects": [
+      "Courtship -- Fiction",
+      "Domestic fiction",
+      "England -- Fiction",
+      "Love stories",
+      "Sisters -- Fiction",
+      "Social classes -- Fiction",
+      "Young women -- Fiction"
+    ],
+    "bookshelves": ["Best Books Ever Listings", "Harvard Classics"],
+    "languages": ["en"],
+    "copyright": false,
+    "media_type": "Text",
+    "formats": {
+      "application/octet-stream": "https://www.gutenberg.org/files/1342/1342-0.zip",
+      "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/1342/1342-0.txt",
+      "text/plain": "https://www.gutenberg.org/ebooks/1342.txt.utf-8",
+      "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/1342.kf8.images",
+      "application/epub+zip": "https://www.gutenberg.org/ebooks/1342.epub3.images",
+      "image/jpeg": "https://www.gutenberg.org/cache/epub/1342/pg1342.cover.medium.jpg",
+      "text/html": "https://www.gutenberg.org/ebooks/1342.html.images",
+      "application/rdf+xml": "https://www.gutenberg.org/ebooks/1342.rdf"
     },
-    {
-      "id": 11,
-      "title": "Alice's Adventures in Wonderland",
-      "authors": [
-        {
-          "name": "Carroll, Lewis",
-          "birth_year": 1832,
-          "death_year": 1898
-        }
-      ],
-      "translators": [],
-      "subjects": [
-        "Alice (Fictitious character from Carroll) -- Juvenile fiction",
-        "Children's stories",
-        "Fantasy fiction",
-        "Imaginary places -- Juvenile fiction"
-      ],
-      "bookshelves": ["Children's Literature"],
-      "languages": ["en"],
-      "copyright": false,
-      "media_type": "Text",
-      "formats": {
-        "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/1513.kf8.images",
-        "application/epub+zip": "https://www.gutenberg.org/ebooks/1513.epub3.images",
-        "text/html": "https://www.gutenberg.org/ebooks/1513.html.images",
-        "application/octet-stream": "https://www.gutenberg.org/files/1513/1513-0.zip",
-        "image/jpeg": "https://www.gutenberg.org/cache/epub/1513/pg1513.cover.medium.jpg",
-        "text/plain": "https://www.gutenberg.org/ebooks/1513.txt.utf-8",
-        "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/1513/1513-0.txt",
-        "application/rdf+xml": "https://www.gutenberg.org/ebooks/1513.rdf"
-      },
-      "download_count": 197127
-    }
-      
+    "download_count": 68103
+  },
+  {
+    "id": 11,
+    "title": "Alice's Adventures in Wonderland",
+    "authors": [
+      {
+        "name": "Carroll, Lewis",
+        "birth_year": 1832,
+        "death_year": 1898
+      }
+    ],
+    "translators": [],
+    "subjects": [
+      "Alice (Fictitious character from Carroll) -- Juvenile fiction",
+      "Children's stories",
+      "Fantasy fiction",
+      "Imaginary places -- Juvenile fiction"
+    ],
+    "bookshelves": ["Children's Literature"],
+    "languages": ["en"],
+    "copyright": false,
+    "media_type": "Text",
+    "formats": {
+      "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/1513.kf8.images",
+      "application/epub+zip": "https://www.gutenberg.org/ebooks/1513.epub3.images",
+      "text/html": "https://www.gutenberg.org/ebooks/1513.html.images",
+      "application/octet-stream": "https://www.gutenberg.org/files/1513/1513-0.zip",
+      "image/jpeg": "https://www.gutenberg.org/cache/epub/1513/pg1513.cover.medium.jpg",
+      "text/plain": "https://www.gutenberg.org/ebooks/1513.txt.utf-8",
+      "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/1513/1513-0.txt",
+      "application/rdf+xml": "https://www.gutenberg.org/ebooks/1513.rdf"
+    },
+    "download_count": 197127
+  }
 ]

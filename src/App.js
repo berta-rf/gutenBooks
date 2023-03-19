@@ -5,7 +5,6 @@ import Navigation from "./components/Navigation";
 import ReviewPage from "./components/Pages/Reviewpage";
 import Bookshelf from "./components/Pages/Bookshelf";
 import Homepage from "./components/Homepage";
-import SearchBook from "./components/SearchBook";
 
 import "./assets/styles/App.scss";
 
