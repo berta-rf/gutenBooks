@@ -5,9 +5,6 @@ import Grid from "@mui/material/Unstable_Grid2";
 import AddToBookshelf from "../AddtoBookshelf";
 
 const Bookshelf = () => {
-  //empty bookshelf array
-  const [addedBooks, setAddedBook] = useState([]);
-
   return (
     <div>
       <Box>

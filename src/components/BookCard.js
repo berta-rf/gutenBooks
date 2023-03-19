@@ -2,21 +2,15 @@ import React, { useContext } from "react";
 import {
   Button,
   Card,
-  CardActionArea,
   CardActions,
   CardContent,
   CardMedia,
   Typography,
 } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
-import defaultBooks from "../assets/data/defaultBooks.json";
 import BookContext from "../context/books";
-import SearchBook from "./SearchBook";
 
 import AddToBookshelf from "./AddtoBookshelf";
-
-const books = defaultBooks;
-//defeault booksjson
 
 const BookCard = () => {
   const { results } = useContext(BookContext);
@@ -62,7 +56,7 @@ const BookCard = () => {
               </Typography>
               <CardActions>
                 <Button size="medium">Description</Button>
-                <Button size="medium">READ </Button>
+                <Button size="medium">READ</Button>
                 <AddToBookshelf />
               </CardActions>
             </CardContent>
