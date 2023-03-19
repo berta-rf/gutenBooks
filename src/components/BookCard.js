@@ -17,8 +17,6 @@ import { createBook } from "../lib/savedBooks";
 const BookCard = () => {
   const { results } = useContext(BookContext);
 
-  const { results } = useContext(BookContext);
-
   return (
     <>
       {results.map((book) => (
