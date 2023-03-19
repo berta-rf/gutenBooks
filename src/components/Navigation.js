@@ -26,26 +26,6 @@ import AutoStoriesIcon from "@mui/icons-material/AutoStories";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
 import HomeIcon from "@mui/icons-material/Home";
 
-/*UNUSED const useStyles = makeStyles({
-  page: {
-    background: "#f9f9f9",
-    width: "100%",
-  },
-  drawer: {
-    width: drawerWidth,
-  },
-  ".MuiDrawer-paper": {
-    width: drawerWidth,
-  },
-  root: {
-    display: "flex",
-  },
-}); 
-const classes = useStyles();
-const location = useLocation();
-const path = location.pathname;
-*/
-
 const menuItems = [
   { text: "Home", icon: <HomeIcon />, path: "/#" },
   { text: "My Bookshelf", icon: <AutoStoriesIcon />, path: "/Bookshelf" },

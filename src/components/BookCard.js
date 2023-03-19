@@ -1,23 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   Button,
   Card,
-  CardActionArea,
+  CardActions,
   CardContent,
   CardMedia,
   Typography,
 } from "@mui/material";
-import defaultBooks from "../assets/data/defaultBooks.json";
 import Grid from "@mui/material/Unstable_Grid2";
+import BookContext from "../context/books";
 
-//defeault booksjson
-const books = defaultBooks;
+import AddToBookshelf from "./AddtoBookshelf";
 
 const BookCard = () => {
+  const { results } = useContext(BookContext);
+
   return (
     <>
-      {books.map((book) => (
-        <Grid>
+      {results.map((book) => (
+        <Grid key={book.id}>
           <Card sx={{ width: 350, height: 700 }}>
             {/* Cover */}
             <CardMedia
@@ -53,12 +54,11 @@ const BookCard = () => {
               >
                 by {book.authors[0] ? book.authors[0].name : "Unknown Author"}
               </Typography>
-
-              <CardActionArea>
+              <CardActions>
                 <Button size="medium">Description</Button>
-                <Button size="medium">READ THIS BOOK</Button>
-              </CardActionArea>
-              {/* Add to Bookshelf */}
+                <Button size="medium">READ</Button>
+                <AddToBookshelf />
+              </CardActions>
             </CardContent>
           </Card>
         </Grid>
