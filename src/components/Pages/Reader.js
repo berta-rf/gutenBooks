@@ -23,6 +23,8 @@ const Reader = () => {
     const [location, setLocation] = useState(null)
     const [firstRenderDone, setFirstRenderDone] = useState(false)
     const renditionRef = useRef(null)
+    const fetchingBook = useRef(false)
+
 
     const locationChanged = epubcifi => {
         // epubcifi is a internal string used by epubjs to point to a location in an epub. It looks like this: epubcfi(/6/6[titlepage]!/4/2/12[pgepubid00003]/3:0)
@@ -47,10 +49,9 @@ const Reader = () => {
 
     const [bookData, setBookData] = useState(null);
 
-    let fetchingBook = false;
     useEffect(() => {
-        if (!fetchingBook) {
-            fetchingBook = true;
+        if (!fetchingBook.current) {
+            fetchingBook.current = true;
             axios.get(baseURL + `?book_id=${book_id}`).then((response) => {
                 setBookData(response.data.data);
             });

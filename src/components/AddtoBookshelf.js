@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 //mui
 import { IconButton } from "@mui/material";
 
@@ -6,9 +6,9 @@ import { IconButton } from "@mui/material";
 import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
 
 const AddToBookshelf = () => {
-  const [addedBooks, setAddedBook] = useState([]);
+  // const [addedBooks, setAddedBook] = useState([]);
 
-  const handleAddBook = () => {};
+  // const handleAddBook = () => {};
 
   return (
     <IconButton>
@@ -16,7 +16,7 @@ const AddToBookshelf = () => {
     </IconButton>
   );
 };
-{
+
   /* <Fab
     color="primary"
     aria-label="add"
@@ -29,6 +29,6 @@ const AddToBookshelf = () => {
       zIndex: 1,
     }}</Fab>
   > */
-}
+
 
 export default AddToBookshelf;
