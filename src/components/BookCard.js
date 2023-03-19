@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import {
   Button,
   Card,
@@ -11,6 +12,7 @@ import Grid from "@mui/material/Unstable_Grid2";
 import BookContext from "../context/books";
 
 import AddToBookshelf from "./AddtoBookshelf";
+import { createBook } from "../lib/savedBooks";
 
 const BookCard = () => {
   const { results } = useContext(BookContext);
@@ -56,7 +58,10 @@ const BookCard = () => {
               </Typography>
               <CardActions>
                 <Button size="medium">Description</Button>
-                <Button size="medium">READ</Button>
+              
+                <Link to={ `/Reader/${book.id}` } onClick={(e) => createBook(book)}>
+                  <Button size="medium">READ</Button>
+                </Link>
                 <AddToBookshelf />
               </CardActions>
             </CardContent>

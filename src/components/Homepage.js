@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
+import React from "react";
 import BookCard from "./BookCard";
 import { Box } from "@mui/system";
 import { Typography } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
-import BookContext from "../context/books";
+// import BookContext from "../context/books";
 
 function Homepage() {
   return (

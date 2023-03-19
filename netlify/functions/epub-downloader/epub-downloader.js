@@ -1,8 +1,11 @@
 const fetch = require('node-fetch')
 
-const handler = async function () {
+const handler = async function (event) {
+
+  const book_id = event.queryStringParameters.book_id;
+
   try {
-    const response = await fetch('https://www.gutenberg.org/ebooks/844.epub.noimages', {
+    const response = await fetch(`https://www.gutenberg.org/ebooks/${book_id}.epub.noimages`, {
     })
     if (!response.ok) {
       // NOT res.status >= 200 && res.status < 300
@@ -20,7 +23,6 @@ const handler = async function () {
     console.log(error)
     return {
       statusCode: 500,
-      // Could be a custom message or object i.e. JSON.stringify(err)
       body: error.message ,
     }
   }
