@@ -32,12 +32,27 @@ function Provider({ children }) {
 
   const [results, setResults] = useState(defaultBooks);
 
+  console.log(results[0]);
+  //save book function
+  const [bookshelf, setBookshelf] = useState([]);
+
+  const addBooktoArray = (bookshelf) => {
+    console.log("This book's title is:" + bookshelf);
+    //add books to the start of bookshelf
+    const updatedBookshelf = [
+      { id: results.id, title: results.title, author: results.author[0].name },
+      ...bookshelf,
+    ];
+    setBookshelf(updatedBookshelf);
+  };
+
   const valueToShare = {
     results,
     searchResults,
     setSearchResults,
     handleChange,
     handleSearch,
+    bookshelf,
   };
 
   return (

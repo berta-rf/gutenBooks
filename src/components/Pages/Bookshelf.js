@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import { Box, Typography } from "@mui/material";
 import BookCard from "../BookCard";
 import Grid from "@mui/material/Unstable_Grid2";
+import BookContext from "../../context/books";
+import BookshelfBookCard from "../BookshelfBookCard";
 
 const Bookshelf = () => {
+  const { results } = useContext(BookContext);
+
   return (
     <div>
       <Box>
@@ -12,7 +16,7 @@ const Bookshelf = () => {
       <Box sx={{ width: "100%" }}>
         <Typography variant="h5">Saved Books</Typography>
         <Grid container spacing={2}>
-          <BookCard />
+          <BookshelfBookCard />
         </Grid>
       </Box>
     </div>

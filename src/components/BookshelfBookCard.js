@@ -1,5 +1,4 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState, useEffect } from "react";
 import {
   Button,
   Card,
@@ -12,16 +11,22 @@ import Grid from "@mui/material/Unstable_Grid2";
 import BookContext from "../context/books";
 
 import AddToBookshelf from "./AddtoBookshelf";
-import { createBook } from "../lib/savedBooks";
 
-const BookCard = () => {
-  const { results } = useContext(BookContext);
+const BookshelfBookCard = () => {
+  const { bookshelf } = useContext(BookContext);
 
-  const { results } = useContext(BookContext);
+  //check local storage for items
+
+  // const addBooktoArray = (book) => {
+  // };
+
+  // useEffect(() => {
+  //   localStorage.setItem("addedBook", JSON.stringify(addedBook));
+  // }, [addedBook]);
 
   return (
     <>
-      {results.map((book) => (
+      {bookshelf.map((book) => (
         <Grid key={book.id}>
           <Card sx={{ width: 350, height: 700 }}>
             {/* Cover */}
@@ -60,13 +65,7 @@ const BookCard = () => {
               </Typography>
               <CardActions>
                 <Button size="medium">Description</Button>
-
-                <Link
-                  to={`/Reader/${book.id}`}
-                  onClick={(e) => createBook(book)}
-                >
-                  <Button size="medium">READ</Button>
-                </Link>
+                <Button size="medium">READ</Button>
                 <AddToBookshelf />
               </CardActions>
             </CardContent>
@@ -77,4 +76,4 @@ const BookCard = () => {
   );
 };
 
-export default BookCard;
+export default BookshelfBookCard;

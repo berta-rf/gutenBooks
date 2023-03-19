@@ -1,34 +1,20 @@
-import React from "react";
+import React, { useState, useContext, useEffect } from "react";
+import BookContext from "../context/books";
+
 //mui
-import { IconButton } from "@mui/material";
+import { IconButton, Tooltip } from "@mui/material";
 
 //mui icons
 import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
 
 const AddToBookshelf = () => {
-  // const [addedBooks, setAddedBook] = useState([]);
-
-  // const handleAddBook = () => {};
-
   return (
-    <IconButton>
-      <BookmarkAddIcon />
-    </IconButton>
+    <Tooltip title="Add to Bookshelf">
+      <IconButton>
+        <BookmarkAddIcon />
+      </IconButton>
+    </Tooltip>
   );
 };
-
-  /* <Fab
-    color="primary"
-    aria-label="add"
-    size="small"
-    onClick={handleAddBook}
-    sx={{
-      position: "relative",
-      bottom: 670,
-      left: 280,
-      zIndex: 1,
-    }}</Fab>
-  > */
-
 
 export default AddToBookshelf;
