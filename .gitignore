@@ -24,4 +24,5 @@ yarn-debug.log*
 yarn-error.log*
 
 # Local Netlify folder
+CSS/
 .netlify
