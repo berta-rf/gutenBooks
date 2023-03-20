@@ -280,5 +280,47 @@
       "application/rdf+xml": "https://www.gutenberg.org/ebooks/1513.rdf"
     },
     "download_count": 197127
+  },
+  {
+    "id": 43,
+    "title": "The Strange Case of Dr. Jekyll and Mr. Hyde",
+    "authors": [
+      {
+        "name": "Stevenson, Robert Louis",
+        "birth_year": 1850,
+        "death_year": 1894
+      }
+    ],
+    "translators": [],
+    "subjects": [
+      "Horror tales",
+      "London (England) -- Fiction",
+      "Multiple personality -- Fiction",
+      "Physicians -- Fiction",
+      "Psychological fiction",
+      "Science fiction",
+      "Self-experimentation in medicine -- Fiction"
+    ],
+    "bookshelves": [
+      "Horror",
+      "Movie Books",
+      "Precursors of Science Fiction"
+    ],
+    "languages": [
+      "en"
+    ],
+    "copyright": false,
+    "media_type": "Text",
+    "formats": {
+      "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/43.kf8.images",
+      "application/epub+zip": "https://www.gutenberg.org/ebooks/43.epub3.images",
+      "text/plain; charset=utf-8": "https://www.gutenberg.org/files/43/43-0.txt",
+      "image/jpeg": "https://www.gutenberg.org/cache/epub/43/pg43.cover.medium.jpg",
+      "text/html; charset=utf-8": "https://www.gutenberg.org/files/43/43-h/43-h.htm",
+      "text/html": "https://www.gutenberg.org/ebooks/43.html.images",
+      "application/rdf+xml": "https://www.gutenberg.org/ebooks/43.rdf"
+    },
+    "download_count": 15098
   }
+
 ]

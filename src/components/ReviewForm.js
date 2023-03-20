@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TextField, Button, Rating } from '@mui/material';
+import { TextField, Button, Rating, Typography, Box } from '@mui/material';
 
 function ReviewForm(props) {
   // states for the input of title, description and star rating
@@ -19,39 +19,43 @@ function ReviewForm(props) {
 
   return (
     <div>
-      <h1>Write your reviews here</h1>
-      <form className='reviewForm'>
-        <TextField 
-        id="titleInput"
-          placeholder='Book Title'
-          sx={{ ml: 30,
-            mb: 5
-          }}
-          onChange={(e) => setTitle(e.target.value)} />
-        <TextField
-          id="descriptionInput"
-          placeholder='What are your thoughts?'
-          sx={{ ml: 5,
-            mb: 5
-          }}
-          onChange={(e) => setDescription(e.target.value)} />
-        <Rating
-          name="simple-controlled"
-          sx={{
-            mx: 'auto',
-            width: 200,
-            p: 1,
-            m: 1
-          }}
-          size="large"
-          value={value}
-          onChange={(event, newValue) => {
-            setValue(newValue);
-            // checking that it is showing star rating as number
-            console.log(newValue)
-          }} />
-        <Button className='submitReviewBtn' variant="outlined" sx={{mb: 3}} onClick={handleClick}>Submit</Button>
-      </form>
+      <Box>
+        <Typography variant="h4">My Reviews</Typography>
+      </Box>
+      <Box>
+        <form className='reviewForm'>
+          <TextField 
+          id="titleInput"
+            placeholder='Book Title'
+            // sx={{ ml: 30,
+            //   mb: 5
+            // }}
+            onChange={(e) => setTitle(e.target.value)} />
+          <TextField
+            id="descriptionInput"
+            placeholder='What are your thoughts?'
+            // sx={{ ml: 5,
+            //   mb: 5
+            // }}
+            onChange={(e) => setDescription(e.target.value)} />
+          <Rating
+            name="simple-controlled"
+            sx={{
+              // mx: 'auto',
+              // width: 200,
+              // p: 1,
+              // m: 1
+            }}
+            size="large"
+            value={value}
+            onChange={(event, newValue) => {
+              setValue(newValue);
+              // checking that it is showing star rating as number
+              console.log(newValue)
+            }} />
+          <Button className='submitReviewBtn' variant="outlined" sx={{mb: 3}} onClick={handleClick}>Submit</Button>
+        </form>
+      </Box>
     </div>
   )
 }
