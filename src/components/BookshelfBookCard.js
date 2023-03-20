@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext } from "react";
 import {
   Button,
   Card,
@@ -14,15 +14,6 @@ import AddToBookshelf from "./AddtoBookshelf";
 
 const BookshelfBookCard = () => {
   const { bookshelf } = useContext(BookContext);
-
-  //check local storage for items
-
-  // const addBooktoArray = (book) => {
-  // };
-
-  // useEffect(() => {
-  //   localStorage.setItem("addedBook", JSON.stringify(addedBook));
-  // }, [addedBook]);
 
   return (
     <>

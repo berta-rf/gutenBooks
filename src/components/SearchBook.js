@@ -14,10 +14,6 @@ const SearchBook = () => {
   const { searchResults, setSearchResults, handleSearch, handleChange } =
     useContext(BookContext);
 
-=======
-  const { searchResults, setSearchResults, handleSearch, handleChange } =
-    useContext(BookContext);
->>>>>>> Stashed changes
   return (
     <div>
       <FormControl id="searchForm">
