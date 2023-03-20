@@ -10,6 +10,10 @@ const Bookshelf = () => {
         <Typography variant="h2">Bookshelf</Typography>
       </Box>
       <Box sx={{ width: "100%" }}>
+        <Typography variant="h5">Your Last Read Book:</Typography>
+        <Grid container spacing={2} sx={{ m: 5 }}>
+          <BookshelfBookCard />
+        </Grid>
         <Typography variant="h5">Saved Books</Typography>
         <Grid container spacing={2}>
           <BookshelfBookCard />
@@ -18,5 +22,4 @@ const Bookshelf = () => {
     </div>
   );
 };
-
 export default Bookshelf;

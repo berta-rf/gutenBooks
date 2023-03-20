@@ -6,21 +6,24 @@ import {
   CardActions,
   CardContent,
   CardMedia,
+  IconButton,
+  Tooltip,
   Typography,
 } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 import BookContext from "../context/books";
 
-import AddToBookshelf from "./AddtoBookshelf";
 import { createBook } from "../lib/savedBooks";
 
+import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
+
 const BookCard = () => {
-  const { results } = useContext(BookContext);
+  const { results, addBooktoArray } = useContext(BookContext);
 
   return (
     <>
       {results.map((book) => (
-        <Grid key={book.id}>
+        <Grid key={book.id} id={book.id}>
           <Card sx={{ width: 350, height: 700 }}>
             {/* Cover */}
             <CardMedia
@@ -65,7 +68,11 @@ const BookCard = () => {
                 >
                   <Button size="medium">READ</Button>
                 </Link>
-                <AddToBookshelf />
+                <Tooltip title="Add to Bookshelf">
+                  <IconButton onClick={addBooktoArray}>
+                    <BookmarkAddIcon />
+                  </IconButton>
+                </Tooltip>
               </CardActions>
             </CardContent>
           </Card>

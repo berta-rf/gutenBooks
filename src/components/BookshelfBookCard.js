@@ -1,18 +1,23 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import {
   Button,
   Card,
   CardActions,
   CardContent,
   CardMedia,
+  IconButton,
+  Tooltip,
   Typography,
 } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 import BookContext from "../context/books";
 
-import AddToBookshelf from "./AddtoBookshelf";
+import { createBook } from "../lib/savedBooks";
 
-const BookshelfBookCard = () => {
+import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
+
+const BookCard = () => {
   const { bookshelf } = useContext(BookContext);
 
   return (
@@ -52,12 +57,17 @@ const BookshelfBookCard = () => {
                   textDecoration: "none",
                 }}
               >
-                by {book.authors[0] ? book.authors[0].name : "Unknown Author"}
+                by {book.authors ? book.authors.name : "Unknown Author"}
               </Typography>
               <CardActions>
                 <Button size="medium">Description</Button>
-                <Button size="medium">READ</Button>
-                <AddToBookshelf />
+
+                <Link
+                  to={`/Reader/${book.id}`}
+                  onClick={(e) => createBook(book)}
+                >
+                  <Button size="medium">READ</Button>
+                </Link>
               </CardActions>
             </CardContent>
           </Card>
@@ -67,4 +77,4 @@ const BookshelfBookCard = () => {
   );
 };
 
-export default BookshelfBookCard;
+export default BookCard;

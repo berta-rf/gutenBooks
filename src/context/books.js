@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
 import axios from "axios";
 import defaultBooks from "../assets/data/defaultBooks.json";
 
@@ -33,19 +33,37 @@ function Provider({ children }) {
 
   const [results, setResults] = useState(defaultBooks);
 
+  //saving context
+
+  //check local storage for items, assign to bookShelfArray
+  let bookShelfArray = JSON.parse(localStorage.getItem("bookshelf"));
+  //if there is nothing in bookshelfarray
+  if (!bookShelfArray) {
+    //set bookshelfarray as []
+    bookShelfArray = [];
+  }
+
+  const [bookshelf, setBookshelf] = useState(bookShelfArray);
+
   //save book function
-  const [bookshelf, setBookshelf] = useState([]);
+  const addBooktoArray = (e) => {
+    let bookID = e.currentTarget.parentNode.parentNode.parentNode.parentNode.id;
 
-  const addBooktoArray = (bookshelf) => {
-    console.log("This book's title is:" + bookshelf);
-    //add books to the start of bookshelf
+    let selectedBook = results.find((obj) => obj.id == bookID);
 
-    const updatedBookshelf = [
-      { id: results.id, title: results.title, author: results.author[0].name },
-      ...bookshelf,
-    ];
+    let addedBook = {
+      id: bookID,
+      title: selectedBook.title,
+      author: selectedBook.authors[0].name,
+    };
+
+    const updatedBookshelf = [addedBook, ...bookshelf];
     setBookshelf(updatedBookshelf);
   };
+
+  useEffect(() => {
+    localStorage.setItem("bookshelf", JSON.stringify(bookshelf));
+  }, [bookshelf]);
 
   //what will passed to children components
   const valueToShare = {
@@ -54,6 +72,7 @@ function Provider({ children }) {
     setSearchResults,
     handleChange,
     handleSearch,
+    setBookshelf,
     bookshelf,
     addBooktoArray,
   };
