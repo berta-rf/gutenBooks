@@ -6,16 +6,12 @@ import {
   CardActions,
   CardContent,
   CardMedia,
-  IconButton,
-  Tooltip,
   Typography,
 } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 import BookContext from "../context/books";
 
 import { createBook } from "../lib/savedBooks";
-
-import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
 
 const BookCard = () => {
   const { bookshelf } = useContext(BookContext);
@@ -32,7 +28,6 @@ const BookCard = () => {
               height="75%"
               image={`https://www.gutenberg.org/cache/epub/${book.id}/pg${book.id}.cover.medium.jpg`}
             />
-
             <CardContent>
               {/* Booktitle */}
               <Typography
@@ -57,7 +52,7 @@ const BookCard = () => {
                   textDecoration: "none",
                 }}
               >
-                by {book.authors ? book.authors.name : "Unknown Author"}
+                by {book.author ? book.author : "Unknown Author"}
               </Typography>
               <CardActions>
                 <Button size="medium">Description</Button>

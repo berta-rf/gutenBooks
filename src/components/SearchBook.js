@@ -53,9 +53,3 @@ const SearchBook = () => {
   );
 };
 export default SearchBook;
-
-/* useContext Test
-<div>
-  {count}
-  <button onClick={incrementCount}> click me!</button>
-</div> */
