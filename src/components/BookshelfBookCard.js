@@ -6,15 +6,18 @@ import {
   CardActions,
   CardContent,
   CardMedia,
+  IconButton,
+  Tooltip,
   Typography,
 } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 import BookContext from "../context/books";
+import ClearIcon from "@mui/icons-material/Clear";
 
 import { createBook } from "../lib/savedBooks";
 
 const BookCard = () => {
-  const { bookshelf } = useContext(BookContext);
+  const { bookshelf, removeFromBookshelf } = useContext(BookContext);
 
   return (
     <>
@@ -54,7 +57,7 @@ const BookCard = () => {
               >
                 by {book.author ? book.author : "Unknown Author"}
               </Typography>
-              <CardActions>
+              <CardActions sx={{ justifyContent: "space-evenly" }}>
                 <Button size="medium">Description</Button>
 
                 <Link
@@ -63,6 +66,12 @@ const BookCard = () => {
                 >
                   <Button size="medium">READ</Button>
                 </Link>
+                <Button size="medium">Review</Button>
+                <IconButton id={book.id} onClick={removeFromBookshelf}>
+                  <Tooltip title="Remove from Bookshelf">
+                    <ClearIcon />
+                  </Tooltip>
+                </IconButton>
               </CardActions>
             </CardContent>
           </Card>
