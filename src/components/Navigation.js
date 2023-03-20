@@ -57,7 +57,7 @@ const Navigation = () => {
     <>
       <Box sx={{ display: "flex" }}>
         {/* app bar */}
-        <Box sx={{ flexGrow: 1 }}>
+        <Box>
           <AppBar sx={{ width: `calc(100%)-${drawerWidth}px` }}>
             <Toolbar
               sx={{ flexDirection: "row-reverse", backgroundColor: "#087f5b" }}

@@ -6,15 +6,19 @@ import {
   CardActions,
   CardContent,
   CardMedia,
+  IconButton,
+  Tooltip,
   Typography,
 } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 import BookContext from "../context/books";
 
+import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
+
 import { createBook } from "../lib/savedBooks";
 
 const LastReadBookCard = () => {
-  const { lastRead } = useContext(BookContext);
+  const { lastRead, addBooktoArray } = useContext(BookContext);
 
   return (
     <>
@@ -64,6 +68,11 @@ const LastReadBookCard = () => {
                 >
                   <Button size="medium">READ</Button>
                 </Link>
+                <Tooltip title="Add to Bookshelf">
+                  <IconButton onClick={addBooktoArray}>
+                    <BookmarkAddIcon />
+                  </IconButton>
+                </Tooltip>
               </CardActions>
             </CardContent>
           </Card>

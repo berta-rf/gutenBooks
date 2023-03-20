@@ -15,7 +15,6 @@ function Provider({ children }) {
     query: "",
   });
 
-
   const handleChange = (event) => {
     setSearchResults({ ...searchResults, param: event.target.value });
   };
@@ -52,7 +51,7 @@ function Provider({ children }) {
   const addBooktoArray = (e) => {
     let bookID = e.currentTarget.parentNode.parentNode.parentNode.parentNode.id;
 
-    let selectedBook = results.find((obj) => obj.id === bookID);
+    let selectedBook = results.find((obj) => obj.id === parseInt(bookID));
 
     let addedBook = {
       id: bookID,
@@ -61,6 +60,16 @@ function Provider({ children }) {
     };
 
     const updatedBookshelf = [addedBook, ...bookshelf];
+    setBookshelf(updatedBookshelf);
+  };
+
+  //remove from bookshelf
+  const removeFromBookshelf = (e) => {
+    let id = e.currentTarget.id;
+    const updatedBookshelf = bookshelf.filter((book) => {
+      return book.id !== id;
+    });
+
     setBookshelf(updatedBookshelf);
   };
 
@@ -73,6 +82,7 @@ function Provider({ children }) {
   //check local storage for items, assign to lastReadArray
 
   let lastReadArray = JSON.parse(localStorage.getItem("lastRead"));
+
   //if there is nothing in lastReadarray
   if (!lastReadArray) {
     //set lastReadarray as []
@@ -86,7 +96,7 @@ function Provider({ children }) {
     let bookID =
       e.currentTarget.parentNode.parentNode.parentNode.parentNode.parentNode.id;
 
-    let lastSelectedBook = results.find((obj) => obj.id === bookID);
+    let lastSelectedBook = results.find((obj) => obj.id === parseInt(bookID));
 
     let lastBook = {
       id: bookID,
@@ -114,6 +124,7 @@ function Provider({ children }) {
     addBooktoArray,
     lastRead,
     addLastReadBook,
+    removeFromBookshelf,
   };
 
   return (
