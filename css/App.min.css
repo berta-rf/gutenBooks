@@ -1,1 +1,83 @@
-/*# sourceMappingURL=App.min.css.map */
+/* SCSS HEX */
+:root {
+  --dark-green: #132a13ff;
+  --hunter-green: #31572cff;
+  --fern-green: #4f772dff;
+  --moss-green: #90a955ff;
+  --mindaro: #ecf39eff;
+}
+
+.css-12i7wg6-MuiPaper-root-MuiDrawer-paper, .css-1hevbfb {
+  background-color: var(--fern-green) !important;
+}
+
+.logo {
+  font-size: 2.5em !important;
+  font-family: "Vidaloka", serif !important;
+  color: var(--mindaro) !important;
+  background-color: var(--fern-green) !important;
+  text-shadow: 2px 3px var(--dark-green);
+}
+.logo svg {
+  color: var(--mindaro) !important;
+}
+
+h4 {
+  font-size: 2em !important;
+  margin: 3% 0 !important;
+  color: var(--dark-green) !important;
+  font-family: "Vidaloka", serif !important;
+}
+
+a {
+  color: var(--hunter-green) !important;
+  padding: 5% !important;
+  font-size: 1.2em;
+}
+
+.drawer {
+  height: 140px !important;
+  background-color: var(--dark-green);
+}
+
+.button {
+  color: var(--dark-green) !important;
+  text-decoration: none;
+}
+
+#search-bar {
+  background-color: white;
+  border: 8px solid var(--mindaro);
+}
+
+.css-h4y409-MuiList-root {
+  list-style: none;
+  margin: 0;
+  padding: 5% !important;
+  position: relative;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  height: 100% !important;
+  background-color: var(--mindaro) !important;
+  font-size: 1.5em !important;
+}
+
+header > div {
+  padding: 1.2% !important;
+  background-image: url("../images/bookshelf.jpg");
+}
+
+.css-q6bp6o-MuiButtonBase-root-MuiIconButton-root {
+  background-color: var(--mindaro) !important;
+}
+
+.MuiInputBase-root {
+  border: 1px solid var(--fern-green) !important;
+}
+
+.MuiButton-outlinedPrimary {
+  width: 3em !important;
+  color: var(--fern-green) !important;
+  border: 2px solid var(--fern-green) !important;
+  margin-left: 2em !important;
+}/*# sourceMappingURL=App.min.css.map */

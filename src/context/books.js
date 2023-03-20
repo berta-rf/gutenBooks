@@ -15,6 +15,7 @@ function Provider({ children }) {
     query: "",
   });
 
+
   const handleChange = (event) => {
     setSearchResults({ ...searchResults, param: event.target.value });
   };
@@ -26,6 +27,7 @@ function Provider({ children }) {
     } else if (searchResults.param === "topic") {
       url = topicURL + searchResults.query;
     }
+
     axios
       .get(url)
       .then((data) => setResults(data.data.results))
@@ -50,7 +52,7 @@ function Provider({ children }) {
   const addBooktoArray = (e) => {
     let bookID = e.currentTarget.parentNode.parentNode.parentNode.parentNode.id;
 
-    let selectedBook = results.find((obj) => obj.id == bookID);
+    let selectedBook = results.find((obj) => obj.id === bookID);
 
     let addedBook = {
       id: bookID,
@@ -84,7 +86,7 @@ function Provider({ children }) {
     let bookID =
       e.currentTarget.parentNode.parentNode.parentNode.parentNode.parentNode.id;
 
-    let lastSelectedBook = results.find((obj) => obj.id == bookID);
+    let lastSelectedBook = results.find((obj) => obj.id === bookID);
 
     let lastBook = {
       id: bookID,
