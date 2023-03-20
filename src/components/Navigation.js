@@ -54,124 +54,142 @@ const Navigation = () => {
   };
 
   return (
-    <Box sx={{ display: "flex" }}>
-      {/* app bar */}
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar sx={{ width: `calc(100%)-${drawerWidth}px` }}>
-          <Toolbar
-            sx={{ flexDirection: "row-reverse", backgroundColor: "#087f5b" }}
-          >
-            <Box sx={{ display: "flex" }}>
-              <SearchBook />
-            </Box>
-            <Box
+    <>
+      <Box sx={{ display: "flex" }}>
+        {/* app bar */}
+        <Box sx={{ flexGrow: 1 }}>
+          <AppBar sx={{ width: `calc(100%)-${drawerWidth}px` }}>
+            <Toolbar
+              sx={{ flexDirection: "row-reverse", backgroundColor: "#087f5b" }}
+            >
+              <Box sx={{ display: "flex" }}>
+                <SearchBook />
+              </Box>
+              <Box
+                sx={{
+                  flexGrow: 1,
+                  flexDirection: "row",
+                  display: { xs: "flex", md: "none" },
+                }}
+              >
+                <IconButton
+                  size="large"
+                  aria-label="hamburger icon"
+                  aria-controls="menu-appbar"
+                  aria-haspopup="true"
+                  onClick={handleDrawerOpen}
+                  color="inherit"
+                >
+                  <MenuIcon />
+                </IconButton>
+              </Box>
+            </Toolbar>
+          </AppBar>
+        </Box>
+
+        {/* side navigation */}
+
+        {/* Mobile */}
+        <Drawer
+          sx={{
+            display: { xs: "block", md: "none" },
+            width: drawerWidth,
+            flexShrink: 0,
+            "& .MuiDrawer-paper": {
+              width: drawerWidth,
+              boxSizing: "border-box",
+            },
+          }}
+          variant="temporary"
+          anchor="left"
+          onClose={() => {
+            handleDrawerClose();
+          }}
+          open={open}
+        >
+          <DrawerHeader sx={{ justifyContent: "space-between" }}>
+            <Typography variant="h4">MENU</Typography>
+            <IconButton onClick={handleDrawerClose}>X</IconButton>
+          </DrawerHeader>
+          {/* Menu items */}
+          <List>
+            {menuItems.map((item) => (
+              <ListItem key={item.text}>
+                <ListItemIcon>{item.icon}</ListItemIcon>
+                <ListItemButton
+                  style={{ textDecoration: "none" }}
+                  to={item.path}
+                >
+                  {item.text}
+                </ListItemButton>
+              </ListItem>
+            ))}
+          </List>
+        </Drawer>
+
+        {/* Desktop */}
+        <Drawer
+          sx={{
+            display: { xs: "none", md: "block" },
+            width: drawerWidth,
+            flexShrink: 0,
+            ".MuiDrawer-paper": {
+              width: drawerWidth,
+              boxSizing: "border-box",
+            },
+          }}
+          variant="permanent"
+          anchor="left"
+        >
+          <Box>
+            <Typography
+              variant="h5"
+              noWrap
+              component="a"
+              href="/"
               sx={{
-                flexGrow: 1,
-                flexDirection: "row",
-                display: { xs: "flex", md: "none" },
+                m: 2,
+                display: "flex",
+                fontWeight: 700,
+                color: "inherit",
+                textDecoration: "none",
               }}
             >
-              <IconButton
-                size="large"
-                aria-label="hamburger icon"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleDrawerOpen}
-                color="inherit"
-              >
-                <MenuIcon />
-              </IconButton>
-            </Box>
-          </Toolbar>
-        </AppBar>
-      </Box>
+              GutenBooks
+              <MenuBookIcon />
+            </Typography>
+          </Box>
+          <Divider />
+          {/* Menu items */}
+          <List>
+            {menuItems.map((item) => (
+              <ListItem key={item.text}>
+                <ListItemIcon>{item.icon}</ListItemIcon>
+                <ListItemButton
+                  style={{ textDecoration: "none" }}
+                  to={item.path}
+                >
+                  {item.text}
+                </ListItemButton>
+              </ListItem>
+            ))}
+          </List>
+        </Drawer>
 
-      {/* side navigation */}
-
-      {/* Mobile */}
-      <Drawer
-        sx={{
-          display: { xs: "block", sm: "none" },
-          width: drawerWidth,
-          flexShrink: 0,
-          "& .MuiDrawer-paper": { width: drawerWidth, boxSizing: "border-box" },
-        }}
-        variant="temporary"
-        anchor="left"
-        onClose={() => {
-          handleDrawerClose();
-        }}
-        open={open}
-      >
-        <DrawerHeader sx={{ justifyContent: "space-between" }}>
-          <Typography variant="h4">MENU</Typography>
-          <IconButton onClick={handleDrawerClose}>X</IconButton>
-        </DrawerHeader>
-        {/* Menu items */}
-        <List>
-          {menuItems.map((item) => (
-            <ListItem key={item.text}>
-              <ListItemIcon>{item.icon}</ListItemIcon>
-              <ListItemButton style={{ textDecoration: "none" }} to={item.path}>
-                {item.text}
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
-      </Drawer>
-
-      {/* Desktop */}
-      <Drawer
-        sx={{
-          display: { xs: "none", sm: "block" },
-          width: drawerWidth,
-          flexShrink: 0,
-          ".MuiDrawer-paper": {
-            width: drawerWidth,
-            boxSizing: "border-box",
-          },
-        }}
-        variant="permanent"
-        anchor="left"
-      >
-        <Box>
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              m: 2,
-              display: "flex",
-              fontWeight: 700,
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            GutenBooks
-            <MenuBookIcon />
-          </Typography>
+        {/* where page will appear */}
+        <Box
+          component="main"
+          sx={{
+            flexGrow: 1,
+            p: 3,
+            width: { sm: `calc(100% - ${drawerWidth}px)` },
+          }}
+        >
+          <Toolbar />
+          <Outlet />
         </Box>
-        <Divider />
-        {/* Menu items */}
-        <List>
-          {menuItems.map((item) => (
-            <ListItem key={item.text}>
-              <ListItemIcon>{item.icon}</ListItemIcon>
-              <ListItemButton style={{ textDecoration: "none" }} to={item.path}>
-                {item.text}
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
-      </Drawer>
-
-      {/* where page will appear */}
-      <Box component="main" sx={{ flexGrow: 1, m: 3, p: 3 }}>
-        <Toolbar />
-        <Outlet />
       </Box>
-    </Box>
+    </>
   );
 };
 
