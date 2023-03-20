@@ -145,7 +145,7 @@ const Navigation = () => {
           variant="permanent"
           anchor="left"
         >
-          <Box>
+          <Box className='logoBg'>
             <Typography
               className="logo"
               variant="h3"

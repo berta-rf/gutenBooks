@@ -8,8 +8,8 @@
 }
 
 //logo wrappers
-.css-12i7wg6-MuiPaper-root-MuiDrawer-paper, .css-1hevbfb {
-    background-color: var(--fern-green)!important;
+#searchForm button {
+    background-color: var(--mindaro)!important;
 
 }
 
@@ -25,6 +25,11 @@
     svg {
         color: var(--mindaro)!important;
     }
+}
+
+.logoBg {
+    background-color: var(--fern-green)!important;
+
 }
 
 // page titles
@@ -59,7 +64,7 @@ a {
 }
 
 // drawer menu
-.css-h4y409-MuiList-root {
+.MuiList-root {
     list-style: none;
     margin: 0;
     padding: 5%!important;
@@ -80,7 +85,7 @@ header > div {
 }
 
 // search button
-.css-q6bp6o-MuiButtonBase-root-MuiIconButton-root {
+.MuiButtonBase-root-MuiIconButton-root {
 
     background-color: var(--mindaro)!important;
 }
