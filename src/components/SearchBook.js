@@ -11,8 +11,10 @@ import MenuItem from "@mui/material/MenuItem";
 import { FormGroup } from "@mui/material";
 
 const SearchBook = () => {
-  const { searchResults, setSearchResults, handleSearch, handleChange } =
+  
+  const { searchResults, setSearchResults, handleSearch, handleChange} =
     useContext(BookContext);
+
 
   return (
     <div>
@@ -36,8 +38,8 @@ const SearchBook = () => {
             onChange={handleChange}
             sx={{ backgroundColor: "#fff", borderRadius: "0px" }}
           >
-            <MenuItem value={"author"}>Search by title / author</MenuItem>
-            <MenuItem value={"topic"}>Search by topic</MenuItem>
+            <MenuItem value={"author"}>by title / author</MenuItem>
+            <MenuItem value={"topic"}>by topic</MenuItem>
           </Select>
           <IconButton
             type="submit"

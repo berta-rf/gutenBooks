@@ -39,18 +39,17 @@ export default function ReviewItem(props) {
           className="outputReviewRating"
           name="read-only"
           value={props.books.starRating}
-          sx={{ ml: 5 }}
+          // sx={{ ml: 5 }}
           readOnly
         />
         <Button
           className="deleteReview"
           variant="outlined"
           size="small"
-          sx={{ ml: 120 }}
+          // sx={{ ml: 80 }}
           startIcon={<DeleteIcon />}
           onClick={() => props.deleteReview(props.books.id)}
         >
-          Delete
         </Button>
       </AccordionSummary>
       <AccordionDetails>

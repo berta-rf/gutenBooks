@@ -28,7 +28,7 @@ import HomeIcon from "@mui/icons-material/Home";
 
 const menuItems = [
   { text: "Home", icon: <HomeIcon />, path: "/#" },
-  { text: "My Bookshelf", icon: <AutoStoriesIcon />, path: "/Bookshelf" },
+  { text: "Bookshelf", icon: <AutoStoriesIcon />, path: "/Bookshelf" },
   { text: "My Reviews", icon: <RateReviewIcon />, path: "/Review" },
 ];
 
@@ -40,7 +40,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   justifyContent: "flex-end",
 }));
 
-const drawerWidth = 280;
+const drawerWidth = 300;
 
 const Navigation = () => {
   const [open, setOpen] = useState(false);
@@ -108,7 +108,11 @@ const Navigation = () => {
           open={open}
         >
           <DrawerHeader sx={{ justifyContent: "space-between" }}>
-            <Typography variant="h4">MENU</Typography>
+            <Typography variant="h3"
+                className="logo"
+                  >gutenBooks
+                  <MenuBookIcon />
+                </Typography>
             <IconButton onClick={handleDrawerClose}>X</IconButton>
           </DrawerHeader>
           {/* Menu items */}
@@ -141,9 +145,10 @@ const Navigation = () => {
           variant="permanent"
           anchor="left"
         >
-          <Box>
+          <Box className='logoBg'>
             <Typography
-              variant="h5"
+              className="logo"
+              variant="h3"
               noWrap
               component="a"
               href="/"
@@ -155,7 +160,7 @@ const Navigation = () => {
                 textDecoration: "none",
               }}
             >
-              GutenBooks
+              gutenBooks
               <MenuBookIcon />
             </Typography>
           </Box>

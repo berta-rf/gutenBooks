@@ -8,11 +8,11 @@ const Bookshelf = () => {
   return (
     <div>
       <Box>
-        <Typography variant="h2">Bookshelf</Typography>
+        <Typography variant="h4">My Bookshelf</Typography>
       </Box>
       <Box sx={{ width: "100%" }}>
         <Typography variant="h5" sx={{ m: 2 }}>
-          Your Last Read Book:
+          Last Read:
         </Typography>
         <Grid container spacing={2} sx={{ m: 3 }}>
           <LastReadBookCard />

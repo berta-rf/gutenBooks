@@ -1,0 +1,105 @@
+/* SCSS HEX */
+:root {
+    --dark-green: #132a13ff;
+    --hunter-green: #31572cff;
+    --fern-green: #4f772dff;
+    --moss-green: #90a955ff;
+    --mindaro: #ecf39eff;
+}
+
+//logo wrappers
+#searchForm button {
+    background-color: var(--mindaro)!important;
+
+}
+
+// gutenBooks
+.logo {
+    
+    font-size: 2.5em!important;
+    font-family: 'Vidaloka', serif !important;
+    color: var(--mindaro)!important;
+    background-color: var(--fern-green)!important;
+    text-shadow: 2px 3px var(--dark-green);
+
+    svg {
+        color: var(--mindaro)!important;
+    }
+}
+
+.logoBg {
+    background-color: var(--fern-green)!important;
+
+}
+
+// page titles
+h4 {
+    font-size: 2em!important;
+    margin: 3% 0!important;
+    color: var(--dark-green)!important;
+    font-family: 'Vidaloka', serif !important;
+}
+
+
+a {
+    color: var(--hunter-green)!important;
+    padding: 5%!important;
+    font-size: 1.2em;
+}
+
+.drawer {
+    height: 140px!important;
+    background-color: var(--dark-green);
+
+}
+
+.button {
+    color: var(--dark-green)!important;
+    text-decoration: none;
+}
+
+#search-bar {
+    background-color: white;
+    border: 8px solid var(--mindaro);
+}
+
+// drawer menu
+.MuiList-root {
+    list-style: none;
+    margin: 0;
+    padding: 5%!important;
+    position: relative;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    height: 100%!important;
+    background-color: var(--mindaro)!important;
+    font-size: 1.5em!important;
+}
+
+// top navbar
+header > div {
+    // background-color: var(--fern-green);
+    padding: 1.2%!important;
+    background-image: url('../images/bookshelf.jpg');
+    
+}
+
+// search button
+.MuiButtonBase-root-MuiIconButton-root {
+
+    background-color: var(--mindaro)!important;
+}
+
+// input fields
+.MuiInputBase-root {
+    border: 1px solid var(--fern-green) !important;
+
+}
+
+// delete review button
+.MuiButton-outlinedPrimary {
+    width: 3em !important;
+    color: var(--fern-green) !important;
+    border:2px solid var(--fern-green) !important;
+    margin-left: 2em !important;
+}

@@ -26,6 +26,7 @@ function Provider({ children }) {
     } else if (searchResults.param === "topic") {
       url = topicURL + searchResults.query;
     }
+
     axios
       .get(url)
       .then((data) => setResults(data.data.results))
