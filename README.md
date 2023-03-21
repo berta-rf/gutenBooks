@@ -1,72 +1,120 @@
-# gutenBooks
+ [![Netlify Status](https://api.netlify.com/api/v1/badges/f651dd93-7176-4675-a062-83e918bdabb3/deploy-status)](https://app.netlify.com/sites/gutenbooksweb/deploys) ![GitHub License](https://img.shields.io/badge/License-MIT-yellow.svg)
+</br>
 
-## Getting Started with Create React App
+# [**gutenBooks**](https://gutenbooksweb.netlify.app/)
+</br>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=white&style=plastic) ![React Router](https://img.shields.io/badge/-React%20Router-CA4245?logo=react-router&logoColor=white&style=plastic) ![MUI](https://img.shields.io/badge/MUI-007FFF?logo=mui&logoColor=white&style=plastic) ![SCSS](https://img.shields.io/badge/SCSS-CC6699?logo=sass&logoColor=white&style=plastic) ![Netlify](https://img.shields.io/badge/Netlify-00C7B7?logo=netlify&logoColor=white&style=plastic) ![npm](https://img.shields.io/badge/npm-CB3837?logo=npm&logoColor=white&style=plastic) ![JS](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=white&style=plastic) ![Node.js](https://img.shields.io/badge/Node.js-339933?logo=node.js&logoColor=white&style=plastic) ![Axios](https://img.shields.io/badge/Axios-5A29E4?logo=axios&logoColor=white&style=plastic)
 
-## Available Scripts
+</br>
 
-In the project directory, you can run:
+## 🎯 Description
 
-### `npm start`
+**gutenBooks** is a responsive web App for users who would like to read free classical books on the go. Using the Gutendex API, we pull books from the Gutenberg Project epub database and display them using React Reader (powered by ePubJS).
+</br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The app allows you to filter your search by author / title or by topic, read the book directly or add it to your Bookshelf for later. There's also a Reviews section for you to keep track of your read books with star rating and review functionality.
+</br>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+This web app was build with React, MUI components, styled with SCSS, and deployed on Netlify.
+</br>
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[<img alt="gutenBooks" width="60%" src="./src/assets/images/APP GIF">](https://gutenbooksweb.netlify.app/)
 
-### `npm run build`
+</br>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Table of Contents
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [🛠 Installation](#-installation)
+- [💻 Usage](#-usage)
+<!-- - [🔍 Tests](#-tests) -->
+- [💬 Questions](#-questions)
+- [🤝 Credits](#-credits)
+- [💪 Contributing](#-contributing)
+- [📖 License](#-license)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+</br>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🛠 Installation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To use this application you will need to install dependencies by entering the following command on your terminal:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```
+npm install
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+</br> 
 
-## Learn More
+## 💻 Usage
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The application is invoked by entering the following command on your terminal:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+npm start
+```
 
-### Code Splitting
+For the Netlify function to work in development, you will have to install Netflify CLI environment with this command:
+(see detailed info here: https://docs.netlify.com/cli/get-started/#installation)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+npm install netlify-cli -g
+```
 
-### Analyzing the Bundle Size
+</br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+<!-- 
+## 🔍 Tests
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+To run tests enter this command on your terminal:
 
-### Advanced Configuration
+```
+npm test
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+</br> -->
 
-### Deployment
+## 💬 Questions
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Contact us if you have any questions!
 
-### `npm run build` fails to minify
+- Through our GitHub profiles:
+    * China Pickering [chinapicke](https://github.com/chinapicke)
+    * Kirsten Tadique [ktadique](https://github.com/ktadique)
+    * Berta Romano Fernandez [berta-rf](https://github.com/berta-rf)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- or drop us an [email](mailto:bertaromanofernandez@gmail.com).
+
+</br>
+
+## 🤝 Credits
+
+* [Gutendex API](https://gutendex.com/)
+* [Project Gutenberg](https://www.gutenberg.org/)
+* [Netlify](https://www.netlify.com/)
+* [React Reader](https://www.npmjs.com/package/react-reader)
+* [Passing Data Deeply with Context (React)](https://react.dev/learn/passing-data-deeply-with-context)
+* [MUI Components](https://mui.com/material-ui/)
+* [Custom Language Badges](https://javascript.plainenglish.io/how-to-make-custom-language-badges-for-your-profile-using-shields-io-d2aeaf016b6b)
+
+</br>
+
+## 💪 Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+</br>
+
+## 📖 License
+
+This project is licensed under the terms of the **MIT License**. See [LICENSE](LICENSE) for more information.
