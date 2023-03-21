@@ -52,12 +52,12 @@ const BookCard = () => {
 
   }, [setResults, param, query])
      
-  
+
   return (
     <>
       {results.map((book) => (
         <Grid key={book.id} id={book.id}>
-          <Card sx={{ width: 350, height: 700 }} onClick={()=>props.showDescription(book.title)}>
+          <Card sx={{ width: 350, height: 700 }} onClick={()=>book.showDescription(book.title)}>
             {/* Cover */}
             <CardMedia
               component="img"
