@@ -90,7 +90,7 @@ const Navigation = () => {
         {/* side navigation */}
 
         {/* Mobile */}
-        <Drawer
+        <Drawer className="mobileDr"
           sx={{
             display: { xs: "block", md: "none" },
             width: drawerWidth,
@@ -107,10 +107,10 @@ const Navigation = () => {
           }}
           open={open}
         >
-          <DrawerHeader sx={{ justifyContent: "space-between" }}>
+          <DrawerHeader sx={{ justifyContent: "space-between" }} className="logoBg">
             <Typography variant="h3"
                 className="logo"
-                  >gutenBooks
+            >gutenBooks
                   <MenuBookIcon />
                 </Typography>
             <IconButton onClick={handleDrawerClose}>X</IconButton>
