@@ -13,6 +13,11 @@ const getLocalItems = () => {
 };
 
 function Reviewpage() {
+
+  // change page title
+  let newPageTitle = `gutenBooks - My Reviews`
+  document.title = newPageTitle;
+
   // empty array to "add" to with the new reviewites and render the local storage
   const [review, setReviews] = useState(getLocalItems());
 

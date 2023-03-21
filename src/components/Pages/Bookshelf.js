@@ -5,6 +5,11 @@ import BookshelfBookCard from "../BookshelfBookCard";
 import LastReadBookCard from "../LastReadBookCard";
 
 const Bookshelf = () => {
+
+  // change page title
+  let newPageTitle = `gutenBooks - My Bookshelf`
+  document.title = newPageTitle;
+
   return (
     <div>
       <Box>
