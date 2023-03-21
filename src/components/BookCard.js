@@ -1,5 +1,8 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useEffect } from "react";
+import { useParams } from 'react-router-dom';
+import axios from "axios";
+
+import { Link} from "react-router-dom";
 import {
   Button,
   Card,
@@ -18,31 +21,43 @@ import { createBook } from "../lib/savedBooks";
 
 import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
 
+const BookCard = () => {
+  const { results, addBooktoArray, addLastReadBook, setResults } = useContext(BookContext);
 
-const BookCard = (props) => {
-  const { results, addBooktoArray, addLastReadBook } = useContext(BookContext);
   const languageAbbr ={
     en:"English",
     es:"Espanol",
     fr:"French",
     gr:"German",
   }
-  // const [description, setDescription] = useState("")
-  // const descript =(data) => {
-  //   axios.get(`https://www.googleapis.com/books/v1/volumes?q=${results}&key=AIzaSyBW3TLScb7kRYv0kkDzkT_Zv5qUF8euQg8`)
-  //   .then(res => { 
-  //     let data = (res.data.items[0].volumeInfo.description);
-  //     console.log(data); });
-  //     // .catch(err => console.log(err)) 
-  //     setDescription(data)
-  //     console.log("Description"+ description)
-  // }
+
+  // param refers to author/title and topic, query is search input
+  const { query, param } = useParams();
+
+  useEffect(() => {
+    if (!query) return;
+    const authorURL = "https://gutendex.com/books?search=";
+    const topicURL = "https://gutendex.com/books?topic=";
+
+    let url;
+    if (param === "author") {
+      url = authorURL + query;
+    } else if (param === "topic") {
+      url = topicURL + query;
+    }
+    axios
+      .get(url)
+      .then((data) => setResults(data.data.results))
+      .catch((error) => console.log(error));
+
+  }, [setResults, param, query])
+     
 
   return (
     <>
       {results.map((book) => (
         <Grid key={book.id} id={book.id}>
-          <Card sx={{ width: 350, height: 700 }} onClick={()=>props.showDescription(book.title)}>
+          <Card sx={{ width: 350, height: 700 }} onClick={()=>book.showDescription(book.title)}>
             {/* Cover */}
             <CardMedia
               component="img"

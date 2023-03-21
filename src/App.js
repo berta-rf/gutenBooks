@@ -15,10 +15,11 @@ function App() {
       <Router>
         <Routes>
           <Route element={<Navigation />}>
-            <Route path="/" element={<Homepage />} />
-            <Route path="/Bookshelf" element={<Bookshelf />} />
-            <Route path="/Review" element={<ReviewPage />} />
-            <Route path="/Reader/:bookId" element={<Reader />} />
+          <Route path="/" element={<Homepage />} />
+            <Route path=":param/:query" element={<Homepage />} />
+            <Route path="Bookshelf" element={<Bookshelf />} />
+            <Route path="Review" element={<ReviewPage />} />
+            <Route path="Reader/:bookId" element={<Reader />} />
           </Route>
         </Routes>
       </Router>
