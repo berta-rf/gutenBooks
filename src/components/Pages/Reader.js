@@ -10,7 +10,6 @@ const drawerWidth = 280;
 
 const Reader = () => {
 
-
   let params = useParams();
   const book_id = params.bookId;
   const book = findBook(book_id);
@@ -29,7 +28,7 @@ const Reader = () => {
     // epubcifi is a internal string used by epubjs to point to a location in an epub
 
     if (!firstRenderDone) {
-      debugger;
+
       const currentLocation = book.location;
       setLocation(currentLocation);
       setFirstRenderDone(true);
