@@ -12,9 +12,7 @@ import {
 } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 import BookContext from "../context/books";
-
 import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
-
 import { createBook } from "../lib/savedBooks";
 
 const LastReadBookCard = () => {
@@ -60,8 +58,6 @@ const LastReadBookCard = () => {
                 by {book.author ? book.author : "Unknown Author"}
               </Typography>
               <CardActions>
-                <Button size="medium">Description</Button>
-
                 <Link
                   to={`/Reader/${book.id}`}
                   onClick={(e) => createBook(book)}

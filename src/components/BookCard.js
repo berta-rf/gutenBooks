@@ -12,19 +12,37 @@ import {
 } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 import BookContext from "../context/books";
+import BookModal from './BookModal'
 
 import { createBook } from "../lib/savedBooks";
 
 import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
 
-const BookCard = () => {
+
+const BookCard = (props) => {
   const { results, addBooktoArray, addLastReadBook } = useContext(BookContext);
+  const languageAbbr ={
+    en:"English",
+    es:"Espanol",
+    fr:"French",
+    gr:"German",
+  }
+  // const [description, setDescription] = useState("")
+  // const descript =(data) => {
+  //   axios.get(`https://www.googleapis.com/books/v1/volumes?q=${results}&key=AIzaSyBW3TLScb7kRYv0kkDzkT_Zv5qUF8euQg8`)
+  //   .then(res => { 
+  //     let data = (res.data.items[0].volumeInfo.description);
+  //     console.log(data); });
+  //     // .catch(err => console.log(err)) 
+  //     setDescription(data)
+  //     console.log("Description"+ description)
+  // }
 
   return (
     <>
       {results.map((book) => (
         <Grid key={book.id} id={book.id}>
-          <Card sx={{ width: 350, height: 700 }}>
+          <Card sx={{ width: 350, height: 700 }} onClick={()=>props.showDescription(book.title)}>
             {/* Cover */}
             <CardMedia
               component="img"
@@ -60,8 +78,14 @@ const BookCard = () => {
                 by {book.authors[0] ? book.authors[0].name : "Unknown Author"}
               </Typography>
               <CardActions>
-                <Button size="medium">Description</Button>
-
+                <BookModal 
+                title={book.title}
+                // this is the props which is breaking the search
+                author={book.authors[0].name}
+                subjects={book.subjects}
+                language={languageAbbr[book.languages]??book.languages}
+                // description= {book.title}
+                /> 
                 <Link
                   to={`/Reader/${book.id}`}
                   onClick={(e) => createBook(book)}

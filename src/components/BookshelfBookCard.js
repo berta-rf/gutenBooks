@@ -58,15 +58,16 @@ const BookCard = () => {
                 by {book.author ? book.author : "Unknown Author"}
               </Typography>
               <CardActions sx={{ justifyContent: "space-evenly" }}>
-                <Button size="medium">Description</Button>
-
                 <Link
                   to={`/Reader/${book.id}`}
                   onClick={(e) => createBook(book)}
                 >
                   <Button size="medium">READ</Button>
                 </Link>
-                <Button size="medium">Review</Button>
+                <Link
+                  to={`/Review`}>
+                  <Button size="medium">Review</Button>
+                </Link>
                 <IconButton id={book.id} onClick={removeFromBookshelf}>
                   <Tooltip title="Remove from Bookshelf">
                     <ClearIcon />
