@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import BookContext from "../context/books";
+import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
 //MUI
 import TextField from "@mui/material/TextField";
@@ -11,8 +11,24 @@ import MenuItem from "@mui/material/MenuItem";
 import { FormGroup } from "@mui/material";
 
 const SearchBook = () => {
-  const { searchResults, setSearchResults, handleSearch, handleChange } =
-    useContext(BookContext);
+
+  const navigate = useNavigate();
+
+  const [searchResults, setSearchResults] = useState({
+    param: "author",
+    query: "",
+  });
+
+  // handles change of param (by author/title to by topic)
+  const handleChange = (event) => {
+    setSearchResults({ ...searchResults, param: event.target.value });
+  };
+
+
+  // handles search input and navigates to url/param/query
+  const handleSearch = () => {
+    navigate(`${searchResults.param}/${searchResults.query}`);
+  }
 
   return (
     <div>

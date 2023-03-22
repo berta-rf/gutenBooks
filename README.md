@@ -1,4 +1,4 @@
- [![Netlify Status](https://api.netlify.com/api/v1/badges/f651dd93-7176-4675-a062-83e918bdabb3/deploy-status)](https://app.netlify.com/sites/gutenbooksweb/deploys) ![GitHub License](https://img.shields.io/badge/License-MIT-yellow.svg)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9c3f6dbd-7a14-4c1c-b9c9-96f8ba326cec/deploy-status)](https://app.netlify.com/sites/gutenbooksweb/deploys) ![GitHub License](https://img.shields.io/badge/License-MIT-yellow.svg)
 </br>
 
 # [**gutenBooks**](https://gutenbooksweb.netlify.app/)
@@ -95,6 +95,7 @@ Contact us if you have any questions!
 * [Project Gutenberg](https://www.gutenberg.org/)
 * [Netlify](https://www.netlify.com/)
 * [React Reader](https://www.npmjs.com/package/react-reader)
+* [React-Promise-Tracker](https://www.npmjs.com/package/react-promise-tracker)
 * [Passing Data Deeply with Context (React)](https://react.dev/learn/passing-data-deeply-with-context)
 * [MUI Components](https://mui.com/material-ui/)
 * [Custom Language Badges](https://javascript.plainenglish.io/how-to-make-custom-language-badges-for-your-profile-using-shields-io-d2aeaf016b6b)

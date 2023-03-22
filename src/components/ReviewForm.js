@@ -1,11 +1,37 @@
-import React, { useState } from 'react';
-import { TextField, Button, Rating, Typography, Box } from '@mui/material';
+import React, { useState, useContext } from 'react';
+import { TextField, Button, Rating, Typography, Box, Select, MenuItem, InputLabel } from '@mui/material';
+import BookContext from "../context/books";
+
+
+const inputStyle = {
+  width: 300,
+  marginRight: 5,
+  marginTop:1,
+  // marginBottom:3,
+}
+
+const dropDownStyle = {
+  width: 300,
+  marginRight: 5,
+  // marginBottom:3,
+}
 
 function ReviewForm(props) {
   // states for the input of title, description and star rating
   const [title, setTitle] = useState("")
   const [description, setDescription] = useState("")
   const [value, setValue] = useState(5)
+  const { bookshelf } = useContext(BookContext);
+
+  // test the dropdown options
+  // const names =[{
+  //   id:1,
+  //   name:"this is a book"},
+  //   {
+  //     id:2,
+  //     name:'another books'
+  //   }
+  // ]
 
   const handleClick = (e) => {
     e.preventDefault()
@@ -16,6 +42,11 @@ function ReviewForm(props) {
     setDescription("")
     setValue(null)
   }
+  
+  const handleChange = (event) => {
+    setTitle(event.target.value)
+  }
+
 
   return (
     <div>
@@ -24,28 +55,27 @@ function ReviewForm(props) {
       </Box>
       <Box>
         <form className='reviewForm'>
-          <TextField 
-          id="titleInput"
+        <InputLabel id='titleInput'>Book Title</InputLabel>
+          <Select 
+            sx={dropDownStyle}
+            id="titleInput"
+            variant='outlined'
+            labelId="Book Title"
             placeholder='Book Title'
-            // sx={{ ml: 30,
-            //   mb: 5
-            // }}
-            onChange={(e) => setTitle(e.target.value)} />
+            value={title}
+            // onChange={(e) => setTitle(e.target.value)}>
+            onChange={handleChange}>
+          {bookshelf.map((savedTitle)=>(
+            <MenuItem key={savedTitle.id} value={savedTitle.title}>{savedTitle.title}</MenuItem>
+          ))}
+          </Select>
           <TextField
             id="descriptionInput"
             placeholder='What are your thoughts?'
-            // sx={{ ml: 5,
-            //   mb: 5
-            // }}
+            sx={inputStyle}
             onChange={(e) => setDescription(e.target.value)} />
           <Rating
             name="simple-controlled"
-            sx={{
-              // mx: 'auto',
-              // width: 200,
-              // p: 1,
-              // m: 1
-            }}
             size="large"
             value={value}
             onChange={(event, newValue) => {
@@ -53,7 +83,13 @@ function ReviewForm(props) {
               // checking that it is showing star rating as number
               console.log(newValue)
             }} />
-          <Button className='submitReviewBtn' variant="outlined" sx={{mb: 3}} onClick={handleClick}>Submit</Button>
+          <Button 
+          className='submitReviewBtn' 
+          variant="outlined" 
+          sx={{mb: 3, mt:1}} 
+          size="large"
+          onClick={handleClick}>
+          Submit</Button>
         </form>
       </Box>
     </div>

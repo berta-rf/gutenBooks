@@ -6,6 +6,10 @@ import Modal from "@mui/material/Modal";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { useSpring, animated } from "@react-spring/web";
+import axios from 'axios'
+import { useEffect, useState } from 'react'
+import '../assets/styles/modal.scss'
+
 
 const Fade = React.forwardRef(function Fade(props, ref) {
   const {
@@ -53,47 +57,81 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 400,
+  width: 700,
+  height: 400,
   bgcolor: "background.paper",
   border: "2px solid #000",
   boxShadow: 24,
   p: 4,
 };
 
-const BookModal = () => {
-  const [open, setOpen] = React.useState(false);
+function BookModal(props) {
+
+  const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const [description, setDescription] = useState("");
+
+  useEffect(
+    () => {
+      console.log('Calling descript', props.title);
+      axios.get(`https://www.googleapis.com/books/v1/volumes?q=${props.title}&key=AIzaSyBW3TLScb7kRYv0kkDzkT_Zv5qUF8euQg8`)
+        .then(res => {
+          let data = (res.data.items[0].volumeInfo.description);
+          // console.log(data);;
+          // .catch(err => console.log(err)) 
+          setDescription(data)
+          console.log("Description" + description)
+        })
+    }, [props.title, description]
+  )  
 
   return (
     <div>
-      <Button onClick={handleOpen}>Open modal</Button>
-      <Modal
-        aria-labelledby="spring-modal-title"
-        aria-describedby="spring-modal-description"
-        open={open}
-        onClose={handleClose}
-        closeAfterTransition
-        slots={{ backdrop: Backdrop }}
-        slotProps={{
-          backdrop: {
-            TransitionComponent: Fade,
-          },
-        }}
-      >
-        <Fade in={open}>
+      <Button className='descriptionBtn'onClick={handleOpen}>Description</Button>
+
+        <Modal
+          aria-labelledby="spring-modal-title"
+          aria-describedby="spring-modal-description"
+          open={open}
+          onClose={handleClose}
+          closeAfterTransition
+          slots={{ backdrop: Backdrop }}
+          slotProps={{
+            backdrop: {
+              TransitionComponent: Fade,
+            },
+          }}
+          fullWidth
+        >
           <Box sx={style}>
-            <Typography id="spring-modal-title" variant="h6" component="h2">
-              Text in a modal
+            <Typography id='modalTitle' className='modalInfo' variant="h5" component="h1">
+              Title: 
             </Typography>
-            <Typography id="spring-modal-description" sx={{ mt: 2 }}>
-              Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+            <p className='modalText'>{props.title}</p>
+            {/* <Typography id='modalTitle' variant="h5" component="h2">
+              Author: {props.author}
+            </Typography> */}
+            <Typography id="modalLanguage"  className='modalInfo' variant="h5" component="h1">
+              Language: 
             </Typography>
+            <p className='modalText'>{props.language}</p>
+            <Typography id="modalDescription"  className='modalInfo' variant="h5" component="h1">
+              Description: 
+            </Typography>
+            <p className='modalText'>{description}</p>
+            <Typography id="modalSubjects"  className='modalInfo'  variant="h5" component="h1">
+              Genre: 
+            </Typography>
+            <div className='modalGenre'>
+            {props.subjects.map((subject, index) => (
+                <button className='subjectText' key={index}>{subject}</button>
+              ))}
+            </div>
           </Box>
-        </Fade>
-      </Modal>
+        </Modal>
     </div>
   );
-};
+}
 
 export default BookModal;
