@@ -79,7 +79,7 @@ const BookModal = (props) => {
           setDescription(data)
           console.log("Description" + description)
         })
-    }, []
+    }, [props.title, description]
   )
 
   return (

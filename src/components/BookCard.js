@@ -52,12 +52,13 @@ const BookCard = () => {
 
   }, [setResults, param, query])
      
+  // onClick={()=> book.showDescription(book.title)}
 
   return (
     <>
       {results.map((book) => (
         <Grid key={book.id} id={book.id}>
-          <Card sx={{ width: 350, height: 700 }} onClick={()=>book.showDescription(book.title)}>
+          <Card sx={{ width: 350, height: 700 }} >
             {/* Cover */}
             <CardMedia
               component="img"
@@ -96,7 +97,7 @@ const BookCard = () => {
                 <BookModal 
                 title={book.title}
                 // this is the props which is breaking the search
-                author={book.authors[0].name}
+                // author={book.authors[0].name}
                 subjects={book.subjects}
                 language={languageAbbr[book.languages]??book.languages}
                 // description= {book.title}
