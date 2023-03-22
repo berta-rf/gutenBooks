@@ -7,9 +7,8 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { useSpring, animated } from "@react-spring/web";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "../assets/styles/modal.scss";
-
 const Fade = React.forwardRef(function Fade(props, ref) {
   const {
     children,
@@ -34,14 +33,12 @@ const Fade = React.forwardRef(function Fade(props, ref) {
       }
     },
   });
-
   return (
     <animated.div ref={ref} style={style} {...other}>
       {React.cloneElement(children, { onClick })}
     </animated.div>
   );
 });
-
 Fade.propTypes = {
   children: PropTypes.element.isRequired,
   in: PropTypes.bool,
@@ -50,47 +47,45 @@ Fade.propTypes = {
   onExited: PropTypes.func,
   ownerState: PropTypes.any,
 };
-
 const style = {
   position: "absolute",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: 700,
-  height: 400,
+  height: 450,
   bgcolor: "background.paper",
   border: "2px solid #000",
   boxShadow: 24,
   p: 4,
 };
-
 function BookModal(props) {
   const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const [description, setDescription] = useState("");
-
-  useEffect(() => {
-    console.log("Calling descript", props.title);
+  const handleOpen = () => {
+    setOpen(true);
+    // console.log('Calling descript', props.title);
     axios
       .get(
-        `https://www.googleapis.com/books/v1/volumes?q=${props.title}&key=AIzaSyBW3TLScb7kRYv0kkDzkT_Zv5qUF8euQg8`
+        `https://www.googleapis.com/books/v1/volumes?q=${props.title}&key=AIzaSyDxKZhFCI9K0aCExPM-D-bIDvZ0UAmylow`
       )
       .then((res) => {
         let data = res.data.items[0].volumeInfo.description;
         // console.log(data);;
         // .catch(err => console.log(err))
         setDescription(data);
-        console.log("Description" + description);
+        // console.log("Description" + description)
       });
-  }, [props.title, description]);
-
+  };
   return (
     <div>
-      <Button className="bookCardButton" onClick={handleOpen}>
+      <Button
+        className={`descriptionBtn ${"bookCardButton"}`}
+        onClick={handleOpen}
+      >
         Description
       </Button>
-
       <Modal
         aria-labelledby="spring-modal-title"
         aria-describedby="spring-modal-description"
@@ -103,7 +98,6 @@ function BookModal(props) {
             TransitionComponent: Fade,
           },
         }}
-        fullWidth
       >
         <Box sx={style}>
           <Typography
@@ -135,7 +129,7 @@ function BookModal(props) {
           >
             Description:
           </Typography>
-          <p className="modalText">{description}</p>
+          <p className="modalText limit">{description}</p>
           <Typography
             id="modalSubjects"
             className="modalInfo"
@@ -156,5 +150,4 @@ function BookModal(props) {
     </div>
   );
 }
-
 export default BookModal;

@@ -10,6 +10,7 @@
     /* column-count: 2; */
     font-size: 15px;
     list-style: none; 
+    margin-bottom: 30px;
 }
 
 .subjectText {
@@ -32,3 +33,9 @@
     font-size:15px;
 }
 
+.limit{
+    // white-space: nowrap;
+    overflow: scroll;
+    width: 100%;
+    height:100px;
+}

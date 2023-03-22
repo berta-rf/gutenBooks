@@ -38,14 +38,15 @@ const Reader = () => {
     setLocation(epubcifi); // Or setLocation(localStorage.getItem("book-progress"))
   };
 
-  const baseURL = "/.netlify/functions/epub-downloader";
+  // AWS Lambda function URL
+  const awsURL = 'https://bxwfxnh4araqswaya6hrklccnu0bsduv.lambda-url.eu-north-1.on.aws/'
 
   const [bookData, setBookData] = useState(null);
 
   useEffect(() => {
     if (!fetchingBook.current) {
       fetchingBook.current = true;
-      axios.get(baseURL + `?book_id=${book_id}`).then((response) => {
+      axios.get(awsURL + `?book_id=${book_id}`).then((response) => {
         setBookData(response.data.data);
       });
     }
