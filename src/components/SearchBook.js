@@ -24,9 +24,10 @@ const SearchBook = () => {
     setSearchResults({ ...searchResults, param: event.target.value });
   };
 
+
   // handles search input and navigates to url/param/query
   const handleSearch = () => {
-    navigate(`${searchResults.param}/${searchResults.query}`)
+    navigate(`${searchResults.param}/${searchResults.query}`);
   }
 
   return (
