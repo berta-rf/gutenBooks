@@ -36,7 +36,8 @@ const SearchBook = () => {
         <FormGroup sx={{ flexDirection: "row" }}>
           <TextField
             id="search-bar"
-            className="text"
+            size="small"
+            className="search-bar"
             type="search"
             label="Search"
             value={searchResults.query}
@@ -48,6 +49,7 @@ const SearchBook = () => {
           />
           <Select
             id="select-param"
+            size="small"
             value={searchResults.param}
             onChange={handleChange}
             sx={{ backgroundColor: "#fff", borderRadius: "0px" }}
@@ -56,7 +58,9 @@ const SearchBook = () => {
             <MenuItem value={"topic"}>by topic</MenuItem>
           </Select>
           <IconButton
+            className="search-btn"
             type="submit"
+            size="small"
             aria-label="search"
             onClick={handleSearch}
             sx={{ border: "solid 1px", borderRadius: "0 1px" }}

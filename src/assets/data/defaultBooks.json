@@ -172,45 +172,38 @@
     "download_count": 136421
   },
   {
-    "id": 84,
-    "title": "Frankenstein; Or, The Modern Prometheus",
+    "id": 64317,
+    "title": "The Great Gatsby",
     "authors": [
       {
-        "name": "Shelley, Mary Wollstonecraft",
-        "birth_year": 1797,
-        "death_year": 1851
+        "name": "Fitzgerald, F. Scott (Francis Scott)",
+        "birth_year": 1896,
+        "death_year": 1940
       }
     ],
     "translators": [],
     "subjects": [
-      "Frankenstein's monster (Fictitious character) -- Fiction",
-      "Frankenstein, Victor (Fictitious character) -- Fiction",
-      "Gothic fiction",
-      "Horror tales",
-      "Monsters -- Fiction",
-      "Science fiction",
-      "Scientists -- Fiction"
+      "First loves -- Fiction",
+      "Long Island (N.Y.) -- Fiction",
+      "Married women -- Fiction",
+      "Psychological fiction",
+      "Rich people -- Fiction"
     ],
-    "bookshelves": [
-      "Gothic Fiction",
-      "Movie Books",
-      "Precursors of Science Fiction",
-      "Science Fiction by Women"
-    ],
+    "bookshelves": [],
     "languages": ["en"],
     "copyright": false,
     "media_type": "Text",
     "formats": {
-      "text/plain": "https://www.gutenberg.org/ebooks/84.txt.utf-8",
-      "application/octet-stream": "https://www.gutenberg.org/files/84/84-0.zip",
-      "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/84/84-0.txt",
-      "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/84.kf8.images",
-      "application/epub+zip": "https://www.gutenberg.org/ebooks/84.epub3.images",
-      "image/jpeg": "https://www.gutenberg.org/cache/epub/84/pg84.cover.medium.jpg",
-      "text/html": "https://www.gutenberg.org/ebooks/84.html.images",
-      "application/rdf+xml": "https://www.gutenberg.org/ebooks/84.rdf"
+      "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/64317.kf8.images",
+      "application/epub+zip": "https://www.gutenberg.org/ebooks/64317.epub3.images",
+      "text/html": "https://www.gutenberg.org/ebooks/64317.html.images",
+      "image/jpeg": "https://www.gutenberg.org/cache/epub/64317/pg64317.cover.medium.jpg",
+      "application/octet-stream": "https://www.gutenberg.org/files/64317/64317-0.zip",
+      "text/plain": "https://www.gutenberg.org/ebooks/64317.txt.utf-8",
+      "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/64317/64317-0.txt",
+      "application/rdf+xml": "https://www.gutenberg.org/ebooks/64317.rdf"
     },
-    "download_count": 75145
+    "download_count": 25354
   },
   {
     "id": 1342,
@@ -301,14 +294,8 @@
       "Science fiction",
       "Self-experimentation in medicine -- Fiction"
     ],
-    "bookshelves": [
-      "Horror",
-      "Movie Books",
-      "Precursors of Science Fiction"
-    ],
-    "languages": [
-      "en"
-    ],
+    "bookshelves": ["Horror", "Movie Books", "Precursors of Science Fiction"],
+    "languages": ["en"],
     "copyright": false,
     "media_type": "Text",
     "formats": {
@@ -321,6 +308,89 @@
       "application/rdf+xml": "https://www.gutenberg.org/ebooks/43.rdf"
     },
     "download_count": 15098
+  },
+  {
+    "id": 1952,
+    "title": "The Yellow Wallpaper",
+    "authors": [
+      {
+        "name": "Gilman, Charlotte Perkins",
+        "birth_year": 1860,
+        "death_year": 1935
+      }
+    ],
+    "translators": [],
+    "subjects": [
+      "Feminist fiction",
+      "Married women -- Psychology -- Fiction",
+      "Mentally ill women -- Fiction",
+      "Psychological fiction",
+      "Sex role -- Fiction"
+    ],
+    "bookshelves": ["Gothic Fiction"],
+    "languages": ["en"],
+    "copyright": false,
+    "media_type": "Text",
+    "formats": {
+      "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/1952.kf8.images",
+      "application/epub+zip": "https://www.gutenberg.org/ebooks/1952.epub3.images",
+      "image/jpeg": "https://www.gutenberg.org/cache/epub/1952/pg1952.cover.medium.jpg",
+      "text/html; charset=utf-8": "https://www.gutenberg.org/files/1952/1952-h/1952-h.htm",
+      "text/plain; charset=utf-8": "https://www.gutenberg.org/files/1952/1952-0.txt",
+      "text/html": "https://www.gutenberg.org/ebooks/1952.html.images",
+      "application/rdf+xml": "https://www.gutenberg.org/ebooks/1952.rdf"
+    },
+    "download_count": 24783
+  },
+  {
+    "id": 103,
+    "title": "Around the World in Eighty Days",
+    "authors": [
+      { "name": "Verne, Jules", "birth_year": 1828, "death_year": 1905 }
+    ],
+    "translators": [],
+    "subjects": ["Adventure stories", "Voyages around the world -- Fiction"],
+    "bookshelves": ["Adventure", "Best Books Ever Listings", "Movie Books"],
+    "languages": ["en"],
+    "copyright": false,
+    "media_type": "Text",
+    "formats": {
+      "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/103.kf8.images",
+      "application/epub+zip": "https://www.gutenberg.org/ebooks/103.epub3.images",
+      "text/plain; charset=utf-8": "https://www.gutenberg.org/files/103/103-0.txt",
+      "text/html; charset=iso-8859-1": "https://www.gutenberg.org/files/103/103-h/103-h.htm",
+      "image/jpeg": "https://www.gutenberg.org/cache/epub/103/pg103.cover.medium.jpg",
+      "text/html": "https://www.gutenberg.org/ebooks/103.html.images",
+      "application/rdf+xml": "https://www.gutenberg.org/ebooks/103.rdf"
+    },
+    "download_count": 3594
+  },
+  {
+    "id": 1727,
+    "title": "The Odyssey: Rendered into English prose for the use of those who cannot read the original",
+    "authors": [{ "name": "Homer", "birth_year": -750, "death_year": -650 }],
+    "translators": [
+      { "name": "Butler, Samuel", "birth_year": 1835, "death_year": 1902 }
+    ],
+    "subjects": [
+      "Epic poetry, Greek -- Translations into English",
+      "Homer -- Translations into English",
+      "Odysseus, King of Ithaca (Mythological character)"
+    ],
+    "bookshelves": ["Classical Antiquity", "Harvard Classics"],
+    "languages": ["en"],
+    "copyright": false,
+    "media_type": "Text",
+    "formats": {
+      "application/x-mobipocket-ebook": "https://www.gutenberg.org/ebooks/1727.kf8.images",
+      "application/epub+zip": "https://www.gutenberg.org/ebooks/1727.epub3.images",
+      "text/html": "https://www.gutenberg.org/ebooks/1727.html.images",
+      "image/jpeg": "https://www.gutenberg.org/cache/epub/1727/pg1727.cover.medium.jpg",
+      "application/octet-stream": "https://www.gutenberg.org/files/1727/1727-0.zip",
+      "text/plain; charset=us-ascii": "https://www.gutenberg.org/files/1727/1727-0.txt",
+      "text/plain": "https://www.gutenberg.org/ebooks/1727.txt.utf-8",
+      "application/rdf+xml": "https://www.gutenberg.org/ebooks/1727.rdf"
+    },
+    "download_count": 11148
   }
-
 ]

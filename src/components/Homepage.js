@@ -7,10 +7,12 @@ import BookCard from "./BookCard";
 
 function Homepage() {
   return (
-    <div>
+    <div className="homePageWrapper">
       <Box>
-        <Typography variant="h4">Here are some books for you:</Typography>
-        <Grid container spacing={2} sx={{ m: 3 }}>
+        <Typography className="homePageHeading">
+          Here are some books for you:
+        </Typography>
+        <Grid container spacing={2} sx={{ p: 5 }} className="gridWrapper">
           <BookCard />
         </Grid>
       </Box>
