@@ -130,15 +130,9 @@ const Navigation = () => {
           {/* Menu items */}
           <List className="menuList">
             {menuItems.map((item) => (
-              <ListItem key={item.text}>
+              <ListItem className="menuItem" key={item.text}>
                 <ListItemIcon>{item.icon}</ListItemIcon>
-                <ListItemButton
-                  className="menuItem"
-                  style={{ textDecoration: "none" }}
-                  to={item.path}
-                >
-                  {item.text}
-                </ListItemButton>
+                <ListItemButton to={item.path}>{item.text}</ListItemButton>
               </ListItem>
             ))}
           </List>
@@ -159,28 +153,38 @@ const Navigation = () => {
           variant="permanent"
           anchor="left"
         >
-          <Box className="logoBg">
-            <Typography className="gutenLogo" noWrap component="a" href="/">
-              gutenBooks
-              <MenuBookIcon />
-            </Typography>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "stretch",
+            }}
+          >
+            <Box>
+              {/* Menu items */}
+              <List className="menuList">
+                {menuItems.map((item) => (
+                  <ListItem className="menuListItem" key={item.text}>
+                    <ListItemButton
+                      className="menuListButton"
+                      align="right"
+                      style={{ textDecoration: "none" }}
+                      to={item.path}
+                    >
+                      {item.text}
+                    </ListItemButton>
+                  </ListItem>
+                ))}
+              </List>
+            </Box>
+            {/* LOGO */}
+            <Box className="logoBg">
+              <Typography className="gutenLogo" noWrap component="a" href="/">
+                gutenBooks
+                <MenuBookIcon />
+              </Typography>
+            </Box>
           </Box>
-          {/* Menu items */}
-          <List className="menuList">
-            {menuItems.map((item) => (
-              <ListItem className="menuListItem" key={item.text}>
-                <ListItemIcon>{item.icon}</ListItemIcon>
-                <ListItemButton
-                  className="menuListButton"
-                  align="right"
-                  style={{ textDecoration: "none" }}
-                  to={item.path}
-                >
-                  {item.text}
-                </ListItemButton>
-              </ListItem>
-            ))}
-          </List>
         </Drawer>
 
         {/* where page will appear */}

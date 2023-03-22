@@ -18,7 +18,8 @@ import ClearIcon from "@mui/icons-material/Clear";
 import { createBook } from "../lib/savedBooks";
 
 const BookCard = () => {
-  const { bookshelf, removeFromBookshelf } = useContext(BookContext);
+  const { bookshelf, addLastReadBook, removeFromBookshelf } =
+    useContext(BookContext);
 
   return (
     <>
@@ -66,7 +67,11 @@ const BookCard = () => {
                     to={`/Reader/${book.id}`}
                     onClick={(e) => createBook(book)}
                   >
-                    <Button className="bookCardButton" size="medium">
+                    <Button
+                      className="bookCardButton"
+                      size="medium"
+                      onClick={addLastReadBook}
+                    >
                       READ
                     </Button>
                   </Link>

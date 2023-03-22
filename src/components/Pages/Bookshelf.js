@@ -14,12 +14,14 @@ const Bookshelf = () => {
   return (
     <div className="homePageWrapper">
       <Box>
-        <Typography variant="h4">My Bookshelf</Typography>
+        <Typography className="pageHeading" variant="h4">
+          My Bookshelf
+        </Typography>
       </Box>
       <Box>
         <Grid container>
-          <Grid sx={{ flexGrow: 0 }}>
-            <Typography variant="h5" sx={{ m: 2 }}>
+          <Grid>
+            <Typography className="pageSubHeading" variant="h5" sx={{ m: 2 }}>
               Last Read:
             </Typography>
             <Grid container spacing={2} sx={{ m: 3 }}>
@@ -27,8 +29,8 @@ const Bookshelf = () => {
             </Grid>
           </Grid>
           <Grid sx={{ flexGrow: 2 }}>
-            <Typography variant="h5" sx={{ m: 2 }}>
-              Your Saved Books:
+            <Typography className="pageSubHeading" variant="h5" sx={{ m: 2 }}>
+              My Saved Books:
             </Typography>
             <Grid container spacing={2} sx={{ m: 3 }}>
               <BookshelfBookCard />

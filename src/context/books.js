@@ -1,13 +1,11 @@
 import React, { createContext, useState, useEffect } from "react";
 import defaultBooks from "../assets/data/defaultBooks.json";
 
-
 const BookContext = createContext();
 
 //search context---------
 
 function Provider({ children }) {
-
   // handles results state, and sets defaultBooks.json as default book results to display on homepage
   const [results, setResults] = useState(defaultBooks);
 
@@ -25,7 +23,8 @@ function Provider({ children }) {
 
   //save book function
   const addBooktoArray = (e) => {
-    let bookID = e.currentTarget.parentNode.parentNode.parentNode.parentNode.id;
+    let bookID =
+      e.currentTarget.parentNode.parentNode.parentNode.parentNode.parentNode.id;
 
     let selectedBook = results.find((obj) => obj.id === parseInt(bookID));
 
@@ -70,7 +69,26 @@ function Provider({ children }) {
   //last read function:
   const addLastReadBook = (e) => {
     let bookID =
-      e.currentTarget.parentNode.parentNode.parentNode.parentNode.parentNode.id;
+      e.currentTarget.parentNode.parentNode.parentNode.parentNode.parentNode
+        .parentNode.id;
+
+    let lastSelectedBook = results.find((obj) => obj.id === parseInt(bookID));
+
+    let lastBook = {
+      id: bookID,
+      title: lastSelectedBook.title,
+      author: lastSelectedBook.authors[0].name,
+    };
+
+    const updateLastRead = [lastBook];
+    setLastRead(updateLastRead);
+  };
+
+  //last read for inside bookshelf
+  const bookshelfLastRead = (e) => {
+    let idDiv = e.target.parentElement.closest(".bookId");
+    let bookID = idDiv.id;
+    console.log(bookID);
 
     let lastSelectedBook = results.find((obj) => obj.id === parseInt(bookID));
 
@@ -88,7 +106,6 @@ function Provider({ children }) {
     localStorage.setItem("lastRead", JSON.stringify(lastRead));
   }, [lastRead]);
 
-  //what will passed to children components
   //what will be passed to children components
 
   const valueToShare = {
@@ -100,6 +117,7 @@ function Provider({ children }) {
     lastRead,
     addLastReadBook,
     removeFromBookshelf,
+    bookshelfLastRead,
   };
 
   return (
