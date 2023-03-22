@@ -7,7 +7,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { useSpring, animated } from "@react-spring/web";
 import axios from 'axios'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import '../assets/styles/modal.scss'
 
 
@@ -68,14 +68,11 @@ const style = {
 function BookModal(props) {
 
   const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const [description, setDescription] = useState("");
-
-  useEffect(
-    () => {
+  const handleOpen = () => {setOpen(true)
       console.log('Calling descript', props.title);
-      axios.get(`https://www.googleapis.com/books/v1/volumes?q=${props.title}&key=AIzaSyBW3TLScb7kRYv0kkDzkT_Zv5qUF8euQg8`)
+      axios.get(`https://www.googleapis.com/books/v1/volumes?q=${props.title}&key=AIzaSyDxKZhFCI9K0aCExPM-D-bIDvZ0UAmylow`)
         .then(res => {
           let data = (res.data.items[0].volumeInfo.description);
           // console.log(data);;
@@ -83,8 +80,7 @@ function BookModal(props) {
           setDescription(data)
           console.log("Description" + description)
         })
-    }, [props.title, description]
-  )  
+  }
 
   return (
     <div>
@@ -117,7 +113,7 @@ function BookModal(props) {
             </Typography>
             <p className='modalText'>{props.language}</p>
             <Typography id="modalDescription"  className='modalInfo' variant="h5" component="h1">
-              Description: 
+              Description: {description}
             </Typography>
             <p className='modalText'>{description}</p>
             <Typography id="modalSubjects"  className='modalInfo'  variant="h5" component="h1">
