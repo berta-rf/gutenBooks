@@ -84,45 +84,29 @@ const BookCard = () => {
                 />
 
                 <CardContent>
-                  {/* Booktitle */}
-                  <Typography
-                    variant="h5"
-                    noWrap
-                    sx={{
-                      p: 1,
-                      fontWeight: 600,
-                      color: "inherit",
-                      textDecoration: "none",
-                    }}
-                  >
-                    {book.title}
-                  </Typography>
-                  {/* Author */}
-                  <Typography
-                    variant="subtitle1"
-                    noWrap
-                    sx={{
-                      p: 1,
-                      color: "inherit",
-                      textDecoration: "none",
-                    }}
-                  >
-                    by {book.authors[0] ? book.authors[0].name : "Unknown Author"}
-                  </Typography>
-                  <CardActions>
-                    <BookModal 
-                    title={book.title}
-                    // this is the props which is breaking the search
-                    // author={book.authors[0].name}
-                    subjects={book.subjects}
-                    language={languageAbbr[book.languages]??book.languages}
-                    // description= {book.title}
-                    /> 
-                    <Link
-                      to={`/Reader/${book.id}`}
-                      onClick={(e) => createBook(book)}
+                    {/* Booktitle */}
+                    <Typography
+                      variant="h5"
+                      noWrap
+                      sx={{
+                        p: 1,
+                        fontWeight: 600,
+                        color: "inherit",
+                        textDecoration: "none",
+                      }}
                     >
-                    <Typography>
+                      {book.title}
+                    </Typography>
+                    {/* Author */}
+                    <Typography
+                      variant="subtitle1"
+                      noWrap
+                      sx={{
+                        p: 1,
+                        color: "inherit",
+                        textDecoration: "none",
+                      }}
+                    >
                       by {book.authors[0] ? book.authors[0].name : "Unknown Author"}
                     </Typography>
                     <CardActions>
@@ -138,16 +122,32 @@ const BookCard = () => {
                         to={`/Reader/${book.id}`}
                         onClick={(e) => createBook(book)}
                       >
-                        <Button size="medium" onClick={addLastReadBook}>
-                          READ
-                        </Button>
-                      </Link>
-                      <Tooltip title="Add to Bookshelf">
-                        <IconButton onClick={addBooktoArray}>
-                          <BookmarkAddIcon />
-                        </IconButton>
-                      </Tooltip>
-                    </CardActions>
+                      <Typography>
+                        by {book.authors[0] ? book.authors[0].name : "Unknown Author"}
+                      </Typography>
+                      <CardActions>
+                        <BookModal 
+                        title={book.title}
+                        // this is the props which is breaking the search
+                        // author={book.authors[0].name}
+                        subjects={book.subjects}
+                        language={languageAbbr[book.languages]??book.languages}
+                        // description= {book.title}
+                        /> 
+                        <Link
+                          to={`/Reader/${book.id}`}
+                          onClick={(e) => createBook(book)}
+                        >
+                          <Button size="medium" onClick={addLastReadBook}>
+                            READ
+                          </Button>
+                        </Link>
+                        <Tooltip title="Add to Bookshelf">
+                          <IconButton onClick={addBooktoArray}>
+                            <BookmarkAddIcon />
+                          </IconButton>
+                        </Tooltip>
+                      </CardActions>
                   </CardContent>
                 </Card>
               </Grid>
