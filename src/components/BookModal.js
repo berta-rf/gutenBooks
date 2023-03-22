@@ -58,7 +58,7 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: 700,
-  height: 400,
+  height: 450,
   bgcolor: "background.paper",
   border: "2px solid #000",
   boxShadow: 24,
@@ -71,14 +71,14 @@ function BookModal(props) {
   const handleClose = () => setOpen(false);
   const [description, setDescription] = useState("");
   const handleOpen = () => {setOpen(true)
-      console.log('Calling descript', props.title);
+      // console.log('Calling descript', props.title);
       axios.get(`https://www.googleapis.com/books/v1/volumes?q=${props.title}&key=AIzaSyDxKZhFCI9K0aCExPM-D-bIDvZ0UAmylow`)
         .then(res => {
           let data = (res.data.items[0].volumeInfo.description);
           // console.log(data);;
           // .catch(err => console.log(err)) 
           setDescription(data)
-          console.log("Description" + description)
+          // console.log("Description" + description)
         })
   }
 
@@ -98,7 +98,6 @@ function BookModal(props) {
               TransitionComponent: Fade,
             },
           }}
-          fullWidth
         >
           <Box sx={style}>
             <Typography id='modalTitle' className='modalInfo' variant="h5" component="h1">
@@ -113,9 +112,9 @@ function BookModal(props) {
             </Typography>
             <p className='modalText'>{props.language}</p>
             <Typography id="modalDescription"  className='modalInfo' variant="h5" component="h1">
-              Description: {description}
+              Description: 
             </Typography>
-            <p className='modalText'>{description}</p>
+            <p className='modalText limit'>{description}</p>
             <Typography id="modalSubjects"  className='modalInfo'  variant="h5" component="h1">
               Genre: 
             </Typography>
