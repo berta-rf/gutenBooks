@@ -122,6 +122,7 @@ const BookCard = () => {
                       to={`/Reader/${book.id}`}
                       onClick={(e) => createBook(book)}
                     >
+                    <Typography>
                       by {book.authors[0] ? book.authors[0].name : "Unknown Author"}
                     </Typography>
                     <CardActions>
