@@ -3,7 +3,18 @@ import { TextField, Button, Rating, Typography, Box, Select, MenuItem, InputLabe
 import BookContext from "../context/books";
 
 
+const inputStyle = {
+  width: 300,
+  marginRight: 5,
+  marginTop:1,
+  // marginBottom:3,
+}
 
+const dropDownStyle = {
+  width: 300,
+  marginRight: 5,
+  // marginBottom:3,
+}
 
 function ReviewForm(props) {
   // states for the input of title, description and star rating
@@ -46,6 +57,7 @@ function ReviewForm(props) {
         <form className='reviewForm'>
         <InputLabel id='titleInput'>Book Title</InputLabel>
           <Select 
+            sx={dropDownStyle}
             id="titleInput"
             variant='outlined'
             labelId="Book Title"
@@ -56,23 +68,14 @@ function ReviewForm(props) {
           {bookshelf.map((savedTitle)=>(
             <MenuItem key={savedTitle.id} value={savedTitle.title}>{savedTitle.title}</MenuItem>
           ))}
-
           </Select>
           <TextField
             id="descriptionInput"
             placeholder='What are your thoughts?'
-            // sx={{ ml: 5,
-            //   mb: 5
-            // }}
+            sx={inputStyle}
             onChange={(e) => setDescription(e.target.value)} />
           <Rating
             name="simple-controlled"
-            sx={{
-              // mx: 'auto',
-              // width: 200,
-              // p: 1,
-              // m: 1
-            }}
             size="large"
             value={value}
             onChange={(event, newValue) => {
@@ -80,7 +83,13 @@ function ReviewForm(props) {
               // checking that it is showing star rating as number
               console.log(newValue)
             }} />
-          <Button className='submitReviewBtn' variant="outlined" sx={{mb: 3}} onClick={handleClick}>Submit</Button>
+          <Button 
+          className='submitReviewBtn' 
+          variant="outlined" 
+          sx={{mb: 3, mt:1}} 
+          size="large"
+          onClick={handleClick}>
+          Submit</Button>
         </form>
       </Box>
     </div>
