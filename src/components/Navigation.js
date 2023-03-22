@@ -58,9 +58,19 @@ const Navigation = () => {
       <Box sx={{ display: "flex" }}>
         {/* app bar */}
         <Box>
-          <AppBar sx={{ width: `calc(100%)-${drawerWidth}px` }}>
+          <AppBar
+            color="transparent"
+            elevation={0}
+            sx={{
+              width: `calc(100%)-${drawerWidth}px`,
+            }}
+          >
             <Toolbar
-              sx={{ flexDirection: "row-reverse", backgroundColor: "#087f5b" }}
+              className="topToolbar"
+              sx={{
+                flexDirection: "row-reverse",
+                backgroundColor: "transparent",
+              }}
             >
               <Box sx={{ display: "flex" }}>
                 <SearchBook />
@@ -90,7 +100,8 @@ const Navigation = () => {
         {/* side navigation */}
 
         {/* Mobile */}
-        <Drawer className="mobileDr"
+        <Drawer
+          className="mobileDr"
           sx={{
             display: { xs: "block", md: "none" },
             width: drawerWidth,
@@ -107,20 +118,23 @@ const Navigation = () => {
           }}
           open={open}
         >
-          <DrawerHeader sx={{ justifyContent: "space-between" }} className="logoBg">
-            <Typography variant="h3"
-                className="logo"
-            >gutenBooks
-                  <MenuBookIcon />
-                </Typography>
+          <DrawerHeader
+            sx={{ justifyContent: "space-between" }}
+            className="logoBg"
+          >
+            <Typography variant="h3" className="logo">
+              gutenBooks
+              <MenuBookIcon />
+            </Typography>
             <IconButton onClick={handleDrawerClose}>X</IconButton>
           </DrawerHeader>
           {/* Menu items */}
-          <List>
+          <List className="menuList">
             {menuItems.map((item) => (
               <ListItem key={item.text}>
                 <ListItemIcon>{item.icon}</ListItemIcon>
                 <ListItemButton
+                  className="menuItem"
                   style={{ textDecoration: "none" }}
                   to={item.path}
                 >
@@ -133,6 +147,7 @@ const Navigation = () => {
 
         {/* Desktop */}
         <Drawer
+          className="desktopDr"
           sx={{
             display: { xs: "none", md: "block" },
             width: drawerWidth,
@@ -145,26 +160,12 @@ const Navigation = () => {
           variant="permanent"
           anchor="left"
         >
-          <Box className='logoBg'>
-            <Typography
-              className="logo"
-              variant="h3"
-              noWrap
-              component="a"
-              href="/"
-              sx={{
-                m: 2,
-                display: "flex",
-                fontWeight: 700,
-                color: "inherit",
-                textDecoration: "none",
-              }}
-            >
+          <Box className="logoBg">
+            <Typography className="gutenLogo" noWrap component="a" href="/">
               gutenBooks
               <MenuBookIcon />
             </Typography>
           </Box>
-          <Divider />
           {/* Menu items */}
           <List>
             {menuItems.map((item) => (
@@ -183,6 +184,7 @@ const Navigation = () => {
 
         {/* where page will appear */}
         <Box
+          className="pageWrapper"
           component="main"
           sx={{
             flexGrow: 1,

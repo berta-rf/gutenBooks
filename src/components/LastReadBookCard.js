@@ -24,7 +24,7 @@ const LastReadBookCard = () => {
     <>
       {lastRead.map((book) => (
         <Grid key={book.id}>
-          <Card sx={{ width: 350, height: 700 }}>
+          <Card sx={{ width: 350, height: 675 }}>
             {/* Cover */}
             <CardMedia
               component="img"
