@@ -87,29 +87,6 @@ function Provider({ children }) {
     localStorage.setItem("lastRead", JSON.stringify(lastRead));
   }, [lastRead]);
 
-  // const [description, setDescription] = useState("")
-
-  // // let descriptionHere 
-  // const descript =(data) => {
-  //   axios.get(`https://www.googleapis.com/books/v1/volumes?q=${results.title}&key=AIzaSyBW3TLScb7kRYv0kkDzkT_Zv5qUF8euQg8`)
-  //   .then(res => { 
-  //     let data = res.data.items[0].volumeInfo.description;
-  //     console.log(data); });
-  //   // .catch(err => console.log(err))  
-  // }
-
-  // const [description, setDescription] = useState([])
-
-  // // let descriptionHere 
-  // const descript =() => {
-  //   axios.get(`https://www.googleapis.com/books/v1/volumes?q=${results.title}&key=AIzaSyBW3TLScb7kRYv0kkDzkT_Zv5qUF8euQg8`)
-  //   .then(outputdescrip=>console.log(outputdescrip.data))
-  //   .catch(err => console.log(err))  
-  // }
-
-  // const handleDescriptionClick =(e) =>{
-  //   console.log(setDescription)
-  // }
   //what will passed to children components
   //what will be passed to children components
 
@@ -122,10 +99,6 @@ function Provider({ children }) {
     lastRead,
     addLastReadBook,
     removeFromBookshelf,
-    // descript,
-    // description,
-    // setDescription,
-    // handleDescriptionClick
   };
 
   return (

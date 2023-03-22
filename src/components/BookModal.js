@@ -8,6 +8,7 @@ import Typography from "@mui/material/Typography";
 import { useSpring, animated } from "@react-spring/web";
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import '../assets/styles/modal.scss'
 
 
 const Fade = React.forwardRef(function Fade(props, ref) {
@@ -56,7 +57,8 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 400,
+  width: 700,
+  height: 400,
   bgcolor: "background.paper",
   border: "2px solid #000",
   boxShadow: 24,
@@ -80,11 +82,12 @@ const BookModal = (props) => {
           console.log("Description" + description)
         })
     }, [props.title, description]
-  )
+  )  
 
   return (
     <div>
-      <Button onClick={handleOpen}>Description
+      <Button className='descriptionBtn'onClick={handleOpen}>Description</Button>
+
         <Modal
           aria-labelledby="spring-modal-title"
           aria-describedby="spring-modal-description"
@@ -97,28 +100,34 @@ const BookModal = (props) => {
               TransitionComponent: Fade,
             },
           }}
+          fullWidth
         >
           <Box sx={style}>
-            <Typography id="spring-modal-title" variant="h5" component="h2">
-              Title: {props.title}
+            <Typography id='modalTitle' className='modalInfo' variant="h5" component="h1">
+              Title: 
             </Typography>
-            <Typography id="spring-modal-title" variant="h5" component="h2">
+            <p className='modalText'>{props.title}</p>
+            {/* <Typography id='modalTitle' variant="h5" component="h2">
               Author: {props.author}
+            </Typography> */}
+            <Typography id="modalLanguage"  className='modalInfo' variant="h5" component="h1">
+              Language: 
             </Typography>
-            <Typography id="spring-modal-title" variant="h6" component="h2">
-              Language: {props.language}
+            <p className='modalText'>{props.language}</p>
+            <Typography id="modalDescription"  className='modalInfo' variant="h5" component="h1">
+              Description: 
             </Typography>
-            <Typography>
-              Description: {description}
+            <p className='modalText'>{description}</p>
+            <Typography id="modalSubjects"  className='modalInfo'  variant="h5" component="h1">
+              Genre: 
             </Typography>
-            <Typography id="spring-modal-description" sx={{ mt: 2 }}>
-              Genre: {props.subjects.map((subject, index) => (
-                <li key={index}>{subject}</li>
+            <div className='modalGenre'>
+            {props.subjects.map((subject, index) => (
+                <button className='subjectText' key={index}>{subject}</button>
               ))}
-            </Typography>
+            </div>
           </Box>
         </Modal>
-      </Button>
     </div>
   );
 };

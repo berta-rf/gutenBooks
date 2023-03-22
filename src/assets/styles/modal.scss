@@ -1,0 +1,34 @@
+:root {
+    --dark-green: #132a13ff;
+    --hunter-green: #31572cff;
+    --fern-green: #4f772dff;
+    --moss-green: #90a955ff;
+    --mindaro: #ecf39eff;
+}
+
+.modalGenre{
+    /* column-count: 2; */
+    font-size: 15px;
+    list-style: none; 
+}
+
+.subjectText {
+    border: black;
+    border-radius: 10px;
+    padding: 7px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    background-color: var(--moss-green);
+    color: white;
+}
+
+.modalInfo{
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.modalText{
+    font-size:15px;
+}
+
