@@ -65,18 +65,20 @@ const style = {
   p: 4,
 };
 
-const BookModal = (props) => {
-  const [open, setOpen] = React.useState(false);
+function BookModal(props) {
+
+  const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const [description, setDescription] = useState("")
+  const [description, setDescription] = useState("");
+
   useEffect(
     () => {
-      console.log('Calling descript', props.title)
+      console.log('Calling descript', props.title);
       axios.get(`https://www.googleapis.com/books/v1/volumes?q=${props.title}&key=AIzaSyBW3TLScb7kRYv0kkDzkT_Zv5qUF8euQg8`)
         .then(res => {
           let data = (res.data.items[0].volumeInfo.description);
-          console.log(data);;
+          // console.log(data);;
           // .catch(err => console.log(err)) 
           setDescription(data)
           console.log("Description" + description)
@@ -130,6 +132,6 @@ const BookModal = (props) => {
         </Modal>
     </div>
   );
-};
+}
 
 export default BookModal;
