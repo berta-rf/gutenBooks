@@ -21,19 +21,25 @@ font-family: 'Open Sans', sans-serif;
   --pale-green: #e2e8a8;
   --action-gren: #4f772d;
 }
-//page wrappers
-.pageWrapper {
+
+body {
   background-color: #dee1c7;
   background-image: url("../images/homeBG2.png");
   background-repeat: repeat-y;
 }
 
-.gridWrapper 
-
+.gridWrapper {
+  justify-content: center !important;
+}
 
 //logo
 .gutenLogo {
+  margin: 24px !important;
   font-family: "Libre Baskerville", serif !important;
+}
+
+.gutenLogo:visited {
+  color: #e2e8a8;
 }
 
 .css-fvtpii-MuiTypography-root {
@@ -97,15 +103,10 @@ font-family: 'Open Sans', sans-serif;
 .desktopDr {
   background-color: #152515 !important;
   // border-right: 10px solid #355131;
+  justify-content: space-between;
 }
 .css-12i7wg6-MuiPaper-root-MuiDrawer-paper {
   background-color: #152515 !important;
-}
-
-.MuiList-root {
-  display: flex !important;
-  flex-direction: column !important;
-  margin-left: 36px !important;
 }
 
 .MuiListItem-root {
@@ -115,8 +116,15 @@ font-family: 'Open Sans', sans-serif;
   text-align: right !important;
 }
 
-.ListItemButton {
-  justify-content: flex-end !important;
+.menuList {
+  margin-top: 56px !important;
+  margin-left: 36px !important;
+  text-align: right !important;
+  color: var(--pale-green);
+}
+
+.menuListButton {
+  text-align: right !important;
 }
 
 // page titles
@@ -153,6 +161,8 @@ font-family: 'Open Sans', sans-serif;
 
 .bookCardActions {
   display: flex;
+  justify-content: space-between;
+  padding: 0px !important;
 }
 
 .bookCardButton {
@@ -162,4 +172,22 @@ font-family: 'Open Sans', sans-serif;
   color: var(--action-gren) !important;
   letter-spacing: 2px !important;
   font-stretch: 50% !important;
+}
+
+//CSS effects
+
+.spreadEffectTitle {
+  font-family: "Libre Baskerville", serif !important;
+  font-style: italic;
+  font-size: 24px !important;
+  // letter-spacing: 2px !important;
+  color: var(--dark-green) !important;
+  letter-spacing: -3px;
+  transition: 700ms ease;
+  font-variation-settings: "wght" 311;
+}
+
+.spreadEffectTitle:hover {
+  font-variation-settings: "wght" 582;
+  letter-spacing: 1px;
 }

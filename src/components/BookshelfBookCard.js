@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import {
+  Box,
   Button,
   Card,
   CardActions,
@@ -31,9 +32,10 @@ const BookCard = () => {
               height="75%"
               image={`https://www.gutenberg.org/cache/epub/${book.id}/pg${book.id}.cover.medium.jpg`}
             />
-            <CardContent>
+            <CardContent className="bookCardContent">
               {/* Booktitle */}
               <Typography
+                className={`"bookCardTitle" ${"spreadEffectTitle"}`}
                 variant="h5"
                 noWrap
                 sx={{
@@ -47,6 +49,7 @@ const BookCard = () => {
               </Typography>
               {/* Author */}
               <Typography
+                className="bookCardAuthor"
                 variant="subtitle1"
                 noWrap
                 sx={{
@@ -57,22 +60,29 @@ const BookCard = () => {
               >
                 by {book.author ? book.author : "Unknown Author"}
               </Typography>
-              <CardActions sx={{ justifyContent: "space-evenly" }}>
-                <Link
-                  to={`/Reader/${book.id}`}
-                  onClick={(e) => createBook(book)}
-                >
-                  <Button size="medium">READ</Button>
-                </Link>
-                <Link
-                  to={`/Review`}>
-                  <Button size="medium">Review</Button>
-                </Link>
-                <IconButton id={book.id} onClick={removeFromBookshelf}>
-                  <Tooltip title="Remove from Bookshelf">
-                    <ClearIcon />
-                  </Tooltip>
-                </IconButton>
+              <CardActions className="bookCardActions">
+                <Box sx={{ display: "flex" }}>
+                  <Link
+                    to={`/Reader/${book.id}`}
+                    onClick={(e) => createBook(book)}
+                  >
+                    <Button className="bookCardButton" size="medium">
+                      READ
+                    </Button>
+                  </Link>
+                  <Link to={`/Review`}>
+                    <Button className="bookCardButton" size="medium">
+                      Review
+                    </Button>
+                  </Link>
+                </Box>
+                <Box>
+                  <IconButton id={book.id} onClick={removeFromBookshelf}>
+                    <Tooltip title="Remove from Bookshelf">
+                      <ClearIcon />
+                    </Tooltip>
+                  </IconButton>
+                </Box>
               </CardActions>
             </CardContent>
           </Card>

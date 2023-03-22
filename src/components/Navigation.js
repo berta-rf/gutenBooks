@@ -6,7 +6,6 @@ import SearchBook from "./SearchBook";
 //MUI
 import {
   AppBar,
-  Divider,
   Drawer,
   IconButton,
   List,
@@ -167,11 +166,13 @@ const Navigation = () => {
             </Typography>
           </Box>
           {/* Menu items */}
-          <List>
+          <List className="menuList">
             {menuItems.map((item) => (
-              <ListItem key={item.text}>
+              <ListItem className="menuListItem" key={item.text}>
                 <ListItemIcon>{item.icon}</ListItemIcon>
                 <ListItemButton
+                  className="menuListButton"
+                  align="right"
                   style={{ textDecoration: "none" }}
                   to={item.path}
                 >

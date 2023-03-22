@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import {
+  Box,
   Button,
   Card,
   CardActions,
@@ -34,6 +35,7 @@ const LastReadBookCard = () => {
             <CardContent>
               {/* Booktitle */}
               <Typography
+                className={`"bookCardTitle" ${"spreadEffectTitle"}`}
                 variant="h5"
                 noWrap
                 sx={{
@@ -47,6 +49,7 @@ const LastReadBookCard = () => {
               </Typography>
               {/* Author */}
               <Typography
+                className="bookCardAuthor"
                 variant="subtitle1"
                 noWrap
                 sx={{
@@ -57,18 +60,29 @@ const LastReadBookCard = () => {
               >
                 by {book.author ? book.author : "Unknown Author"}
               </Typography>
-              <CardActions>
-                <Link
-                  to={`/Reader/${book.id}`}
-                  onClick={(e) => createBook(book)}
-                >
-                  <Button size="medium">READ</Button>
-                </Link>
-                <Tooltip title="Add to Bookshelf">
-                  <IconButton onClick={addBooktoArray}>
-                    <BookmarkAddIcon />
-                  </IconButton>
-                </Tooltip>
+              <CardActions className="bookCardActions">
+                <Box sx={{ display: "flex" }}>
+                  <Link
+                    to={`/Reader/${book.id}`}
+                    onClick={(e) => createBook(book)}
+                  >
+                    <Button className="bookCardButton" size="medium">
+                      READ
+                    </Button>
+                  </Link>
+                  <Link to={`/Review`}>
+                    <Button className="bookCardButton" size="medium">
+                      Review
+                    </Button>
+                  </Link>
+                </Box>
+                <Box>
+                  <Tooltip title="Add to Bookshelf">
+                    <IconButton onClick={addBooktoArray}>
+                      <BookmarkAddIcon />
+                    </IconButton>
+                  </Tooltip>
+                </Box>
               </CardActions>
             </CardContent>
           </Card>

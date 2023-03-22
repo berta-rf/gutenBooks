@@ -5,19 +5,16 @@ import { findBook, updateBook } from "../../lib/savedBooks";
 import axios from "axios";
 import Grid from "@mui/material/Unstable_Grid2";
 
-
 const drawerWidth = 280;
 
 const Reader = () => {
-
   let params = useParams();
   const book_id = params.bookId;
   const book = findBook(book_id);
 
   // change page title
-  let newPageTitle = `gutenBooks - ${book.title}`
+  let newPageTitle = `gutenBooks - ${book.title}`;
   document.title = newPageTitle;
-
 
   const [location, setLocation] = useState(null);
   const [firstRenderDone, setFirstRenderDone] = useState(false);
@@ -28,7 +25,6 @@ const Reader = () => {
     // epubcifi is a internal string used by epubjs to point to a location in an epub
 
     if (!firstRenderDone) {
-
       const currentLocation = book.location;
       setLocation(currentLocation);
       setFirstRenderDone(true);
