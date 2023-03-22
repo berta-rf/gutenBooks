@@ -95,6 +95,7 @@ Contact us if you have any questions!
 * [Project Gutenberg](https://www.gutenberg.org/)
 * [Netlify](https://www.netlify.com/)
 * [React Reader](https://www.npmjs.com/package/react-reader)
+* [React-Promise-Tracker](https://www.npmjs.com/package/react-promise-tracker)
 * [Passing Data Deeply with Context (React)](https://react.dev/learn/passing-data-deeply-with-context)
 * [MUI Components](https://mui.com/material-ui/)
 * [Custom Language Badges](https://javascript.plainenglish.io/how-to-make-custom-language-badges-for-your-profile-using-shields-io-d2aeaf016b6b)
