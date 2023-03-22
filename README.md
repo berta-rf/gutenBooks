@@ -4,7 +4,7 @@
 # [**gutenBooks**](https://gutenbooksweb.netlify.app/)
 </br>
 
-![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=white&style=plastic) ![React Router](https://img.shields.io/badge/-React%20Router-CA4245?logo=react-router&logoColor=white&style=plastic) ![MUI](https://img.shields.io/badge/MUI-007FFF?logo=mui&logoColor=white&style=plastic) ![SCSS](https://img.shields.io/badge/SCSS-CC6699?logo=sass&logoColor=white&style=plastic) ![Netlify](https://img.shields.io/badge/Netlify-00C7B7?logo=netlify&logoColor=white&style=plastic) ![npm](https://img.shields.io/badge/npm-CB3837?logo=npm&logoColor=white&style=plastic) ![JS](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=white&style=plastic) ![Node.js](https://img.shields.io/badge/Node.js-339933?logo=node.js&logoColor=white&style=plastic) ![Axios](https://img.shields.io/badge/Axios-5A29E4?logo=axios&logoColor=white&style=plastic)
+![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=white&style=plastic) ![React Router](https://img.shields.io/badge/-React%20Router-CA4245?logo=react-router&logoColor=white&style=plastic) ![MUI](https://img.shields.io/badge/MUI-007FFF?logo=mui&logoColor=white&style=plastic) ![AWS Lambda](https://img.shields.io/badge/AWS%20Lambda-FF9900?logo=aws-lambda&logoColor=white&style=plastic) ![SCSS](https://img.shields.io/badge/SCSS-CC6699?logo=sass&logoColor=white&style=plastic) ![Netlify](https://img.shields.io/badge/Netlify-00C7B7?logo=netlify&logoColor=white&style=plastic) ![npm](https://img.shields.io/badge/npm-CB3837?logo=npm&logoColor=white&style=plastic) ![JS](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=white&style=plastic) ![Node.js](https://img.shields.io/badge/Node.js-339933?logo=node.js&logoColor=white&style=plastic) ![Axios](https://img.shields.io/badge/Axios-5A29E4?logo=axios&logoColor=white&style=plastic)
 
 </br>
 
@@ -97,6 +97,7 @@ Contact us if you have any questions!
 * [React Reader](https://www.npmjs.com/package/react-reader)
 * [React-Promise-Tracker](https://www.npmjs.com/package/react-promise-tracker)
 * [Passing Data Deeply with Context (React)](https://react.dev/learn/passing-data-deeply-with-context)
+* [Using Layers on AWS Lambda — Node.js](https://aws.plainenglish.io/using-layers-on-aws-lambda-nodejs-77ba8c4f2a17)
 * [MUI Components](https://mui.com/material-ui/)
 * [Custom Language Badges](https://javascript.plainenglish.io/how-to-make-custom-language-badges-for-your-profile-using-shields-io-d2aeaf016b6b)
 

@@ -1,5 +1,8 @@
 const fetch = require('node-fetch')
 
+//old url to call before I created the AWS function
+// const baseURL = "/.netlify/functions/epub-downloader";
+
 const handler = async function (event) {
 
   const book_id = event.queryStringParameters.book_id;
