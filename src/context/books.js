@@ -25,7 +25,9 @@ function Provider({ children }) {
 
   //save book function
   const addBooktoArray = (e) => {
-    let bookID = e.currentTarget.parentNode.parentNode.parentNode.parentNode.id;
+    // target bookid from parent div
+    let idDiv = e.target.parentElement.closest(".bookId");
+    let bookID = idDiv.id;
 
     let selectedBook = results.find((obj) => obj.id === parseInt(bookID));
 
@@ -89,8 +91,6 @@ function Provider({ children }) {
   }, [lastRead]);
 
   //what will passed to children components
-  //what will be passed to children components
-
   const valueToShare = {
     results,
     setResults,
