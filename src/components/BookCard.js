@@ -110,22 +110,23 @@ const BookCard = () => {
                       by {book.authors[0] ? book.authors[0].name : "Unknown Author"}
                     </Typography>
                     <CardActions>
-                      <BookModal 
-                      title={book.title}
-                      // this is the props which is breaking the search
-                      // author={book.authors[0].name}
-                      subjects={book.subjects}
-                      language={languageAbbr[book.languages]??book.languages}
-                      // description= {book.title}
-                      /> 
-                      <Link
-                        to={`/Reader/${book.id}`}
-                        onClick={(e) => createBook(book)}
-                      >
-                      <Typography>
-                        by {book.authors[0] ? book.authors[0].name : "Unknown Author"}
-                      </Typography>
-                      <CardActions>
+                        <BookModal 
+                        title={book.title}
+                        // this is the props which is breaking the search
+                        // author={book.authors[0].name}
+                        subjects={book.subjects}
+                        language={languageAbbr[book.languages]??book.languages}
+                        // description= {book.title}
+                        /> 
+                        <Link
+                          to={`/Reader/${book.id}`}
+                          onClick={(e) => createBook(book)}
+                        >
+                        <Typography>
+                          by {book.authors[0] ? book.authors[0].name : "Unknown Author"}
+                        </Typography>
+                     </CardContent>
+                     <CardActions>
                         <BookModal 
                         title={book.title}
                         // this is the props which is breaking the search
@@ -147,8 +148,7 @@ const BookCard = () => {
                             <BookmarkAddIcon />
                           </IconButton>
                         </Tooltip>
-                      </CardActions>
-                  </CardContent>
+                     </CardActions>
                 </Card>
               </Grid>
             ))}
