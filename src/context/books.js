@@ -31,9 +31,7 @@ function Provider({ children }) {
     let selectedBook = results.find((obj) => obj.id === parseInt(bookID));
 
     let bookshelf = getBookshelf();
-//     const inShelf = bookshelf.find((b) => parseInt(b.id) === parseInt(selectedBook.id));
-    // if (!inShelf) return;
-    debugger
+
     let addedBook = {
       id: bookID,
       title: selectedBook.title,
