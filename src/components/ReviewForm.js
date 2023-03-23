@@ -88,6 +88,7 @@ function ReviewForm(props) {
             id="descriptionInput"
             color="success"
             variant="filled"
+            value={description}
             placeholder="What are your thoughts?"
             onChange={(e) => setDescription(e.target.value)}
           />
