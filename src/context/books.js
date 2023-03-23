@@ -12,14 +12,14 @@ function Provider({ children }) {
   //saving context-------
 
   // //check local storage for items, assign to bookShelfArray
-  // let bookShelfArray = JSON.parse(localStorage.getItem("bookshelf"));
-  // //if there is nothing in bookshelfarray
-  // if (!bookShelfArray) {
-  //   //set bookshelfarray as []
-  //   bookShelfArray = [];
-  // }
+  let bookShelfArray = JSON.parse(localStorage.getItem("bookshelf"));
+  //if there is nothing in bookshelfarray
+  if (!bookShelfArray) {
+    //set bookshelfarray as []
+    bookShelfArray = [];
+  }
 
-  // const [bookshelf, setBookshelf] = useState(bookShelfArray);
+  const [bookshelf, setBookshelf] = useState(bookShelfArray);
 
   const getBookshelf = () => JSON.parse(localStorage.getItem("bookshelf") || '[]');
   //save book function
@@ -39,23 +39,25 @@ function Provider({ children }) {
     };
 
     // const updatedBookshelf = [addedBook, ...bookshelf];
-    // setBookshelf(updatedBookshelf);
+    setBookshelf(bookshelf);
     bookshelf.unshift(addedBook);
     localStorage.setItem("bookshelf", JSON.stringify(bookshelf));
   };
 
   //remove from bookshelf
   const removeFromBookshelf = (e) => {
+    // debugger
+
     let id = e.currentTarget.id;
     let bookshelf = getBookshelf();
 
-
     const updatedBookshelf = bookshelf.filter((book) => {
-      return book.id !== id;
+      return parseInt(book.id) !== parseInt(id);
     });
+
     localStorage.setItem("bookshelf", JSON.stringify(updatedBookshelf));
 
-    // setBookshelf(updatedBookshelf);
+    setBookshelf(updatedBookshelf);
   };
 
   // useEffect(() => {
@@ -119,7 +121,7 @@ function Provider({ children }) {
     results,
     setResults,
     // setBookshelf,
-    // bookshelf,
+    bookshelf,
     getBookshelf,
     addBooktoArray,
     getLastRead,

@@ -18,12 +18,12 @@ import ClearIcon from "@mui/icons-material/Clear";
 import { createBook } from "../lib/savedBooks";
 
 const BookshelfBookCard = () => {
-  const { getBookshelf, addLastReadBook, removeFromBookshelf } =
+  const { bookshelf, getBookshelf, addLastReadBook, removeFromBookshelf } =
     useContext(BookContext);
 
   return (
     <>
-      {getBookshelf().map((book) => (
+      {bookshelf.map((book) => (
         <Grid className="bookId" key={book.id} id={book.id}>
           <Card sx={{ width: 350, height: 675 }}>
             {/* Cover */}
