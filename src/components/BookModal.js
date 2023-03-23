@@ -52,8 +52,6 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 700,
-  height: 450,
   bgcolor: "background.paper",
   border: "2px solid #000",
   boxShadow: 24,
@@ -80,10 +78,7 @@ function BookModal(props) {
   };
   return (
     <div>
-      <Button
-        className={`descriptionBtn ${"bookCardButton"}`}
-        onClick={handleOpen}
-      >
+      <Button className="bookCardButton" color="success" onClick={handleOpen}>
         Description
       </Button>
       <Modal
@@ -99,7 +94,7 @@ function BookModal(props) {
           },
         }}
       >
-        <Box sx={style}>
+        <Box className="modalBox" sx={style}>
           <Typography
             id="modalTitle"
             className="modalInfo"

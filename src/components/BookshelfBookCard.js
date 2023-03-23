@@ -17,14 +17,14 @@ import ClearIcon from "@mui/icons-material/Clear";
 
 import { createBook } from "../lib/savedBooks";
 
-const BookCard = () => {
+const BookshelfBookCard = () => {
   const { bookshelf, addLastReadBook, removeFromBookshelf } =
     useContext(BookContext);
 
   return (
     <>
       {bookshelf.map((book) => (
-        <Grid key={book.id}>
+        <Grid key={book.id} id={book.id}>
           <Card sx={{ width: 350, height: 675 }}>
             {/* Cover */}
             <CardMedia
@@ -69,6 +69,7 @@ const BookCard = () => {
                   >
                     <Button
                       className="bookCardButton"
+                      color="success"
                       size="medium"
                       onClick={addLastReadBook}
                     >
@@ -76,7 +77,11 @@ const BookCard = () => {
                     </Button>
                   </Link>
                   <Link to={`/Review`}>
-                    <Button className="bookCardButton" size="medium">
+                    <Button
+                      className="bookCardButton"
+                      color="success"
+                      size="medium"
+                    >
                       Review
                     </Button>
                   </Link>
@@ -97,4 +102,4 @@ const BookCard = () => {
   );
 };
 
-export default BookCard;
+export default BookshelfBookCard;

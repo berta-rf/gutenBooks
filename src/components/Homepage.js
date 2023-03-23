@@ -6,7 +6,7 @@ import BookCard from "./BookCard";
 
 function Homepage() {
   return (
-    <div className="homePageWrapper">
+    <div>
       <Box>
         <Typography className="pageHeading">
           Here are some books for you:

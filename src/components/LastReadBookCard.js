@@ -22,7 +22,7 @@ const LastReadBookCard = () => {
   return (
     <>
       {lastRead.map((book) => (
-        <Grid key={book.id}>
+        <Grid key={book.id} id={book.id}>
           <Card sx={{ width: 350, height: 675 }}>
             {/* Cover */}
             <CardMedia
@@ -31,8 +31,7 @@ const LastReadBookCard = () => {
               height="75%"
               image={`https://www.gutenberg.org/cache/epub/${book.id}/pg${book.id}.cover.medium.jpg`}
             />
-
-            <CardContent>
+            <CardContent className="bookCardContent">
               {/* Booktitle */}
               <Typography
                 className={`"bookCardTitle" ${"spreadEffectTitle"}`}
@@ -66,13 +65,12 @@ const LastReadBookCard = () => {
                     to={`/Reader/${book.id}`}
                     onClick={(e) => createBook(book)}
                   >
-                    <Button className="bookCardButton" size="medium">
+                    <Button
+                      className="bookCardButton"
+                      color="success"
+                      size="medium"
+                    >
                       READ
-                    </Button>
-                  </Link>
-                  <Link to={`/Review`}>
-                    <Button className="bookCardButton" size="medium">
-                      Review
                     </Button>
                   </Link>
                 </Box>

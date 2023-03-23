@@ -71,7 +71,7 @@ const BookCard = () => {
     return (
       <>
         {results.map((book) => (
-          <Grid key={book.id} id={book.id}>
+          <Grid className="bookId" key={book.id} id={book.id}>
             <Card sx={{ width: 350, height: 700 }}>
               {/* Cover */}
               <CardMedia
@@ -124,6 +124,7 @@ const BookCard = () => {
                       onClick={(e) => createBook(book)}
                     >
                       <Button
+                        color="success"
                         className="bookCardButton"
                         size="medium"
                         onClick={addLastReadBook}

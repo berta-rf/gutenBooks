@@ -23,8 +23,10 @@ function Provider({ children }) {
 
   //save book function
   const addBooktoArray = (e) => {
-    let bookID =
-      e.currentTarget.parentNode.parentNode.parentNode.parentNode.parentNode.id;
+    // target bookid from parent div
+    let idDiv = e.target.parentElement.closest(".bookId");
+    let bookID = idDiv.id;
+    console.log(idDiv);
 
     let selectedBook = results.find((obj) => obj.id === parseInt(bookID));
 
@@ -68,27 +70,11 @@ function Provider({ children }) {
 
   //last read function:
   const addLastReadBook = (e) => {
-    let bookID =
-      e.currentTarget.parentNode.parentNode.parentNode.parentNode.parentNode
-        .parentNode.id;
-
-    let lastSelectedBook = results.find((obj) => obj.id === parseInt(bookID));
-
-    let lastBook = {
-      id: bookID,
-      title: lastSelectedBook.title,
-      author: lastSelectedBook.authors[0].name,
-    };
-
-    const updateLastRead = [lastBook];
-    setLastRead(updateLastRead);
-  };
-
-  //last read for inside bookshelf
-  const bookshelfLastRead = (e) => {
     let idDiv = e.target.parentElement.closest(".bookId");
     let bookID = idDiv.id;
-    console.log(bookID);
+    console.log(idDiv);
+
+    console.log(idDiv);
 
     let lastSelectedBook = results.find((obj) => obj.id === parseInt(bookID));
 
@@ -106,8 +92,7 @@ function Provider({ children }) {
     localStorage.setItem("lastRead", JSON.stringify(lastRead));
   }, [lastRead]);
 
-  //what will be passed to children components
-
+  //what will passed to children components
   const valueToShare = {
     results,
     setResults,
@@ -117,7 +102,6 @@ function Provider({ children }) {
     lastRead,
     addLastReadBook,
     removeFromBookshelf,
-    bookshelfLastRead,
   };
 
   return (

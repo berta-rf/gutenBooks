@@ -22,7 +22,8 @@ import { Box } from "@mui/system";
 import MenuIcon from "@mui/icons-material/Menu";
 import RateReviewIcon from "@mui/icons-material/RateReview";
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
-import MenuBookIcon from "@mui/icons-material/MenuBook";
+import MenuBookSharpIcon from "@mui/icons-material/MenuBookSharp";
+// import MenuBookIcon from "@mui/icons-material/MenuBook";
 import HomeIcon from "@mui/icons-material/Home";
 
 const menuItems = [
@@ -123,7 +124,7 @@ const Navigation = () => {
           >
             <Typography variant="h3" className="logo">
               gutenBooks
-              <MenuBookIcon />
+              <MenuBookSharpIcon />
             </Typography>
             <IconButton onClick={handleDrawerClose}>X</IconButton>
           </DrawerHeader>
@@ -148,6 +149,7 @@ const Navigation = () => {
             ".MuiDrawer-paper": {
               width: drawerWidth,
               boxSizing: "border-box",
+              borderRight: 10,
             },
           }}
           variant="permanent"
@@ -161,10 +163,17 @@ const Navigation = () => {
             }}
           >
             <Box>
+              <MenuBookSharpIcon
+                className="desktopIcon"
+                sx={{ fontSize: 100 }}
+              />
               {/* Menu items */}
               <List className="menuList">
                 {menuItems.map((item) => (
-                  <ListItem className="menuListItem" key={item.text}>
+                  <ListItem
+                    className={`menuListItem ${"spreadEffectMenu"}`}
+                    key={item.text}
+                  >
                     <ListItemButton
                       className="menuListButton"
                       align="right"
@@ -179,9 +188,13 @@ const Navigation = () => {
             </Box>
             {/* LOGO */}
             <Box className="logoBg">
-              <Typography className="gutenLogo" noWrap component="a" href="/">
+              <Typography
+                className={`gutenLogo ${"spreadEffectLogo"}`}
+                noWrap
+                component="a"
+                href="/"
+              >
                 gutenBooks
-                <MenuBookIcon />
               </Typography>
             </Box>
           </Box>
