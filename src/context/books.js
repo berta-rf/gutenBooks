@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from "react";
+import React, { createContext, useState } from "react";
 import defaultBooks from "../assets/data/defaultBooks.json";
 
 const BookContext = createContext();
@@ -31,7 +31,7 @@ function Provider({ children }) {
     let selectedBook = results.find((obj) => obj.id === parseInt(bookID));
 
     let bookshelf = getBookshelf();
-    const inShelf = bookshelf.find((b) => parseInt(b.id) === parseInt(selectedBook.id));
+//     const inShelf = bookshelf.find((b) => parseInt(b.id) === parseInt(selectedBook.id));
     // if (!inShelf) return;
     debugger
     let addedBook = {
