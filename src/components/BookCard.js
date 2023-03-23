@@ -24,7 +24,7 @@ import Spinner from "./Spinner";
 import { Box } from "@mui/system";
 
 const BookCard = () => {
-  const { results, addBooktoArray, addLastReadBook, setResults } =
+  const { results, addBooktoArray, setResults } =
     useContext(BookContext);
 
   const languageAbbr = {
@@ -127,7 +127,6 @@ const BookCard = () => {
                         color="success"
                         className="bookCardButton"
                         size="medium"
-                        onClick={addLastReadBook}
                       >
                         READ
                       </Button>
