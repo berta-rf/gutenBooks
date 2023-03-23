@@ -24,7 +24,7 @@ const BookshelfBookCard = () => {
   return (
     <>
       {bookshelf.map((book) => (
-        <Grid key={book.id} id={book.id}>
+        <Grid className="bookId" key={book.id} id={book.id}>
           <Card sx={{ width: 350, height: 675 }}>
             {/* Cover */}
             <CardMedia

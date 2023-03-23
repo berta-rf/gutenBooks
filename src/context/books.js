@@ -28,6 +28,8 @@ function Provider({ children }) {
     let bookID = idDiv.id;
     console.log(idDiv);
 
+
+
     let selectedBook = results.find((obj) => obj.id === parseInt(bookID));
 
     let addedBook = {
@@ -70,11 +72,8 @@ function Provider({ children }) {
 
   //last read function:
   const addLastReadBook = (e) => {
-    let idDiv = e.target.parentElement.closest(".bookId");
-    let bookID = idDiv.id;
-    console.log(idDiv);
-
-    console.log(idDiv);
+    // target bookid from parent div
+    let bookID = e.target.parentElement.closest(".bookId").id;
 
     let lastSelectedBook = results.find((obj) => obj.id === parseInt(bookID));
 
