@@ -8,7 +8,7 @@ export const findBook = (book_id) => {
 
     const books = loadBooks();
     // returns the book_id or -1
-    const book = books.find((book) => book.id === parseInt(book_id));
+    const book = books.find((book) => parseInt(book.id) === parseInt(book_id));
 
     // (guard statement) returns null if book_id not found in the array
     if (book === -1) return null;
@@ -19,7 +19,7 @@ export const findBook = (book_id) => {
 // finds index of book in the array and with that we assign updates (epubcifi)
 export const updateBook = (book_id, updates) => {
     const books = loadBooks();
-    const bookIndex = books.findIndex((book) => book.id === parseInt(book_id));
+    const bookIndex = books.findIndex((book) => parseInt(book.id) === parseInt(book_id));
     if (bookIndex === -1)
         return;
 
