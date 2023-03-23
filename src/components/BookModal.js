@@ -39,6 +39,7 @@ const Fade = React.forwardRef(function Fade(props, ref) {
     </animated.div>
   );
 });
+
 Fade.propTypes = {
   children: PropTypes.element.isRequired,
   in: PropTypes.bool,
@@ -47,6 +48,7 @@ Fade.propTypes = {
   onExited: PropTypes.func,
   ownerState: PropTypes.any,
 };
+
 const style = {
   position: "absolute",
   top: "50%",
@@ -57,6 +59,7 @@ const style = {
   boxShadow: 24,
   p: 4,
 };
+
 function BookModal(props) {
   const [open, setOpen] = useState(false);
   const handleClose = () => setOpen(false);

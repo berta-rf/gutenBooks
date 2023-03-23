@@ -8,10 +8,10 @@ import {
   AppBar,
   Drawer,
   IconButton,
+  Link,
   List,
   ListItem,
   ListItemButton,
-  ListItemIcon,
   Toolbar,
   Typography,
 } from "@mui/material";
@@ -23,7 +23,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import RateReviewIcon from "@mui/icons-material/RateReview";
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
 import MenuBookSharpIcon from "@mui/icons-material/MenuBookSharp";
-// import MenuBookIcon from "@mui/icons-material/MenuBook";
+import CloseIcon from "@mui/icons-material/Close";
 import HomeIcon from "@mui/icons-material/Home";
 
 const menuItems = [
@@ -31,6 +31,11 @@ const menuItems = [
   { text: "Bookshelf", icon: <AutoStoriesIcon />, path: "/Bookshelf" },
   { text: "My Reviews", icon: <RateReviewIcon />, path: "/Review" },
 ];
+const gitHubLink = {
+  berta: "https://github.com/berta-rf",
+  china: "https://github.com/chinapicke",
+  kirsten: "https://github.com/ktadique",
+};
 
 const DrawerHeader = styled("div")(({ theme }) => ({
   display: "flex",
@@ -83,6 +88,7 @@ const Navigation = () => {
                 }}
               >
                 <IconButton
+                  className="hamburger"
                   size="large"
                   aria-label="hamburger icon"
                   aria-controls="menu-appbar"
@@ -124,15 +130,15 @@ const Navigation = () => {
           >
             <Typography variant="h3" className="logo">
               gutenBooks
-              <MenuBookSharpIcon />
             </Typography>
-            <IconButton onClick={handleDrawerClose}>X</IconButton>
+            <IconButton className="closeBtn" onClick={handleDrawerClose}>
+              <CloseIcon />
+            </IconButton>
           </DrawerHeader>
           {/* Menu items */}
-          <List className="menuList">
+          <List className="menuMobileList">
             {menuItems.map((item) => (
               <ListItem className="menuItem" key={item.text}>
-                <ListItemIcon>{item.icon}</ListItemIcon>
                 <ListItemButton to={item.path}>{item.text}</ListItemButton>
               </ListItem>
             ))}
@@ -196,10 +202,35 @@ const Navigation = () => {
               >
                 gutenBooks
               </Typography>
+              <Typography className="credits">
+                Created by{" "}
+                <Link
+                  className="credLink"
+                  href={gitHubLink.berta}
+                  target="_blank"
+                >
+                  Berta R. F.
+                </Link>
+                ,{" "}
+                <Link
+                  className="credLink"
+                  href={gitHubLink.china}
+                  target="_blank"
+                >
+                  China P.
+                </Link>{" "}
+                &{" "}
+                <Link
+                  className="credLink"
+                  href={gitHubLink.kirsten}
+                  target="_blank"
+                >
+                  Kirsten T.
+                </Link>
+              </Typography>
             </Box>
           </Box>
         </Drawer>
-
         {/* where page will appear */}
         <Box
           className="pageWrapper"

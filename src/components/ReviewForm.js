@@ -37,7 +37,7 @@ function ReviewForm(props) {
     <>
       <Container className="reviewForm">
         <FormGroup>
-          <InputLabel id="inputLabel">Book Title</InputLabel>
+          <InputLabel className="inputLabel">Book Title</InputLabel>
           <Select
             color="success"
             className="bookTitleSelect"
@@ -68,7 +68,7 @@ function ReviewForm(props) {
               alignItems: "center",
             }}
           >
-            <InputLabel id="inputLabel">Review</InputLabel>
+            <InputLabel className="inputLabel">Review</InputLabel>
             <Rating
               className="starRating"
               name="simple-controlled"
