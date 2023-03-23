@@ -16,11 +16,11 @@
 The app allows you to filter your search by author / title or by topic, read the book directly or add it to your Bookshelf for later. There's also a Reviews section for you to keep track of your read books with star rating and review functionality.
 </br>
 
-This web app was build with React, MUI components, styled with SCSS, and deployed on Netlify.
+This web app was build with React, MUI components, styled with SCSS, uses an AWS Lambda function and is deployed on Netlify.
 </br>
 
 
-[<img alt="gutenBooks" width="60%" src="./src/assets/images/APP GIF">](https://gutenbooksweb.netlify.app/)
+[<img alt="gutenBooks" width="60%" src="./src/assets/images/gutenBooks.gif">](https://gutenbooksweb.netlify.app/)
 
 </br>
 
