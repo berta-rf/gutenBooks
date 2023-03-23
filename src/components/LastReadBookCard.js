@@ -7,21 +7,23 @@ import {
   CardActions,
   CardContent,
   CardMedia,
-  IconButton,
-  Tooltip,
+  // IconButton,
+  // Tooltip,
   Typography,
 } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 import BookContext from "../context/books";
-import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
+// import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
 import { createBook } from "../lib/savedBooks";
 
 const LastReadBookCard = () => {
-  const { lastRead, addBooktoArray } = useContext(BookContext);
+  const { getLastRead } = useContext(BookContext);
 
+  const book = getLastRead();
+
+  if (book) {
   return (
     <>
-      {lastRead.map((book) => (
         <Grid className="bookId" key={book.id} id={book.id}>
           <Card sx={{ width: 350, height: 675 }}>
             {/* Cover */}
@@ -74,20 +76,22 @@ const LastReadBookCard = () => {
                     </Button>
                   </Link>
                 </Box>
-                <Box>
+                {/* <Box>
                   <Tooltip title="Add to Bookshelf">
                     <IconButton onClick={addBooktoArray}>
                       <BookmarkAddIcon />
                     </IconButton>
                   </Tooltip>
-                </Box>
+                </Box> */}
               </CardActions>
             </CardContent>
           </Card>
         </Grid>
-      ))}
     </>
   );
+              } else {
+
+              }
 };
 
 export default LastReadBookCard;

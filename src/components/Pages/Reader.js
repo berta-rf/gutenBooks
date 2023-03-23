@@ -1,7 +1,10 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useContext, useState, useEffect, useRef } from "react";
+
 import { useParams } from "react-router-dom";
 import { ReactReader } from "react-reader";
 import { findBook, updateBook } from "../../lib/savedBooks";
+import BookContext from "../../context/books";
+
 import axios from "axios";
 import Grid from "@mui/material/Unstable_Grid2";
 
@@ -11,6 +14,9 @@ const Reader = () => {
   let params = useParams();
   const book_id = params.bookId;
   const book = findBook(book_id);
+
+
+  const { addLastReadBook } = useContext(BookContext);
 
   // change page title
   let newPageTitle = `gutenBooks - ${book.title}`;
@@ -49,7 +55,10 @@ const Reader = () => {
       axios.get(awsURL + `?book_id=${book_id}`).then((response) => {
         setBookData(response.data.data);
       });
+      addLastReadBook(book)
+
     }
+
   });
 
   return (

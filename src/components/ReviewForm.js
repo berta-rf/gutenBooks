@@ -17,7 +17,7 @@ function ReviewForm(props) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [value, setValue] = useState(0);
-  const { bookshelf } = useContext(BookContext);
+  const { getBookshelf } = useContext(BookContext);
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -49,7 +49,7 @@ function ReviewForm(props) {
             // onChange={(e) => setTitle(e.target.value)}>
             onChange={handleChange}
           >
-            {bookshelf.map((savedTitle) => (
+            {getBookshelf().map((savedTitle) => (
               <MenuItem
                 className="menuItem"
                 key={savedTitle.id}
