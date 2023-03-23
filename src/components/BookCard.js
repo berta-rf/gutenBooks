@@ -124,6 +124,7 @@ const BookCard = () => {
                       onClick={(e) => createBook(book)}
                     >
                       <Button
+                        color="success"
                         className="bookCardButton"
                         size="medium"
                         onClick={addLastReadBook}

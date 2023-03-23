@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import ReviewForm from "../ReviewForm";
 import ReviewItem from "../ReviewItem";
+import Grid from "@mui/material/Unstable_Grid2";
+import { Box } from "@mui/system";
+import { FormGroup, Typography } from "@mui/material";
 
 // get the local storage before the page loads so it can load with the storage
 const getLocalItems = () => {
@@ -13,9 +16,8 @@ const getLocalItems = () => {
 };
 
 function Reviewpage() {
-
   // change page title
-  let newPageTitle = `gutenBooks - My Reviews`
+  let newPageTitle = `gutenBooks - My Reviews`;
   document.title = newPageTitle;
 
   // empty array to "add" to with the new reviewites and render the local storage
@@ -56,18 +58,28 @@ function Reviewpage() {
 
   return (
     <div>
-      <ReviewForm addReview={addReview} />
-      {/* goes through each array and displays using the review item format */}
-      {review.map((books) => {
-        return (
-          // applies the functions to part we want to render
-          <ReviewItem
-            books={books}
-            deleteReview={deleteReview}
-            key={books.id}
-          />
-        );
-      })}
+      <Box>
+        <Typography className="pageHeading" variant="h4">
+          My Reviews
+        </Typography>
+      </Box>
+      <Grid container spacing={2} sx={{ p: 10 }} className="gridWrapper">
+        <FormGroup className="reviewFormGroup">
+          <ReviewForm addReview={addReview} />
+          {/* goes through each array and displays using the review item format */}
+          {review.map((books) => {
+            return (
+              // applies the functions to part we want to render
+
+              <ReviewItem
+                books={books}
+                deleteReview={deleteReview}
+                key={books.id}
+              />
+            );
+          })}
+        </FormGroup>
+      </Grid>
     </div>
   );
 }

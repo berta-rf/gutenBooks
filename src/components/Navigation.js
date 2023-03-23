@@ -8,10 +8,10 @@ import {
   AppBar,
   Drawer,
   IconButton,
+  Link,
   List,
   ListItem,
   ListItemButton,
-  ListItemIcon,
   Toolbar,
   Typography,
 } from "@mui/material";
@@ -22,7 +22,8 @@ import { Box } from "@mui/system";
 import MenuIcon from "@mui/icons-material/Menu";
 import RateReviewIcon from "@mui/icons-material/RateReview";
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
-import MenuBookIcon from "@mui/icons-material/MenuBook";
+import MenuBookSharpIcon from "@mui/icons-material/MenuBookSharp";
+import CloseIcon from "@mui/icons-material/Close";
 import HomeIcon from "@mui/icons-material/Home";
 
 const menuItems = [
@@ -30,6 +31,11 @@ const menuItems = [
   { text: "Bookshelf", icon: <AutoStoriesIcon />, path: "/Bookshelf" },
   { text: "My Reviews", icon: <RateReviewIcon />, path: "/Review" },
 ];
+const gitHubLink = {
+  berta: "https://github.com/berta-rf",
+  china: "https://github.com/chinapicke",
+  kirsten: "https://github.com/ktadique",
+};
 
 const DrawerHeader = styled("div")(({ theme }) => ({
   display: "flex",
@@ -82,6 +88,7 @@ const Navigation = () => {
                 }}
               >
                 <IconButton
+                  className="hamburger"
                   size="large"
                   aria-label="hamburger icon"
                   aria-controls="menu-appbar"
@@ -123,22 +130,16 @@ const Navigation = () => {
           >
             <Typography variant="h3" className="logo">
               gutenBooks
-              <MenuBookIcon />
             </Typography>
-            <IconButton onClick={handleDrawerClose}>X</IconButton>
+            <IconButton className="closeBtn" onClick={handleDrawerClose}>
+              <CloseIcon />
+            </IconButton>
           </DrawerHeader>
           {/* Menu items */}
-          <List className="menuList">
+          <List className="menuMobileList">
             {menuItems.map((item) => (
-              <ListItem key={item.text}>
-                <ListItemIcon>{item.icon}</ListItemIcon>
-                <ListItemButton
-                  className="menuItem"
-                  style={{ textDecoration: "none" }}
-                  to={item.path}
-                >
-                  {item.text}
-                </ListItemButton>
+              <ListItem className="menuItem" key={item.text}>
+                <ListItemButton to={item.path}>{item.text}</ListItemButton>
               </ListItem>
             ))}
           </List>
@@ -154,35 +155,82 @@ const Navigation = () => {
             ".MuiDrawer-paper": {
               width: drawerWidth,
               boxSizing: "border-box",
+              borderRight: 10,
             },
           }}
           variant="permanent"
           anchor="left"
         >
-          <Box className="logoBg">
-            <Typography className="gutenLogo" noWrap component="a" href="/">
-              gutenBooks
-              <MenuBookIcon />
-            </Typography>
-          </Box>
-          {/* Menu items */}
-          <List className="menuList">
-            {menuItems.map((item) => (
-              <ListItem className="menuListItem" key={item.text}>
-                <ListItemIcon>{item.icon}</ListItemIcon>
-                <ListItemButton
-                  className="menuListButton"
-                  align="right"
-                  style={{ textDecoration: "none" }}
-                  to={item.path}
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "stretch",
+            }}
+          >
+            <Box>
+              <MenuBookSharpIcon
+                className="desktopIcon"
+                sx={{ fontSize: 100 }}
+              />
+              {/* Menu items */}
+              <List className="menuList">
+                {menuItems.map((item) => (
+                  <ListItem
+                    className={`menuListItem ${"spreadEffectMenu"}`}
+                    key={item.text}
+                  >
+                    <ListItemButton
+                      className="menuListButton"
+                      align="right"
+                      style={{ textDecoration: "none" }}
+                      to={item.path}
+                    >
+                      {item.text}
+                    </ListItemButton>
+                  </ListItem>
+                ))}
+              </List>
+            </Box>
+            {/* LOGO */}
+            <Box className="logoBg">
+              <Typography
+                className={`gutenLogo ${"spreadEffectLogo"}`}
+                noWrap
+                component="a"
+                href="/"
+              >
+                gutenBooks
+              </Typography>
+              <Typography className="credits">
+                Created by{" "}
+                <Link
+                  className="credLink"
+                  href={gitHubLink.berta}
+                  target="_blank"
                 >
-                  {item.text}
-                </ListItemButton>
-              </ListItem>
-            ))}
-          </List>
+                  Berta R. F.
+                </Link>
+                ,{" "}
+                <Link
+                  className="credLink"
+                  href={gitHubLink.china}
+                  target="_blank"
+                >
+                  China P.
+                </Link>{" "}
+                &{" "}
+                <Link
+                  className="credLink"
+                  href={gitHubLink.kirsten}
+                  target="_blank"
+                >
+                  Kirsten T.
+                </Link>
+              </Typography>
+            </Box>
+          </Box>
         </Drawer>
-
         {/* where page will appear */}
         <Box
           className="pageWrapper"

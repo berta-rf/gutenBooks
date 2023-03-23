@@ -1,13 +1,11 @@
 import React, { createContext, useState, useEffect } from "react";
 import defaultBooks from "../assets/data/defaultBooks.json";
 
-
 const BookContext = createContext();
 
 //search context---------
 
 function Provider({ children }) {
-
   // handles results state, and sets defaultBooks.json as default book results to display on homepage
   const [results, setResults] = useState(defaultBooks);
 
@@ -28,6 +26,7 @@ function Provider({ children }) {
     // target bookid from parent div
     let idDiv = e.target.parentElement.closest(".bookId");
     let bookID = idDiv.id;
+    console.log(idDiv);
 
     let selectedBook = results.find((obj) => obj.id === parseInt(bookID));
 
@@ -71,8 +70,11 @@ function Provider({ children }) {
 
   //last read function:
   const addLastReadBook = (e) => {
-    let bookID =
-      e.currentTarget.parentNode.parentNode.parentNode.parentNode.parentNode.id;
+    let idDiv = e.target.parentElement.closest(".bookId");
+    let bookID = idDiv.id;
+    console.log(idDiv);
+
+    console.log(idDiv);
 
     let lastSelectedBook = results.find((obj) => obj.id === parseInt(bookID));
 

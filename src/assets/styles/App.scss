@@ -13,13 +13,13 @@ font-style: italic;
 font-family: 'Open Sans', sans-serif;
 */
 
-/* COLORS
- */
+/* COLORS */
 :root {
   --dark-green: #152515;
   --green: #355131;
   --pale-green: #e2e8a8;
-  --action-gren: #4f772d;
+  --action-green: #4f772d;
+  --background-green: #dee1c7;
 }
 
 body {
@@ -29,26 +29,40 @@ body {
 }
 
 .gridWrapper {
+  display: flex;
   justify-content: center !important;
 }
 
 //logo
-.gutenLogo {
-  margin: 24px !important;
+
+.logo {
   font-family: "Libre Baskerville", serif !important;
-}
-
-.gutenLogo:visited {
+  font-style: italic;
+  font-size: 40px !important;
   color: #e2e8a8;
+  text-decoration: none !important;
+  display: flex;
+  padding: 10px;
+  // positioning
+  position: absolute !important;
+  bottom: 46px;
 }
 
-.css-fvtpii-MuiTypography-root {
+.gutenLogo {
   font-family: "Libre Baskerville", serif !important;
   font-style: italic;
   font-size: 40px !important;
   text-decoration: none !important;
+  padding: 5px;
   display: flex;
-  padding: 10px;
+  // positioning
+  position: absolute !important;
+  bottom: 46px;
+}
+
+.gutenLogo:link,
+.gutenLogo:visited {
+  color: #e2e8a8;
 }
 
 .logoBg {
@@ -56,8 +70,35 @@ body {
   justify-content: center !important;
 }
 
-.lohoBg > a {
+.logoBg > a {
   color: var(--pale-green) !important;
+}
+
+.credits {
+  font-family: "Libre Baskerville", serif !important;
+  font-style: italic;
+  font-size: 12px !important;
+  letter-spacing: 0.8px !important;
+  text-align: center;
+  color: #0b110b;
+  padding: 10px;
+  width: 175px;
+  // positioning
+  position: absolute !important;
+  bottom: 4px;
+}
+
+.closeBtn {
+  margin-top: 10px !important;
+  margin-left: 225px !important;
+}
+
+.desktopIcon {
+  color: #3551319c;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+  position: absolute;
+  left: 100px;
+  top: 100px;
 }
 
 // Top Appbar/Toolbar
@@ -73,40 +114,58 @@ body {
 
 #search-bar {
   background-color: #fff;
+  width: 200px !important;
 }
 
-.css-1ff8729-MuiInputBase-root-MuiFilledInput-root::before {
+#search-bar-label {
+  font-family: "Open Sans", sans-serif !important;
+}
+
+.MuiInputBase-root {
+  font-family: "Open Sans", sans-serif !important;
+}
+
+.MuiInputBase-root::before {
   border: none !important;
 }
 
 #select-param {
   border: none !important;
   background-color: #ffffffaa;
+  font-family: "Open Sans", sans-serif !important;
 }
 
-.css-1ka5eyc-MuiPaper-root-MuiMenu-paper-MuiPopover-paper {
+.MuiPopover-paper {
   border-radius: 0px !important;
+}
+
+.MuiMenuItem-root {
+  font-family: "Open Sans", sans-serif !important;
 }
 
 .MuiOutlinedInput-notchedOutline {
   border: none !important;
-  border-left: 2px solid #4f772d !important;
+  border-left: 2px solid var(--action-green) !important;
 }
 
 .search-btn {
-  background-color: #4f772d !important;
+  background-color: var(--action-green) !important;
   border: none !important;
   width: 50px;
 }
 
 //side navigation
 .desktopDr {
-  background-color: #152515 !important;
-  // border-right: 10px solid #355131;
   justify-content: space-between;
 }
-.css-12i7wg6-MuiPaper-root-MuiDrawer-paper {
-  background-color: #152515 !important;
+
+.MuiDrawer-paper {
+  background: linear-gradient(#162716, #152515) !important;
+}
+
+.MuiDrawer-paperAnchorLeft {
+  border-right: 10px solid;
+  border-image: linear-gradient(to bottom, #355131, rgba(0, 0, 0, 0)) 1 100%;
 }
 
 .MuiListItem-root {
@@ -117,25 +176,56 @@ body {
 }
 
 .menuList {
-  margin-top: 56px !important;
-  margin-left: 36px !important;
-  text-align: right !important;
+  margin-top: 250px !important;
+  // margin-left: 24px !important;
+  text-align: c !important;
   color: var(--pale-green);
 }
 
-.menuListButton {
+.menuMobileList {
+  margin-top: 50px !important;
+  // margin-left: 24px !important;
+  text-align: c !important;
+  color: var(--pale-green);
+}
+
+.MuiListItemButton-root {
   text-align: right !important;
+  font-size: 28px !important;
+  margin-bottom: 36px !important;
+  padding: 0 0 8px 0 !important;
+  border-bottom: 2px solid var(--pale-green) !important;
+}
+
+.hamburger {
+  color: var(--action-green) !important;
 }
 
 // page titles
 
-.homePageHeading {
+.pageHeading {
   font-size: 45px !important;
   font-family: "Libre Baskerville", serif !important;
   font-style: italic;
   margin-left: 56px !important;
   margin-top: 16px !important;
   color: var(--pale-green) !important;
+  text-shadow: #15251575 0.1em 0.1em 0.2em;
+
+  //phone
+  @media screen and (max-width: 899px) {
+    color: var(--dark-green) !important;
+    text-shadow: #15251549 0.1em 0.1em 0.2em;
+  }
+}
+
+.pageSubHeading {
+  font-family: "Open Sans", sans-serif !important;
+  font-style: italic;
+  font-size: 20px !important;
+  letter-spacing: 1px !important;
+  margin-left: 56px !important;
+  color: #0b110b;
 }
 
 //card styling
@@ -169,9 +259,114 @@ body {
   font-family: "Open Sans", sans-serif !important;
   font-weight: 500;
 
-  color: var(--action-gren) !important;
+  color: var(--action-green) !important;
   letter-spacing: 2px !important;
   font-stretch: 50% !important;
+}
+
+//Review form
+
+.reviewFormGroup {
+  background-color: #fff;
+  flex-grow: 1;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px !important;
+}
+
+.reviewForm {
+  padding: 24px;
+}
+
+.inputLabel {
+  font-family: "Open Sans", sans-serif !important;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+
+.bookTitleSelect {
+  font-family: "Open Sans", sans-serif !important;
+  border-radius: 0px !important;
+}
+
+.menuItem:focus {
+  background-color: #50772d75 !important;
+}
+
+.reviewInput > div {
+  font-family: "Open Sans", sans-serif !important;
+  font-size: 16px;
+  border-radius: 0px !important;
+  margin-top: 0px !important;
+  height: 150px;
+  padding: 16px;
+}
+
+.starRating {
+  padding: 5px;
+}
+
+.submitReviewBtn {
+  font-family: "Open Sans", sans-serif !important;
+  letter-spacing: 2px !important;
+  color: var(--background-green) !important;
+  background-color: var(--action-green) !important;
+  border: none !important;
+  border-radius: 0px !important;
+  height: 50px;
+}
+
+.submitReviewBtn:hover {
+  background-color: #355131 !important;
+  transition: 600ms ease;
+}
+
+.reviewOutput {
+  // border: 1px dashed var(--action-green);
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.outputReviewTitle {
+  font-family: "Libre Baskerville", serif !important;
+  font-style: italic;
+  font-size: 18px !important;
+  margin-right: 10px !important;
+}
+
+.outputReviewDescription {
+  font-family: "Open Sans", sans-serif !important;
+  letter-spacing: 0.2px !important;
+  text-align: justify;
+  padding: 10px 50px 20px 50px;
+}
+
+.brackets {
+  margin: 0px 1px !important;
+}
+
+.socialLabel {
+  font-family: "Open Sans", sans-serif !important;
+  font-size: 14px !important;
+  letter-spacing: 1px !important;
+  margin: 5px 3px !important;
+}
+
+.socialIcons {
+  margin-right: 1px;
+  width: 35px;
+  height: 35px;
+}
+
+.deleteReview {
+  background-color: #4f772d !important;
+  color: #ffffff !important;
+  margin-right: 5px !important;
+  margin-top: 20px !important;
+}
+
+.deleteReview:hover {
+  background-color: #355131 !important;
+  transition: 600ms ease;
 }
 
 //CSS effects
@@ -179,9 +374,6 @@ body {
 .spreadEffectTitle {
   font-family: "Libre Baskerville", serif !important;
   font-style: italic;
-  font-size: 24px !important;
-  // letter-spacing: 2px !important;
-  color: var(--dark-green) !important;
   letter-spacing: -3px;
   transition: 700ms ease;
   font-variation-settings: "wght" 311;
@@ -190,4 +382,42 @@ body {
 .spreadEffectTitle:hover {
   font-variation-settings: "wght" 582;
   letter-spacing: 1px;
+}
+
+.spreadEffectMenu {
+  font-family: "Libre Baskerville", serif !important;
+  font-style: italic;
+  letter-spacing: -2px;
+  transition: 1000ms ease;
+  font-variation-settings: "wght" 311;
+}
+
+.spreadEffectMenu:hover {
+  font-variation-settings: "wght" 582;
+  letter-spacing: 0px;
+}
+
+.spreadEffectLogo {
+  font-family: "Libre Baskerville", serif !important;
+  font-style: italic;
+  letter-spacing: -3px;
+  transition: 1000ms ease;
+  font-variation-settings: "wght" 311;
+}
+
+.spreadEffectLogo:hover {
+  font-variation-settings: "wght" 582;
+  letter-spacing: 2px;
+}
+
+.credLink:link,
+.credLink:visited {
+  padding: 0 5px;
+  color: #0b110b !important;
+  text-decoration: none !important;
+  box-shadow: inset 0 0 0 0 var(--background-green);
+  transition: all 1000ms ease;
+  &:hover {
+    box-shadow: inset 300px 0 0 0 var(--background-green);
+  }
 }
