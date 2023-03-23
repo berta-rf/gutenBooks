@@ -18,7 +18,7 @@ import ClearIcon from "@mui/icons-material/Clear";
 import { createBook } from "../lib/savedBooks";
 
 const BookshelfBookCard = () => {
-  const { bookshelf, getBookshelf, addLastReadBook, removeFromBookshelf } =
+  const { bookshelf, addLastReadBook, removeFromBookshelf } =
     useContext(BookContext);
 
   return (
