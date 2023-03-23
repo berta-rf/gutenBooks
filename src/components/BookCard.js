@@ -109,8 +109,8 @@ const BookCard = () => {
                 >
                   by {book.authors[0] ? book.authors[0].name : "Unknown Author"}
                 </Typography>
-                <CardActions className="bookCardActions">
-                  <Box sx={{ display: "flex" }}>
+                <CardActions className="bookCardActions" >
+                  <Box id={book.id} sx={{ display: "flex" }}>
                     <BookModal
                       title={book.title}
                       // this is the props which is breaking the search
